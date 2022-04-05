@@ -1,30 +1,23 @@
-/** @jsxImportSource theme-ui */
-import { ThemeProvider } from 'theme-ui'
-
-import Header from '../components/Header'
-import { theme } from '../lib/theme'
+import { ThemeProvider } from 'styled-components'
+import useDefaultTheme, { GlobalStyle } from '../theme'
 import type { AppProps } from 'next/app'
+import Header from '../components/common/header'
+import { Footer } from '../components/common/footer'
+import i18n from '../i18n'
+import { I18nextProvider } from 'react-i18next'
 
-/**
- * @see https://nextjs.org/docs/advanced-features/custom-app
- * @see https://nextjs.org/docs/basic-features/typescript#custom-app
- */
+
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const theme = useDefaultTheme()
   return (
-    <ThemeProvider theme={theme}>
-      <main
-        sx={{
-          border: '1px solid',
-          borderColor: 'text',
-          padding: 3,
-          borderRadius: 1,
-          maxWidth: 768,
-          mx: 'auto',
-        }}
-      >
+    <I18nextProvider i18n={i18n} defaultNS='common'>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle {...theme}/>
         <Header />
-        <Component {...pageProps} />
-      </main>
-    </ThemeProvider>
+        <Component {...pageProps}/>
+        <Footer />
+      </ThemeProvider>
+    </I18nextProvider>
+
   )
 }
