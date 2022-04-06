@@ -1,7 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 // Components
-import { Flex, FlexProps } from 'rebass/styled-components'
+import { MotionFlex } from '../../components/motion-components'
+import { FlexProps } from 'theme-ui'
 
 interface IMain extends FlexProps {
   children?: React.ReactNode
@@ -35,11 +36,11 @@ const Main: React.FC<IMain> = ({ children, title = '', description = '', url = '
         <meta property='twitter:description' content={description} />
         <meta property='twitter:image' content={image} />
       </Head>
-      <Flex height={['auto']} flexDirection='column'>
-        <Flex flexDirection='column' alignItems='center' width={['100%']} {...restprops}>
+      <MotionFlex sx={{ height: 'auto', flexDirection: 'column'}}>
+        <MotionFlex sx={{ flexDirection: 'column', alignItems: 'center', width: '100%'}}>
           {children}
-        </Flex>
-      </Flex>
+        </MotionFlex>
+      </MotionFlex>
     </>
   )
 }

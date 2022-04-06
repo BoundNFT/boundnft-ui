@@ -1,6 +1,6 @@
 
-import { Flex, Box, Text } from 'rebass/styled-components'
-
+import { MotionText, MotionFlex } from '../../motion-components'
+import { Text } from 'theme-ui'
 interface ISelectionBox {
     backgroundColor?: string
     text: string
@@ -8,17 +8,23 @@ interface ISelectionBox {
     outlined?: boolean
 }
 
-export const SelectionBox: React.FC<ISelectionBox> = ({ backgroundColor, text, arrowColor, outlined }, ...restprops) => {
-
+export const SelectionBox: React.FC<ISelectionBox> = ({ backgroundColor, text, arrowColor, outlined }) => {
 
   return (
-    <Flex backgroundColor={backgroundColor ? backgroundColor : 'transparent'} height={56} width='100%' maxWidth={[320, 320, 454]} sx={{border: outlined ? '1px solid white' : '0px'}}  {...restprops}>
-      <Flex width='100%' justifyContent={'space-between'} px={30} py={20} alignItems='center'>
-        <Flex as='text' color={outlined ? 'white' : 'blue.100'} variant='body'>{text}</Flex>
-        <Flex fontSize={30} color={outlined ? 'white' : arrowColor ? arrowColor : 'blue.100'} fontWeight={'bold'}>&#x2192;</Flex>
-      </Flex>
-    </Flex>
 
-      
+    <MotionFlex 
+      sx={{ 
+        backgroundColor: backgroundColor ? backgroundColor : 'transparent',
+        height: 56,
+        width: '100%',
+        maxWidth: 454,
+        border: outlined ? '1px solid white' : '0px',
+      }}>
+      <MotionFlex sx={{ width: '100%', justifyContent: 'space-between', px: 30, py: 20, alignItems: 'center'}}>
+        <Text color={outlined ? 'white' : 'blue.100'} variant='styles.body'>{text}</Text>
+        <Text sx={{ fontSize: 30, fontWeight: 'bold'}} color={outlined ? 'white' : arrowColor ? arrowColor : 'blue.100'}>&#x2192;</Text>
+      </MotionFlex>
+    </MotionFlex>   
+
   )
 }

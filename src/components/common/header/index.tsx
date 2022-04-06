@@ -1,8 +1,6 @@
-import { Flex } from 'rebass/styled-components'
+import { Flex } from 'theme-ui'
 import Link from 'next/link'
 import Navigation from './navigation'
-import { rgba } from 'polished'
-import { useRouter } from 'next/router'
 import Logo from './logo'
 
 

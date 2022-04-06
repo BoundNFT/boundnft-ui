@@ -1,10 +1,9 @@
-import { useMemo, forwardRef, useEffect } from 'react'
+import { useMemo, forwardRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Flex, Text, Link as LinkRebass, FlexProps } from 'rebass/styled-components'
+import { Flex, Text, Link as StyledLink, FlexProps } from 'theme-ui'
 import { IRoutes } from '../../../constants/types'
 import { permalink } from '../../../constants/routes'
-import { isEmpty } from 'lodash'
 
 
 interface INavButton extends IRoutes {}
@@ -13,7 +12,7 @@ const NavButton: React.FC<INavButton> = props => {
   const { route, onClick, children, external } = props
 
   return external ? (
-    <LinkRebass
+    <StyledLink
       href={route}
       target='_blank'
       rel='noopener noreferrer'
@@ -25,9 +24,9 @@ const NavButton: React.FC<INavButton> = props => {
       }}
     >
       <LinkComponent {...props} />
-    </LinkRebass>
+    </StyledLink>
   ) : (
-    <Flex alignItems={'center'}>
+    <Flex sx={{ alignItems: 'center'}}>
       {children ? (
         <LinkComponent onClick={onClick} {...props} />
       ) : (
@@ -49,18 +48,17 @@ const LinkComponent = forwardRef<HTMLElement, INavButton & FlexProps>(({ route, 
     if (!pathname) return null
     if (pathname === permalink.home) return '/'
     const path = pathname.split('/')
-    return `/${path[1]}/${path[2]}`
+    return `/${path[1]}`
   }, [pathname])
 
-
   return (
-    <Flex sx={{ position: 'relative', justifyContent: 'center' }} ref={ref} {...restprops}>
+    <Flex sx={{ position: 'relative', justifyContent: 'center' }} /* ref={ref} */ {...restprops}>
       <Flex
         sx={{
           flexDirection: ['row'],
           justifyContent: 'center',
           alignItems: 'center',
-          px: [15],
+          px: [25],
           height: [80],
           '&:after': {
             content: "''",
@@ -88,14 +86,14 @@ const LinkComponent = forwardRef<HTMLElement, INavButton & FlexProps>(({ route, 
           }
         }}
       >
-        <Flex
+        <Text
           as='text'
-          color={['white']}
-          textAlign={'center'}
-          variant='nav-buttons-text'
+          color='white'
+          sx={{ textAlign: 'center'}}
+          variant='styles.nav-buttons-text'
         >
           {name}
-        </Flex>
+        </Text>
       </Flex>
         
     </Flex>

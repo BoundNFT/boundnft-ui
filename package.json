@@ -12,13 +12,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/react": "^11.7.1",
+    "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.6.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^12.0.7",
     "@types/lodash": "^4.14.181",
-    "@types/rebass": "^4.0.10",
     "@types/styled-components": "^5.1.24",
     "framer-motion": "^6.2.8",
     "i18next": "^21.6.14",
@@ -29,7 +28,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.16.2",
-    "rebass": "^4.0.7",
     "styled-components": "^5.3.5",
     "theme-ui": "latest"
   },

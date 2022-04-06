@@ -19,4 +19,14 @@ export default {
   'paragraph.section3-3': "The BoundNFT Protocol codebase is open source, AVAILABLE ON  GITHUB  IT's Permissively licensed and third-party audited.",
   'label.get-started': 'Get started',
   'label.read-the-docs': 'Read the Docs',
+  'label.the-protocol': 'The Protocol',
+  'paragraph.footer-1': 'Project BoundNFT is a decentralized NFT bound protocol running on Ethereum. Bound everything from CryptoPunks to game assets with no stolen risk.',
+
+  'label.twitter': 'Twitter',
+  'label.discord': 'Discord',
+  'label.github': 'Github',
+  'label.about': 'About',
+  'label.contract': 'Contract',
+  'label.platform': 'Platform',
+  'label.community': 'Community',
 }

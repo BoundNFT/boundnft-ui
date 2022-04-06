@@ -1,8 +1,8 @@
 import React from 'react'
-import { Flex } from 'rebass/styled-components'
+import { Flex } from 'theme-ui'
 import { IContainer } from './interfaces'
 
-const Container: React.FC<IContainer> = ({ hasBorder = false, hasPadding = false, styles, children, ...restprops }) => {
+const Container: React.FC<IContainer> = ({ hasBorder = false, hasPadding = false, children, ...restprops }) => {
   return (
     <Flex
       pt={170}
@@ -16,7 +16,7 @@ const Container: React.FC<IContainer> = ({ hasBorder = false, hasPadding = false
         borderWidth: hasBorder ? 2 : null,
         borderStyle: hasBorder ? 'solid' : null,
         borderColor: hasBorder ? 'primary' : null,
-        ...styles
+       
       }}
       {...restprops}
     >
