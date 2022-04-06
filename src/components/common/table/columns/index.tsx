@@ -22,7 +22,7 @@ export const useColumns = () => {
           return (
             <Flex sx={{ alignItems: 'left'}}>
               <Box sx={{ width: 88, height: 44, position: 'relative' }}>
-                <Image src={data.avatar} layout='fill' />
+                <Image src={data.avatar} layout='fill'/>
               </Box>
             </Flex>
 
@@ -94,7 +94,7 @@ export const useColumns = () => {
         hideSort: true,
         Render(data: ICollections) {
           return (
-            <Flex sx={{textAlign: 'right', justifyContent: 'right'}}>
+            <Flex sx={{ justifyContent: 'right'}}>
               <Text variant='styles.table-row-text'>
                 {data.totalNfts}
               </Text>

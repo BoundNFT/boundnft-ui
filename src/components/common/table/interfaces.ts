@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlexProps } from 'theme-ui'
+import { FlexProps, SxProp } from 'theme-ui'
 
 export interface ITable extends FlexProps {
   columns: ITableColumn[]

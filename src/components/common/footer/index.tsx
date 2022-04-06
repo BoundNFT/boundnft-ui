@@ -14,27 +14,31 @@ export const Footer: React.FC = () => {
         justifyContent: 'center', 
         backgroundColor: 'blue.200', 
         opacity: 0.8, 
-        mt: -500, 
-        height: 500
+        mt: [-660, -700, -500], 
+        height: [660, 700, 500],
+        px: [20, 20, 40, 40, null],
+        pt: [40, 40, 0],
+        pb: [60]
+      
       }}>
       <Flex sx={{ maxWidth: 960, width: '100%', flexDirection: 'column', alignItems: 'center'}}>
-        <Flex sx={{ flexDirection: 'column', alignItems: 'center', mb: 100}}>
+        <Flex sx={{ flexDirection: 'column', alignItems: 'center'}}>
           <Image src='/assets/images/boundnft_logo.svg' width={88} height={70} />
           <Flex>
             <Text variant='styles.semi-title-white'>{t('label.bound').toUpperCase()}</Text>
             <Text variant='styles.semi-title-bold-white'>{t('label.nft').toUpperCase()}</Text>
           </Flex>
         </Flex>
-        <Flex sx={{ width: '100%', flex: 1, justifyContent: 'flex-start'}}>
-          <Flex sx={{ flexDirection: 'column', flex: 0.5}}>
+        <Flex sx={{ mt: [40, 40, 40, 70], width: '100%', flex: 1, justifyContent: 'flex-start', flexDirection: ['column', 'column', 'row']}}>
+          <Flex sx={{ flexDirection: 'column', flex: [1, 1, 0.5]}}>
             <Text variant='styles.mid-title-white'>{t('label.the-protocol').toUpperCase()}</Text>
             <Text variant='styles.body-xs' color='grey.100' sx={{ maxWidth: 400, mt: 25}}>
               {t('paragraph.footer-1')}
             </Text>
           </Flex>
 
-          <Flex sx={{ flexDirection: 'column', flex: 0.25}}>
-            <Text variant='styles.mid-title-white'>ABOUT</Text>
+          <Flex sx={{ flexDirection: 'column', flex: [1, 1, 0.25], mt: [30, 30, 0]}}>
+            <Text variant='styles.mid-title-white'>{t('label.about')}</Text>
             <Flex variant='styles.body-xs' color='grey.100' sx={{ maxWidth: 400, mt: 25, flexDirection: 'column'}}>
               <Link>{t('label.twitter')}</Link>
               <Link>{t('label.discord')}</Link>
@@ -42,7 +46,7 @@ export const Footer: React.FC = () => {
             </Flex>
           </Flex>
 
-          <Flex sx={{ flexDirection: 'column', flex: 0.25}}>
+          <Flex sx={{ flexDirection: 'column', flex: [1, 1, 0.25], mt: [30, 30, 0]}}>
             <Text variant='styles.mid-title-white'>{t('label.community')}</Text>
             <Flex variant='styles.body-xs' color='grey.100' sx={{ maxWidth: 400, mt: 25, flexDirection: 'column'}}>
               <Link>{t('label.about')}</Link>

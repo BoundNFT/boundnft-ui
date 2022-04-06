@@ -42,7 +42,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           html {
             padding: 0px;
             margin: 0px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             font-family: 'code_boldregular';
             font-size: 12px;           
           }

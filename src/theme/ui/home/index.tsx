@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 // Components
-import { MotionFlex } from '../../components/motion-components'
+import { MotionFlex } from '../../../components/common/motion-components'
 import { FlexProps } from 'theme-ui'
 
 interface IMain extends FlexProps {

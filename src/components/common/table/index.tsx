@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { Flex, Box, Text } from 'theme-ui'
 import useResponsive from '../../../hooks/common/useResponsive'
 import { SkeletonLine } from '../skeleton'
-import SpacerDash from '../../../theme/common/spacer-dash'
+import SpacerDash from '../../../theme/ui/common/spacer-dash'
 
 const SORT_DIRECTION: {
   [x: string]: 'asc' | 'desc'
@@ -83,7 +83,7 @@ const Table: React.FC<ITable> = ({
                     sx={{
                       flexDirection: 'row',
                       alignItems: 'center',
-                      justifyContent: !col.align ? 'flex-start' : col.align === 'left' ? 'flex-start' : col.align === 'right' ? 'flex-end' : 'center'
+                      justifyContent: !col.align ? 'flex-start' : col.align === 'left' ? 'flex-start' : col.align === 'right' ? 'flex-end' : 'center',
                     }}
                   >
                     {col?.hideSort ? (
@@ -187,14 +187,14 @@ const Table: React.FC<ITable> = ({
                                 </Box>
                               ))}
                           </Flex>
-                          <Flex sx={{ width: '100%', my: 15, opacity: 0.5 }}>
+                          <Flex sx={{ width: '100%', my: 15, opacity: 0.5, ":last-child": { width: 0, height: 0, my: 0, mt: 3} }}>
                             <SpacerDash bgColor='grey.100' height={1} />
                           </Flex>
                         </React.Fragment>
                       )
                 )}
               </Flex>
-              <Flex sx={{ width: '100%', pt: 15 }}>
+              <Flex sx={{ width: '100%' }}>
                 <SpacerDash bgColor='grey.100' height={3} />
               </Flex>
             </Box>

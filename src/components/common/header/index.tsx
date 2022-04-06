@@ -8,13 +8,15 @@ const Header: React.FC = () => {
   return (
     <Flex
       sx={{
+        position: 'fixed',
         bg: 'blue.300',
         width: '100%',
-        height: 78,
+        height: [78],
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        opacity: 0.8
+        opacity: 0.8,
+        px: [20, 20, 40, null]
       }}
     >
       <Flex
@@ -22,7 +24,7 @@ const Header: React.FC = () => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: '100%',
-          maxWidth: 1280,          
+          maxWidth: 1280,         
         }}
       >
         <Link href='/' passHref>

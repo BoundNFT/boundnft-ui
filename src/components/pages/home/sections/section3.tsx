@@ -1,12 +1,12 @@
 
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-import { MotionBox, MotionFlex, MotionText } from '../../../motion-components'
+import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-components'
 
 export const Section3 = () => {
   const { t } = useTranslation('common')
   return (
-    <MotionFlex sx={{ width:'100%', justifyContent: 'center', alignItems: 'center', mt: 500 }}>
+    <MotionFlex sx={{ width:'100%', justifyContent: 'center', alignItems: 'center', mt: [250, 250, 250, 500] }}>
         
       <MotionFlex sx={{ maxWidth: 960, width: '100%', flexDirection: 'column'}}>
 

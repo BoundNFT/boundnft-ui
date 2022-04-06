@@ -9,8 +9,7 @@ export const theme = makeTheme({
     
   },
 
-
-  breakpoints: [375, 768, 1024, 1366, 1440, 1600].map((n) => n + 'em'),
+  breakpoints: ['320x', '768px', '1024px', '1366px', '1440px'],
 
   fonts: {
     bold: "code_boldregular",
@@ -62,25 +61,24 @@ export const theme = makeTheme({
     },
     
     'title-white': {
-      fontSize: 64,
+      fontSize: [34, 34, 44, 64],
       color: 'white',
       fontFamily: 'light',
       letterSpacing: '1.5px'
     },
     'title-bold-white': {
-      fontSize: 64,
+      fontSize: [34, 34, 44, 64],
       color: 'white',
       fontFamily: 'bold',
       fontWeight: 'bold',
       letterSpacing: '1.5px'
     },
     'title-bold-green': {
-      fontSize: 64,
+      fontSize: [34, 34, 44, 64],
       color: 'green.100',
       fontFamily: 'bold',
       fontWeight: 'bold',
       letterSpacing: '3px'
-
     }, 
     'semi-title-white': {
       fontSize: 32,
@@ -94,7 +92,6 @@ export const theme = makeTheme({
     },
     'logo-text-bold': {
       fontSize: 21,
-      fontWeight: 'bold',
       color: 'white',
       fontFamily: 'bold',
     },
@@ -128,8 +125,6 @@ export const theme = makeTheme({
       letterSpacing: '0.6px',      
       lineHeight: '25px',
     },
-
-
     table: {
       flexDirection: 'column',
       width: '100%',
@@ -174,8 +169,7 @@ export const theme = makeTheme({
     'table-header-column-mobile': {
       fontSize: 12,
       color: 'white',
-
-    }
+    },
   },
 
   buttons: {

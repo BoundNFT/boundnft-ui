@@ -2,13 +2,13 @@
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import { SelectionBox } from '../../../common/selection-box'
-import { MotionBox, MotionFlex, MotionText } from '../../../motion-components'
+import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-components'
 
 export const Section2 = () => {
   const { t } = useTranslation('common')
 
   return (
-    <MotionFlex sx={{ width: '100%', alignItems: 'center', justifyContent: 'center', mt: 120}}>
+    <MotionFlex sx={{ width: '100%', alignItems: 'center', justifyContent: 'center', mt: [150, 150, 120]}}>
         
       <MotionFlex sx={{ maxWidth: 960, width: '100%', flexDirection: 'column'}}>
 
@@ -40,9 +40,9 @@ export const Section2 = () => {
             </MotionBox>
           </MotionFlex>
 
-          <MotionFlex sx={{ width: '100%', mt: 70, justifyContent: 'space-between'}}>
+          <MotionFlex sx={{ width: '100%', mt: 70, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
             <SelectionBox text={t('label.get-started').toUpperCase()} backgroundColor='green.100' arrowColor='black' />
-            <SelectionBox text={t('label.read-the-docs').toUpperCase()} outlined/>
+            <SelectionBox text={t('label.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}}/>
           </MotionFlex>
           
         </MotionFlex>

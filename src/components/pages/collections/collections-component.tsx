@@ -2,11 +2,11 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Flex } from "theme-ui";
 import { BAYC_IMAGE_PATH, PUNK_IMAGE_PATH } from "../../../constants";
-import Container from "../../../theme/common/container";
+import Container from "../../../theme/ui/common/container";
 import Table from "../../common/table";
 import { useColumns } from "../../common/table/columns";
 import { ICollections } from "../../common/table/columns/interfaces";
-import { MotionFlex, MotionText } from "../../motion-components";
+import { MotionFlex, MotionText } from "../../common/motion-components";
 
 
 export const CollectionsPageComponent: React.FC = () => {
@@ -36,10 +36,8 @@ export const CollectionsPageComponent: React.FC = () => {
   ], [])
 
   return (
-    <Container 
+    <MotionFlex 
       sx={{
-      pt: 90,
-      pb: 380,
       width: '100%', 
       flexDirection: 'column', 
       alignItems: 'center',
@@ -66,17 +64,10 @@ export const CollectionsPageComponent: React.FC = () => {
         
           //tabletHasTable={tabletHasTable}
           //noRecords={noRecords}
-        />
-
-        
+        />     
       </Flex>
-
-
-
-        
-
       </MotionFlex>
-    </Container>
+    </MotionFlex>
   )
 
 }
