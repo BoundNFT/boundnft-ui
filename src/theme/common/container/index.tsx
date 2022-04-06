@@ -5,6 +5,7 @@ import { IContainer } from './interfaces'
 const Container: React.FC<IContainer> = ({ hasBorder = false, hasPadding = false, children, ...restprops }) => {
   return (
     <Flex
+      px={[20, 40, 0, null, null]}
       pt={170}
       pb={670} 
       mt={-80}

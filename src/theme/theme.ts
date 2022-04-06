@@ -1,4 +1,5 @@
 import { makeTheme } from '@theme-ui/css/utils'
+import React from 'react'
 
 
 export const theme = makeTheme({
@@ -7,13 +8,17 @@ export const theme = makeTheme({
     useColorSchemeMediaQuery: true,
     
   },
+
+
+  breakpoints: [375, 768, 1024, 1366, 1440, 1600].map((n) => n + 'em'),
+
   fonts: {
     bold: "code_boldregular",
     light: "code_lightregular",
   },
   fontWeights: {
     body: 400,
-    heading: 700,
+    bold: 700,
   },
 
   fontSizes: [
@@ -122,6 +127,54 @@ export const theme = makeTheme({
       fontFamily: 'bold',
       letterSpacing: '0.6px',      
       lineHeight: '25px',
+    },
+
+
+    table: {
+      flexDirection: 'column',
+      width: '100%',
+      minWidth: 295,
+      overflowY: 'auto',
+      backgroundColor: 'transparent',
+    },
+    'table-small': {
+      flexDirection: 'column',
+      width: '100%',
+    },
+    'table-header': {
+      flexDirection: 'row',
+      width: '100%',
+      color: 'grey.100',
+      py: 20,
+      fontFamily: 'bold',
+      fontWeight: 'bold',
+      maxHeight: 52,
+      justifyContent: 'space-between',
+      mb: 10
+    },
+    'table-row': {
+      alignItems: 'center',
+      fontSize: 13,
+      fontWeight: 'bold',
+      fontFamily: 'bold',
+      py: [10],
+      width: '100%',  
+      justifyContent: 'space-between',
+    },
+    
+    'table-row-skeleton': {
+      mb: 10,
+      py: 20
+    },
+    'table-row-text': {
+      color: 'white',
+      fontFamily: 'bold',
+      fontSize: 16
+    },
+    'table-header-column-mobile': {
+      fontSize: 12,
+      color: 'white',
+
     }
   },
 
@@ -134,3 +187,4 @@ export const theme = makeTheme({
 
   
 })
+

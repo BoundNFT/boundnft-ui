@@ -1,7 +1,7 @@
 
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-import { MotionBox, MotionFlex, MotionText } from '../../motion-components'
+import { MotionBox, MotionFlex, MotionText } from '../../../motion-components'
 
 export const Section3 = () => {
   const { t } = useTranslation('common')

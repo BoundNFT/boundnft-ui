@@ -29,4 +29,18 @@ export default {
   'label.contract': 'Contract',
   'label.platform': 'Platform',
   'label.community': 'Community',
+
+  'label.collections': 'Collections',
+  'label.list-of': 'List of',
+  'label.nft-collections-support': 'Nft collections supported by the boundnft protocol',
+
+  'label.create-new-boundnft': 'Create new boundnft',
+  'label.use-existing-boundnft': 'Use existing boundnft',
+
+  'label.avatar': 'Avatar',
+  'label.collection-name': 'Collection name',
+  'label.collection-address': 'Collection address',
+  'label.boundnft-name': 'Boundnft name',
+  'label.boundnft-address': 'Boundnft address',
+  'label.total-nfts': 'Total NFTs',
 }

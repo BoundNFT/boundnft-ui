@@ -1,8 +1,8 @@
 
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-import { SelectionBox } from '../../common/selection-box'
-import { MotionBox, MotionFlex, MotionText } from '../../motion-components'
+import { SelectionBox } from '../../../common/selection-box'
+import { MotionBox, MotionFlex, MotionText } from '../../../motion-components'
 
 export const Section2 = () => {
   const { t } = useTranslation('common')

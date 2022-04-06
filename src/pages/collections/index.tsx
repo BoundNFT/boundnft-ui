@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+import { CollectionsPageComponent } from '../../components/pages/collections/collections-component'
 import Container from '../../theme/common/container'
 
 
@@ -6,15 +7,14 @@ const CollectionsPage: NextPage = () => (
   <Container 
     sx={{
     width: '100%', 
-    maxWidth: 1920, 
     flexDirection: 'column', 
     alignItems: 'center',
-    background: 'url(/assets/images/bg/section1_bg.png)',
+    background: 'url(/assets/images/bg/collections_bg.png)',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: '100%',  
-    backgroundPosition : '100% auto',  
+    backgroundSize: '100%', 
     overflow: 'hidden',
   }}>
+    <CollectionsPageComponent/>
 
 
   </Container>

@@ -10,7 +10,6 @@ export const Footer: React.FC = () => {
       sx={{ 
         position: 'relative',
         width: '100%', 
-        maxWidth: 1920, 
         alignItems: 'center', 
         justifyContent: 'center', 
         backgroundColor: 'blue.200', 

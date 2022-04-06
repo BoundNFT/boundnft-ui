@@ -7,6 +7,7 @@ import i18n from '../i18n'
 import { I18nextProvider } from 'react-i18next'
 import { Global, css } from "@emotion/react";
 import { theme } from '../theme/theme'
+import ResponsiveContextProvider from '../components/context/responsive'
 
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -40,13 +41,26 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
           html {
             padding: 0px;
-            letter-spacing: 2.5px;
+            margin: 0px;
+            letter-spacing: 1px;
+            font-family: 'code_boldregular';
+            font-size: 12px;           
           }
+
+          body {
+            min-width: 360px;
+            height: 100%;
+          }
+
+          p {}
         `}
       />
-        <Header />
-        <Component {...pageProps}/>
-        <Footer />
+
+        <ResponsiveContextProvider>               
+          <Header />
+          <Component {...pageProps}/>
+          <Footer />
+        </ResponsiveContextProvider>
       </ThemeProvider>
     </I18nextProvider>
 

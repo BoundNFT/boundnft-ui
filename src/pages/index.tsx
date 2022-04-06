@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-import { HomePageComponent } from '../components/home/home-component'
+import { HomePageComponent } from '../components/pages/home/home-component'
 import Home from '../theme/home'
 
 const IndexPage: NextPage = () => (
