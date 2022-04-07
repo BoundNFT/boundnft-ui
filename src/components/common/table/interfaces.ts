@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlexProps, SxProp } from 'theme-ui'
+import { FlexProps, ThemeUIStyleObject  } from 'theme-ui'
 
 export interface ITable extends FlexProps {
   columns: ITableColumn[]
@@ -28,7 +28,7 @@ export interface ITableColumn {
   align?: 'left' | 'center' | 'right'
   sortBy?: string | undefined
   hideSort?: boolean
-  styles?: any
+  styles?: any 
   Render?: (data: any, index: number, loading?: boolean) => React.ReactNode
 }
 

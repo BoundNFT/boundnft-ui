@@ -5,7 +5,7 @@ export const permalink: IPermalink = {
   collections: '/collections',
   governance: '/governance',
   documents: '/documents',
-  createNewNft: '/collections/create'
+  createBoundNFT: '/collections/create'
 }
 
 const routes: IRoutes[] = [

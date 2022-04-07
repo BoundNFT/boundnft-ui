@@ -48,6 +48,12 @@ export const theme = makeTheme({
       width: '100%', 
       padding: 40, 
       backgroundColor: 'blue.400'
+    },
+    'image' : {
+      alignItems: 'center',
+      width: '100%',
+      padding: 10,
+      backgroundColor: 'blue.400'
     }
   },
 
@@ -154,7 +160,7 @@ export const theme = makeTheme({
       fontSize: 12,
       fontFamily: 'bold',
       letterSpacing: '1px',      
-      lineHeight: '25px',
+      color: 'grey.100',
     },
     table: {
       flexDirection: 'column',

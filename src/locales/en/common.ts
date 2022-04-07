@@ -17,8 +17,6 @@ export default {
   'paragraph.section3-2': 'Anyone can bound any kind of non-fungible asset without permission, as an engine to power any decentralized NFT liquidity platform.',
   'label.open-source': 'Open Source',
   'paragraph.section3-3': "The BoundNFT Protocol codebase is open source, AVAILABLE ON  GITHUB  IT's Permissively licensed and third-party audited.",
-  'label.get-started': 'Get started',
-  'label.read-the-docs': 'Read the Docs',
   'label.the-protocol': 'The Protocol',
   'paragraph.footer-1': 'Project BoundNFT is a decentralized NFT bound protocol running on Ethereum. Bound everything from CryptoPunks to game assets with no stolen risk.',
 
@@ -51,6 +49,9 @@ export default {
 
 
   'paragraph.create-boundnft-step1': 'The collection contract metadata must be fetched.<br> <light-green>If the contract is valid,</light-green> you will be able to create your bound nft.',
+  'paragraph.create-boundnft-step2': 'The contract is valid. <light-green>Please check details above.</light-green><br> If the data is correct, you can continue and create your bound nft.',
+  'paragraph.create-boundnft-proccesing': '<light-green>{{ asset }}</light-green> boundnft is being created...',
+  'paragraph.create-boundnft-success': 'You have successfully created the bound nft <light-green>{{ boundAsset }}.</light-green>',
   'label.input-notice': 'a valid ethereum contract address starts with 0x followed by 40 characters (0-9, a-f)',
   'label.contract-address': 'Contract address',
 
@@ -60,6 +61,13 @@ export default {
 
   'button.use-existing-boundnft': 'Use existing Boundnft',
   'button.create-new-boundnft': 'Create new Boundnft',
+  'button.back': 'Back',
+  'button.create-bound-nft': 'Create BoundNFT',
+  'button.next': 'Next',
+  'button.back-to-collections': 'Back to collections',
+  'button.create-another-one': 'Create another one',
+  'button.get-started': 'Get started',
+  'button.read-the-docs': 'Read the Docs',
 
 
 }

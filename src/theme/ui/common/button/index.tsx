@@ -8,9 +8,10 @@ interface IButton {
     outlined?: boolean
     sx?: any
     onClick?: () => {},
+    switchArrow?: boolean
 }
 
-export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, outlined, sx, onClick }, ...restprops) => {
+export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, outlined, switchArrow, sx, onClick }, ...restprops) => {
 
   return (
     <MotionButton 
@@ -28,7 +29,7 @@ export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, o
       >
       <MotionFlex sx={{ width: '100%', justifyContent: 'space-between', px: 10, alignItems: 'center'}}>
         <Text color={outlined ? 'white' : 'blue.100'} variant='styles.body'>{text}</Text>
-        <Text sx={{ fontSize: 30, fontWeight: 'bold'}} color={outlined ? 'white' : arrowColor ? arrowColor : 'blue.100'}>&#x2192;</Text>
+        <Text sx={{ fontSize: 30, fontWeight: 'bold', transform: switchArrow ? 'scaleX(-1)' : null}} color={outlined ? 'white' : arrowColor ? arrowColor : 'blue.100'}>&#x2192;</Text>
       </MotionFlex>
     </MotionButton>   
 

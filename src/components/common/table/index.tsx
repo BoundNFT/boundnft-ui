@@ -53,11 +53,6 @@ const Table: React.FC<ITable> = ({
     setSortHeader(defaultSortHeader)
   }, [defaultSortHeader])
 
-  const toggleDetails = React.useCallback(
-    (item: string | number) =>
-      selected.includes(item) ? setSelected(state => state.filter((record: string | number) => record !== item)) : setSelected(state => [item, ...state]),
-    [selected]
-  )
 
   const mobileColumns = React.useMemo(() => {
     const header = _.slice(columns, 0, 2)

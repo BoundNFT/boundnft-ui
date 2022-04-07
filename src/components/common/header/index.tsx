@@ -16,7 +16,8 @@ const Header: React.FC = () => {
         alignItems: 'center',
         flexDirection: 'row',
         opacity: 0.8,
-        px: [20, 20, 40, null]
+        px: [20, 20, 40, null],
+        zIndex: 200
       }}
     >
       <Flex
@@ -30,9 +31,7 @@ const Header: React.FC = () => {
         <Link href='/' passHref>
           <Logo />
         </Link>
-
         <Navigation />
-
       </Flex>
     </Flex>
   )

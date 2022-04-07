@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
 
           <Flex sx={{ flexDirection: 'column', flex: [1, 1, 0.25], mt: [30, 30, 0]}}>
             <Text variant='styles.mid-title-white'>{t('label.about')}</Text>
-            <Flex variant='styles.body-xs' color='grey.100' sx={{ maxWidth: 400, mt: 25, flexDirection: 'column'}}>
+            <Flex variant='styles.body-xs' color='grey.100' sx={{ maxWidth: 400, lineHeight: '25px', mt: 25, flexDirection: 'column'}}>
               <Link>{t('label.twitter')}</Link>
               <Link>{t('label.discord')}</Link>
               <Link>{t('label.github')}</Link>
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
 
           <Flex sx={{ flexDirection: 'column', flex: [1, 1, 0.25], mt: [30, 30, 0]}}>
             <Text variant='styles.mid-title-white'>{t('label.community')}</Text>
-            <Flex variant='styles.body-xs' color='grey.100' sx={{ maxWidth: 400, mt: 25, flexDirection: 'column'}}>
+            <Flex variant='styles.body-xs' color='grey.100' sx={{ maxWidth: 400, mt: 25, lineHeight: '25px', flexDirection: 'column'}}>
               <Link>{t('label.about')}</Link>
               <Link>{t('label.contract')}</Link>
               <Link>{t('label.platform')}</Link>

@@ -41,8 +41,8 @@ export const Section2 = () => {
           </MotionFlex>
 
           <MotionFlex sx={{ width: '100%', mt: 70, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
-            <Button text={t('label.get-started').toUpperCase()} backgroundColor='green.100' arrowColor='black' />
-            <Button text={t('label.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}}/>
+            <Button text={t('button.get-started').toUpperCase()} backgroundColor='green.100' arrowColor='black' />
+            <Button text={t('button.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}}/>
           </MotionFlex>
           
         </MotionFlex>

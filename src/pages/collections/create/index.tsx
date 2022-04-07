@@ -1,9 +1,9 @@
 import { NextPage } from 'next'
-import { CreateBounftNFT } from '../../../components/pages/collections/details/create-boundnft'
+import { CreateBoundNFT } from '../../../components/pages/collections/create-boundnft'
 import Container from '../../../theme/ui/common/container'
 
 
-const CreateBoundNFT: NextPage = () => (
+const CreateBoundNFTPage: NextPage = () => (
   <Container 
     sx={{
     width: '100%', 
@@ -14,8 +14,8 @@ const CreateBoundNFT: NextPage = () => (
     backgroundSize: '100%', 
     overflow: 'hidden',
   }}>
-    <CreateBounftNFT/>
+    <CreateBoundNFT/>
   </Container>
 )
 
-export default CreateBoundNFT
+export default CreateBoundNFTPage
