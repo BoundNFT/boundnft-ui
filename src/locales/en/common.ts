@@ -43,4 +43,8 @@ export default {
   'label.boundnft-name': 'Boundnft name',
   'label.boundnft-address': 'Boundnft address',
   'label.total-nfts': 'Total NFTs',
+  
+  'label.create': 'Create',
+  'label.new-bounftnft': 'New Bound Nft',
+  'label.nft-collection-create': 'Enter NFT Collections contract address to create Bound NFT',
 }

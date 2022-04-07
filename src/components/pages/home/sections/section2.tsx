@@ -1,7 +1,7 @@
 
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-import { SelectionBox } from '../../../common/selection-box'
+import { Button } from '../../../../theme/ui/common/button'
 import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-components'
 
 export const Section2 = () => {
@@ -41,8 +41,8 @@ export const Section2 = () => {
           </MotionFlex>
 
           <MotionFlex sx={{ width: '100%', mt: 70, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
-            <SelectionBox text={t('label.get-started').toUpperCase()} backgroundColor='green.100' arrowColor='black' />
-            <SelectionBox text={t('label.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}}/>
+            <Button text={t('label.get-started').toUpperCase()} backgroundColor='green.100' arrowColor='black' />
+            <Button text={t('label.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}}/>
           </MotionFlex>
           
         </MotionFlex>

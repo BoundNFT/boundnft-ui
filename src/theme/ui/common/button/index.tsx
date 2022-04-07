@@ -1,7 +1,7 @@
 
-import { MotionText, MotionFlex } from '../motion-components'
+import { MotionButton, MotionFlex } from '../../../../components/common/motion-components'
 import { Text } from 'theme-ui'
-interface ISelectionBox {
+interface IButton {
     backgroundColor?: string
     text: string
     arrowColor?: string
@@ -9,13 +9,14 @@ interface ISelectionBox {
     sx?: any
 }
 
-export const SelectionBox: React.FC<ISelectionBox> = ({ backgroundColor, text, arrowColor, outlined, sx }) => {
+export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, outlined, sx }) => {
 
   return (
 
-    <MotionFlex 
+    <MotionButton 
       sx={{ 
         backgroundColor: backgroundColor ? backgroundColor : 'transparent',
+
         height: 56,
         width: '100%',
         maxWidth: 454,
@@ -23,11 +24,11 @@ export const SelectionBox: React.FC<ISelectionBox> = ({ backgroundColor, text, a
         ":hover": { opacity: 0.6, transition: 'ease-in-out 0.3s', cursor: 'pointer'},
         ...sx
       }}>
-      <MotionFlex sx={{ width: '100%', justifyContent: 'space-between', px: 30, py: 20, alignItems: 'center'}}>
+      <MotionFlex sx={{ width: '100%', justifyContent: 'space-between', px: 10, alignItems: 'center'}}>
         <Text color={outlined ? 'white' : 'blue.100'} variant='styles.body'>{text}</Text>
         <Text sx={{ fontSize: 30, fontWeight: 'bold'}} color={outlined ? 'white' : arrowColor ? arrowColor : 'blue.100'}>&#x2192;</Text>
       </MotionFlex>
-    </MotionFlex>   
+    </MotionButton>   
 
   )
 }
