@@ -45,6 +45,21 @@ export default {
   'label.total-nfts': 'Total NFTs',
   
   'label.create': 'Create',
-  'label.new-bounftnft': 'New Bound Nft',
+  'label.new-boundnft': 'New Bound Nft',
   'label.nft-collection-create': 'Enter NFT Collections contract address to create Bound NFT',
+
+
+
+  'paragraph.create-boundnft-step1': 'The collection contract metadata must be fetched.<br> <light-green>If the contract is valid,</light-green> you will be able to create your bound nft.',
+  'label.input-notice': 'a valid ethereum contract address starts with 0x followed by 40 characters (0-9, a-f)',
+  'label.contract-address': 'Contract address',
+
+
+
+  // BUTTONS
+
+  'button.use-existing-boundnft': 'Use existing Boundnft',
+  'button.create-new-boundnft': 'Create new Boundnft',
+
+
 }

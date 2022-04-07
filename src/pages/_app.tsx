@@ -47,6 +47,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             font-size: 12px;           
           }
 
+          light-green {
+            color: ${theme.colors.green[100]}
+          }
+
           body {
             min-width: 360px;
             height: 100%;

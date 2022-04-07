@@ -1,12 +1,15 @@
-import { useMemo } from "react";
-import { useTranslation } from "react-i18next";
-import { Flex } from "theme-ui";
-import { BAYC_IMAGE_PATH, PUNK_IMAGE_PATH } from "../../../constants";
-import Container from "../../../theme/ui/common/container";
-import Table from "../../common/table";
-import { useColumns } from "../../common/table/columns";
-import { ICollections } from "../../common/table/columns/interfaces";
-import { MotionFlex, MotionText } from "../../common/motion-components";
+import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Flex } from 'theme-ui';
+import { BAYC_IMAGE_PATH, PUNK_IMAGE_PATH } from '../../../constants';
+import Container from '../../../theme/ui/common/container';
+import Table from '../../common/table';
+import { useColumns } from '../../common/table/columns';
+import { ICollections } from '../../common/table/columns/interfaces';
+import { MotionFlex, MotionText } from '../../common/motion-components';
+import { Button } from '../../../theme/ui/common/button';
+import { permalink } from '../../../constants/routes';
+import router from 'next/router';
 
 
 export const CollectionsPageComponent: React.FC = () => {
@@ -66,6 +69,11 @@ export const CollectionsPageComponent: React.FC = () => {
           //noRecords={noRecords}
         />     
       </Flex>
+
+      <Flex sx={{ width: '100%', mt: 70, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
+        <Button text={t('button.create-new-boundnft').toUpperCase()} backgroundColor='green.100' arrowColor='black' onClick={() => router.push(permalink.createNewNft)} />
+        <Button text={t('button.use-existing-boundnft').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}} onClick={() => router.push(permalink.createNewNft)}/>
+     </Flex>
       </MotionFlex>
     </MotionFlex>
   )

@@ -38,8 +38,39 @@ export const theme = makeTheme({
       100: '#242F3F',
       200: '#1A2430',
       300: '#060A10',
+      400: '#2A3646',
     }
   
+  },
+
+  frames : {
+    'normal' : {
+      width: '100%', 
+      padding: 40, 
+      backgroundColor: 'blue.400'
+    }
+  },
+
+  forms: {
+    label: {
+      fontSize: 12,
+      fontWeight: 'bold',
+    },
+    input: {
+      border: '1px solid white',
+      py: 24,
+      px: 30,
+      '&:focus': {
+        boxShadow: t => `0 0 0 2px ${'black'}`,
+        outline: '1px solid white',
+      },
+      color: 'white',
+      fontSize: 16,
+      fontFamily: 'bold',
+      letterSpacing: '1px',
+    },
+
+
   },
 
 
@@ -122,7 +153,7 @@ export const theme = makeTheme({
     'body-xs': {
       fontSize: 12,
       fontFamily: 'bold',
-      letterSpacing: '0.6px',      
+      letterSpacing: '1px',      
       lineHeight: '25px',
     },
     table: {

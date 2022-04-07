@@ -1,7 +1,6 @@
 import { NextPage } from 'next'
-import { Container } from 'theme-ui'
 import { CreateBounftNFT } from '../../../components/pages/collections/details/create-boundnft'
-
+import Container from '../../../theme/ui/common/container'
 
 
 const CreateBoundNFT: NextPage = () => (
