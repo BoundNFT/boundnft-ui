@@ -9,7 +9,7 @@ export const theme = makeTheme({
     
   },
 
-  breakpoints: ['320px', '480px', '768px', '1024px', '1800px'],
+  breakpoints: ['375px', '768px', '1024px', '1366px', '1440px', '1600px'],
 
   fonts: {
     bold: "code_boldregular",

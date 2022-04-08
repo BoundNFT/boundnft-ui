@@ -16,7 +16,7 @@ export const Section3 = () => {
               <MotionText variant='text.title-white'>{t('label.fully').toUpperCase()}</MotionText>
               <MotionText variant='text.title-bold-white'>{t('label.functional').toUpperCase()}</MotionText>
             </MotionFlex>
-            <MotionBox sx={{ width: 65, height: 65, position: 'relative', mx: 25}}>        
+            <MotionBox sx={{ width: 65, height: 65, position: 'relative'}}>        
               <Image src={'/assets/images/elements/subtitle_element_1.svg'} layout='fill' />
             </MotionBox>
           </MotionFlex>
@@ -33,7 +33,7 @@ export const Section3 = () => {
                 <MotionText variant='text.title-white'>{t('label.fully').toUpperCase()}</MotionText>
                 <MotionText variant='text.title-bold-white'>{t('label.permissionless').toUpperCase()}</MotionText>
               </MotionFlex>
-              <MotionBox sx={{ width: 65, height: 65, position: 'relative', mx: 25}}>        
+              <MotionBox sx={{ width: 65, height: 65, position: 'relative'}}>        
                 <Image src={'/assets/images/elements/subtitle_element_3.svg'} layout='fill' />
               </MotionBox>
             </MotionFlex>
@@ -51,7 +51,7 @@ export const Section3 = () => {
               <MotionText as='text' variant='text.title-white'>{t('label.fully').toUpperCase()}</MotionText>
               <MotionText as='text' variant='text.title-bold-white'>{t('label.open-source').toUpperCase()}</MotionText>
             </MotionFlex>
-            <MotionBox sx={{ width: 65, height: 65, position: 'relative', mx: 25}}>        
+            <MotionBox sx={{ width: 65, height: 65, position: 'relative'}}>        
               <Image src={'/assets/images/elements/subtitle_element_2.svg'} layout='fill' />
             </MotionBox>
           </MotionFlex>
