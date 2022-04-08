@@ -21,6 +21,7 @@ export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, o
         height: 56,
         width: '100%',
         maxWidth: 454,
+        borderRadius: 0,
         border: outlined ? '1px solid white' : '0px',
         ":hover": { opacity: 0.6, transition: 'ease-in-out 0.3s', cursor: 'pointer'},
         ...sx

@@ -35,7 +35,7 @@ export const CreateBoundNFTStep3: React.FC = () => {
 
       <Flex sx={{ width: '100%', mt: 40, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
         <Button text={t('button.back').toUpperCase()} backgroundColor='green.100' arrowColor='black' switchArrow onClick={() => setScreenState(Screen.checkDetails)} />
-        <Button text={t('button.next').toUpperCase()} outlined arrowColor='black' onClick={() => setScreenState(Screen.boundNFTCreationSuccess)} />
+        <Button text={t('button.next').toUpperCase()} outlined arrowColor='black' onClick={() => setScreenState(Screen.boundNFTCreationSuccess)} sx={{ mt: [20, 20, 20, 0]}} />
 
       </Flex>
     </>
