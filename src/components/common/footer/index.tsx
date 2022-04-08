@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
       <Flex sx={{ maxWidth: 960, width: '100%', flexDirection: 'column', alignItems: 'center'}}>
         <Flex sx={{ flexDirection: 'column', alignItems: 'center'}}>
           <Image src='/assets/images/boundnft_logo.svg' width={88} height={70} />
-          <Flex>
+          <Flex sx={{mt: 25}}>
             <Text variant='text.semi-title-white'>{t('label.bound').toUpperCase()}</Text>
             <Text variant='text.semi-title-bold-white'>{t('label.nft').toUpperCase()}</Text>
           </Flex>
