@@ -1,5 +1,4 @@
 import { Flex } from 'theme-ui'
-import Link from 'next/link'
 import Navigation from './navigation'
 import Logo from './logo'
 
@@ -28,9 +27,7 @@ const Header: React.FC = () => {
           maxWidth: 1280,         
         }}
       >
-        <Link href='/' passHref>
-          <Logo />
-        </Link>
+        <Logo />
         <Navigation />
       </Flex>
     </Flex>
