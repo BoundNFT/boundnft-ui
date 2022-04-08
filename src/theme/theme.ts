@@ -154,7 +154,6 @@ export const theme = makeTheme({
     root: {
       fontFamily: 'body',
       color: 'white',
-      bg: 'grey.100',
     },
     a: {
       color: 'primary',
