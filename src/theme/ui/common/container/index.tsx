@@ -7,7 +7,7 @@ const Container: React.FC<IContainer> = ({ hasBorder = false, hasPadding = false
     <Flex
       px={[20, 20, 40, 40, null]}
       pt={200}
-      pb={[750, 750, 700]} 
+      pb={[800, 800, 700]} 
       sx={{
         flexDirection: 'column',
         width: '100%',

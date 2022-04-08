@@ -14,8 +14,8 @@ export const Footer: React.FC = () => {
         justifyContent: 'center', 
         backgroundColor: 'blue.200', 
         opacity: 0.8, 
-        mt: [-660, -700, -500], 
-        height: [660, 700, 500],
+        mt: [-760, -760, -500], 
+        height: [760, 760, 500],
         px: [20, 20, 40, 40, null],
         pt: [40, 40, 0],
         pb: [60]
