@@ -8,9 +8,9 @@ export const Section1 = () => {
   return (
     <>
       <MotionFlex sx={{ width: '100%', flexDirection: 'column', fontSize: 'xxxl'}} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <MotionText variant='styles.title-white'>{t('label.powering').toUpperCase()}</MotionText>
-        <MotionText variant='styles.title-bold-white'>{t('label.decentralized').toUpperCase()}</MotionText>
-        <MotionText variant='styles.title-bold-green'>{t('label.nft-liquidity').toUpperCase()}</MotionText>
+        <MotionText variant='text.title-white'>{t('label.powering').toUpperCase()}</MotionText>
+        <MotionText variant='text.title-bold-white'>{t('label.decentralized').toUpperCase()}</MotionText>
+        <MotionText variant='text.title-bold-green'>{t('label.nft-liquidity').toUpperCase()}</MotionText>
       </MotionFlex>
 
     <MotionFlex sx={{position: 'relative', flexDirection: 'column', alignItems: 'center', mt: [100, 100, 100, 20], ml: 25}} initial={{ opacity: 0 }} animate={{ opacity: 1}}>
@@ -18,8 +18,8 @@ export const Section1 = () => {
         <Image src='/assets/images/boundnft_logo.svg' layout='fill'/>
       </MotionBox>
       <MotionFlex sx={{ mt: 25}}>
-        <MotionText variant='styles.semi-title-white'>{t('label.bound').toUpperCase()}</MotionText>
-        <MotionText variant='styles.semi-title-bold-white'>{t('label.nft').toUpperCase()}</MotionText>
+        <MotionText variant='text.semi-title-white'>{t('label.bound').toUpperCase()}</MotionText>
+        <MotionText variant='text.semi-title-bold-white'>{t('label.nft').toUpperCase()}</MotionText>
       </MotionFlex>
     </MotionFlex>
 

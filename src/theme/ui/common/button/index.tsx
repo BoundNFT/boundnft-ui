@@ -28,8 +28,8 @@ export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, o
       {...restprops}
       >
       <MotionFlex sx={{ width: '100%', justifyContent: 'space-between', px: 10, alignItems: 'center'}}>
-        <Text color={outlined ? 'white' : 'blue.100'} variant='styles.body'>{text}</Text>
-        <Text sx={{ fontSize: 30, fontWeight: 'bold', transform: switchArrow ? 'scaleX(-1)' : null}} color={outlined ? 'white' : arrowColor ? arrowColor : 'blue.100'}>&#x2192;</Text>
+        <Text color={outlined ? 'white' : 'blue.100'} variant='text.body'>{text}</Text>
+        <Text sx={{ fontSize: 30, transform: switchArrow ? 'scaleX(-1)' : null}} color={outlined ? 'white' : arrowColor ? arrowColor : 'blue.100'}>&#x2192;</Text>
       </MotionFlex>
     </MotionButton>   
 

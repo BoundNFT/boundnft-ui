@@ -30,7 +30,7 @@ export const CreateBoundNFTStep3: React.FC = () => {
       </Flex>
 
       <Box variant='frames.normal' sx={{textAlign: 'center', mt: 40}}>
-        <Text as='span' variant='styles.body' sx={{ color: 'white', lineHeight: 1.5}} dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-proccesing', { asset: 'CRYPTOPUNKS' })}}/>
+        <Text as='span' variant='text.body' sx={{ color: 'white', lineHeight: 1.5}} dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-proccesing', { asset: 'CRYPTOPUNKS' })}}/>
       </Box>
 
       <Flex sx={{ width: '100%', mt: 40, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>

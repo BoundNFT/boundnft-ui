@@ -14,11 +14,12 @@ export const theme = makeTheme({
   fonts: {
     bold: "code_boldregular",
     light: "code_lightregular",
+    
   },
-  fontWeights: {
+/*   fontWeights: {
     body: 400,
     bold: 700,
-  },
+  }, */
 
   fontSizes: [
     12, 14, 16, 24, 32, 64
@@ -43,6 +44,78 @@ export const theme = makeTheme({
   
   },
 
+  text : {
+    'title-white': {
+      fontSize: [34, 34, 44, 64],
+      color: 'white',
+      fontFamily: 'light',
+      letterSpacing: '1.5px'
+    },
+
+    'title-bold-white': {
+      fontSize: [34, 34, 44, 64],
+      color: 'white',
+      fontFamily: 'bold',
+      letterSpacing: '1.5px'
+    },
+
+    'title-bold-green': {
+      fontSize: [34, 34, 44, 64],
+      color: 'green.100',
+      fontFamily: 'bold',
+      letterSpacing: '3px'
+    }, 
+
+    'semi-title-white': {
+      fontSize: 32,
+      color: 'white',
+      fontFamily: 'light',
+    },
+
+    'logo-text': {
+      fontSize: 21,
+      color: 'white',
+      fontFamily: 'light',
+    },
+
+    'logo-text-bold': {
+      fontSize: 21,
+      color: 'white',
+      fontFamily: 'bold',
+    },//CHECK
+    'semi-title-bold-white': {
+      fontSize: 32,
+      color: 'white',
+      fontFamily: 'bold',
+    },
+
+    'body': {
+      fontSize: 16,
+      color: 'grey.100',
+      fontFamily: 'bold',
+      letterSpacing: '1.2px'
+    },
+
+    'nav-buttons-text': {
+      fontSize: 14,
+      color: 'grey.100',
+      fontFamily: 'bold',
+    },
+
+    'mid-title-white': {
+      fontSize: 24,
+      color: 'white',
+      fontFamily: 'bold'
+    },
+
+    'body-xs': {
+      fontSize: 12,
+      fontFamily: 'bold',
+      letterSpacing: '1px',      
+      color: 'grey.100',
+    },
+  },
+
   frames : {
     'normal' : {
       width: '100%', 
@@ -60,7 +133,6 @@ export const theme = makeTheme({
   forms: {
     label: {
       fontSize: 12,
-      fontWeight: 'bold',
     },
     input: {
       border: '1px solid white',
@@ -76,20 +148,16 @@ export const theme = makeTheme({
       letterSpacing: '1px',
     },
 
-
   },
-
-
+  
   styles: {
     root: {
       fontFamily: 'body',
-      color: 'text',
-      bg: 'background',
-      p: 4,
+      color: 'white',
+      bg: 'grey.100',
     },
     a: {
       color: 'primary',
-      fontWeight: 'bold',
       textDecoration: 'none',
       ':hover': {
         color: 'secondary',
@@ -97,71 +165,6 @@ export const theme = makeTheme({
       },
     },
     
-    'title-white': {
-      fontSize: [34, 34, 44, 64],
-      color: 'white',
-      fontFamily: 'light',
-      letterSpacing: '1.5px'
-    },
-    'title-bold-white': {
-      fontSize: [34, 34, 44, 64],
-      color: 'white',
-      fontFamily: 'bold',
-      fontWeight: 'bold',
-      letterSpacing: '1.5px'
-    },
-    'title-bold-green': {
-      fontSize: [34, 34, 44, 64],
-      color: 'green.100',
-      fontFamily: 'bold',
-      fontWeight: 'bold',
-      letterSpacing: '3px'
-    }, 
-    'semi-title-white': {
-      fontSize: 32,
-      color: 'white',
-      fontFamily: 'light',
-    },
-    'logo-text': {
-      fontSize: 21,
-      color: 'white',
-      fontFamily: 'light',
-    },
-    'logo-text-bold': {
-      fontSize: 21,
-      color: 'white',
-      fontFamily: 'bold',
-    },
-    'semi-title-bold-white': {
-      fontSize: 32,
-      fontWeight: 'bold',
-      color: 'white',
-      fontFamily: 'bold',
-    },
-    'body': {
-      fontSize: 16,
-      fontWeight: 'bold',
-      color: 'grey.100',
-      fontFamily: 'bold',
-      letterSpacing: '1.2px'
-    },
-    'nav-buttons-text': {
-      fontSize: 14,
-      fontWeight: 'bold',
-      color: 'grey.100',
-      fontFamily: 'light',
-    },
-    'mid-title-white': {
-      fontSize: 24,
-      color: 'white',
-      fontFamily: 'bold'
-    },
-    'body-xs': {
-      fontSize: 12,
-      fontFamily: 'bold',
-      letterSpacing: '1px',      
-      color: 'grey.100',
-    },
     table: {
       flexDirection: 'column',
       width: '100%',
@@ -169,17 +172,12 @@ export const theme = makeTheme({
       overflowY: 'auto',
       backgroundColor: 'transparent',
     },
-    'table-small': {
-      flexDirection: 'column',
-      width: '100%',
-    },
     'table-header': {
       flexDirection: 'row',
       width: '100%',
       color: 'grey.100',
       py: 20,
       fontFamily: 'bold',
-      fontWeight: 'bold',
       maxHeight: 52,
       justifyContent: 'space-between',
       mb: 10
@@ -187,17 +185,12 @@ export const theme = makeTheme({
     'table-row': {
       alignItems: 'center',
       fontSize: 13,
-      fontWeight: 'bold',
       fontFamily: 'bold',
       py: [10],
       width: '100%',  
       justifyContent: 'space-between',
     },
     
-    'table-row-skeleton': {
-      mb: 10,
-      py: 20
-    },
     'table-row-text': {
       color: 'white',
       fontFamily: 'bold',

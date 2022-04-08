@@ -12,16 +12,16 @@ export const CreateBoundNFTStep1: React.FC = () => {
     <>
       <Box variant='frames.normal' sx={{mt: 80}}>
         <Box as='form'sx={{width: '100%'}}>
-          <Label sx={{mb: 20}} variant='styles.body-xs' color='grey.100' htmlFor='username'>{t('label.contract-address')}</Label>
+          <Label sx={{mb: 20}} variant='text.body-xs' color='grey.100' htmlFor='username'>{t('label.contract-address')}</Label>
           <Input
             
           />
-          <Label sx={{mt: 20}} variant='styles.body-xs' color='grey.100' htmlFor='password'>{t('label.input-notice')}</Label>
+          <Label sx={{mt: 20}} variant='text.body-xs' color='grey.100' htmlFor='password'>{t('label.input-notice')}</Label>
         </Box>
       </Box>
 
       <Box variant='frames.normal' sx={{textAlign: 'center', mt: 40}}>
-        <Text as='span' variant='styles.body' sx={{ color: 'white', lineHeight: 1.5}} dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-step1')}}/>
+        <Text as='span' variant='text.body' sx={{ color: 'white', lineHeight: 1.5}} dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-step1')}}/>
       </Box>
 
       <Flex sx={{ width: '100%', mt: 40, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>

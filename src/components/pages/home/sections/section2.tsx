@@ -13,9 +13,9 @@ export const Section2 = () => {
       <MotionFlex sx={{ maxWidth: 960, width: '100%', flexDirection: 'column'}}>
 
         <MotionFlex sx={{ width: '100%', flexDirection: 'column'}}>
-          <MotionText variant='styles.title-white'>{t('label.bound').toUpperCase()}</MotionText>
-          <MotionText variant='styles.title-bold-white'>{t('label.any-kind-of-nfts').toUpperCase()}</MotionText>
-          <MotionText variant='styles.body' mt={16}>{t('paragraph.section2-1').toUpperCase()}</MotionText>
+          <MotionText variant='text.title-white'>{t('label.bound').toUpperCase()}</MotionText>
+          <MotionText variant='text.title-bold-white'>{t('label.any-kind-of-nfts').toUpperCase()}</MotionText>
+          <MotionText variant='text.body' mt={16}>{t('paragraph.section2-1').toUpperCase()}</MotionText>
         </MotionFlex>
 
         <MotionFlex sx={{ width: '100%', mt: 60, flexDirection: 'column'}}>

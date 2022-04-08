@@ -11,8 +11,8 @@ export const LabelInfo: React.FC<ILabelInfo> = ({ label, info, textColor }) => {
 
   return (
     <Box>
-      <Label mb={10} variant='styles.body-xs'>{label}</Label>
-      <Text variant='styles.body' sx={{ color: textColor ? textColor : 'white'}}>{info}</Text>
+      <Label mb={10} variant='text.body-xs'>{label}</Label>
+      <Text variant='text.body' sx={{ color: textColor ? textColor : 'white'}}>{info}</Text>
     </Box>
   )
 }
