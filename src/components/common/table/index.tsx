@@ -112,7 +112,9 @@ const Table: React.FC<ITable> = ({
                     )}
                   </Flex>
                 ) : (
-                    <Text sx={{ textAlign: col.align}}>{col.title}</Text>
+                  <Flex sx={{ justifyContent: !col.align ? 'flex-start' : col.align === 'left' ? 'flex-start' : col.align === 'right' ? 'flex-end' : 'center' }}>
+                    <Text sx={{ textAlign: col.align }}>{col.title}</Text>
+                  </Flex>
                 )}
                 <Flex sx={{ width: '100%', pt: 15 }}>
                   <SpacerDash bgColor='grey.100' height={3} />
