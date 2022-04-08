@@ -13,7 +13,7 @@ export const Section1 = () => {
         <MotionText variant='text.title-bold-green'>{t('label.nft-liquidity').toUpperCase()}</MotionText>
       </MotionFlex>
 
-    <MotionFlex sx={{position: 'relative', flexDirection: 'column', alignItems: 'center', mt: [100, 100, 100, 20], ml: 25}} initial={{ opacity: 0 }} animate={{ opacity: 1}}>
+    <MotionFlex sx={{position: 'relative', flexDirection: 'column', alignItems: 'center', mt: [100, 100, 100, 50, 0], ml: 25}} initial={{ opacity: 0 }} animate={{ opacity: 1}}>
       <MotionBox sx={{ width: 95, height: 75, position: 'relative'}}>        
         <Image src='/assets/images/boundnft_logo.svg' layout='fill'/>
       </MotionBox>
@@ -23,7 +23,7 @@ export const Section1 = () => {
       </MotionFlex>
     </MotionFlex>
 
-    <MotionFlex sx={{ width: '100%', justifyContent: 'right', ml: [100, 200, 300, 380], mt: [50, 50, 50, -240]}} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <MotionFlex sx={{ width: '100%', justifyContent: 'right', ml: [100, 100, 200, 450, 450], mt: [50, 50, 50, -100, -200]}} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Box sx={{ width: [344, 452, 638, 853], height: [191, 250, 354, 473], position: 'relative'}}>        
         <Image src='/assets/images/top_image_1.png' layout='fill'/>
       </Box>

@@ -9,7 +9,7 @@ export const theme = makeTheme({
     
   },
 
-  breakpoints: ['320x', '768px', '1024px', '1366px', '1440px'],
+  breakpoints: ['320px', '480px', '768px', '1024px', '1800px'],
 
   fonts: {
     bold: "code_boldregular",
@@ -82,7 +82,7 @@ export const theme = makeTheme({
       fontSize: 21,
       color: 'white',
       fontFamily: 'bold',
-    },//CHECK
+    },
     'semi-title-bold-white': {
       fontSize: 32,
       color: 'white',

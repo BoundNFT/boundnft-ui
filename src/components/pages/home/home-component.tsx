@@ -14,6 +14,7 @@ export const HomePageComponent: React.FC = () => (
       background: 'url(/assets/images/bg/section1_bg.png)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
+      backgroundPositionY: ['30%', '30%', '30%', '30%', '15%'],
       backgroundSize: 'cover',
       overflow: 'hidden',
       }}>
