@@ -224,6 +224,7 @@ const Table: React.FC<ITable> = ({
                         >
                           <Box
                             sx={{
+                              
                               display: 'grid',
                               gridGap: 20,
                               gridTemplateColumns: 'repeat(3, minmax(160px, 1fr))',

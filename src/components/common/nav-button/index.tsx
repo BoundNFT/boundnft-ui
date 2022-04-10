@@ -88,10 +88,9 @@ const LinkComponent = forwardRef<HTMLElement, INavButton & FlexProps>(({ route, 
       >
         <Text
           as='text'
-          color='white'
-          sx={{ textAlign: 'center', display: ['none', 'none', 'flex'],}}
+          color={activePathname === route ? 'white' : 'grey.100 '}
+          sx={{ textAlign: 'center', display: ['none', 'none', 'flex']}}
           variant='text.nav-buttons-text'
-          
         >
           {name}
         </Text>

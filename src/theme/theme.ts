@@ -120,7 +120,7 @@ export const theme = makeTheme({
     'normal' : {
       width: '100%', 
       padding: 40, 
-      backgroundColor: 'blue.400'
+      backgroundColor: 'blue.400',
     },
     'image' : {
       alignItems: 'center',
@@ -193,11 +193,13 @@ export const theme = makeTheme({
     'table-row-text': {
       color: 'white',
       fontFamily: 'bold',
-      fontSize: 16
+      fontSize: 16,
     },
     'table-header-column-mobile': {
-      fontSize: 12,
+      fontSize: 14,
       color: 'white',
+      alignItems: 'center',
+      mt: '0.5px'
     },
   },
 

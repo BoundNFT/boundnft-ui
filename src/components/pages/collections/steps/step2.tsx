@@ -13,25 +13,29 @@ import { LabelInfo } from '../../../../theme/ui/common/label-info'
 export const CreateBoundNFTStep2: React.FC = () => {
   const { t } = useTranslation('common')
   const { setScreenState } = useContext(BoundNFTContext)
+
   return (
     <>
-      <Flex sx={{mt: 80, justifyContent: 'space-between', width: '100%'}}>
+      <Flex sx={{mt: 80, justifyContent: ['space-between'], alignItems: ['center', 'center', 'flex-start'], width: '100%', flexDirection: ['column', 'column', 'row']}}>
 
-        <Box variant='frames.image' sx={{width: '100%', maxWidth: 202}}>
-          <Box sx={{width: 182, height: 182, position: 'relative'}}>
+        <Box variant='frames.image' sx={{width: '100%', maxWidth: [320, 330, 202], mr: [0, 0, 30]}}>
+          <Box sx={{width: [300, 300, 182], height: [300, 300, 182], position: 'relative'}}>
             <Image src='/assets/images/collections/big/punk.svg' layout='fill'/>
           </Box>
         </Box>
         
-        <Box variant='frames.normal' sx={{width: '100%', maxWidth: 728}}>
-          <Flex sx={{ justifyContent: 'space-between', width: '100%'}}>
-            <LabelInfo label='Name' info='Cryptopunks' />
-            <LabelInfo label='NO. OF TOKENS' info='10,000' />
-            <Button text='View on Opensea' arrowColor='white' outlined sx={{maxWidth: 286}} />
+        <Box variant='frames.normal' sx={{width: '100%', maxWidth: 728, mt: [20, 20, 0]}}>
+          <Flex sx={{ justifyContent: 'space-between', width: '100%', flexDirection: ['column', 'column', 'column', 'row']}}>
+            <Flex sx={{ justifyContent: 'space-between'}}>
+              <LabelInfo label='Name' info='Cryptopunks' />
+              <LabelInfo label='NO. OF TOKENS' info='10,000' sx={{mt: [20, 20, 0]}} />
+            </Flex>
+
+            <Button text='View on Opensea' arrowColor='white' outlined sx={{maxWidth: 286, mt: [20, 20, 20, 0]}} />
           </Flex>
 
           <Flex sx={{ mt: 25}}>
-          <LabelInfo label='CONTRACT' info='0x83494d0c61f87ff3e44992552ee0751816f478e4482349763d9bdd219986b5ff' textColor='green.100' />
+            <LabelInfo label='CONTRACT' info='0x83494d0c61f87ff3e44992552ee0751816f478e4482349763d9bdd219986b5ff' textColor='green.100' />
           </Flex>
 
         </Box>
