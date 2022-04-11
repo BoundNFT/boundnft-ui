@@ -68,6 +68,7 @@ export default {
   'button.create-another-one': 'Create another one',
   'button.get-started': 'Get started',
   'button.read-the-docs': 'Read the Docs',
+  'button.connect': 'Connect',
 
 
 }

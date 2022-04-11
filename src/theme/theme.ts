@@ -100,6 +100,7 @@ export const theme = makeTheme({
       fontSize: 14,
       color: 'grey.100',
       fontFamily: 'bold',
+      fontWeight: 'bold',
     },
 
     'mid-title-white': {
@@ -207,6 +208,26 @@ export const theme = makeTheme({
     primary: {
       cursor: 'pointer',
     },
+    'web3': {
+      cursor: 'pointer',
+      backgroundColor: 'green.100',
+      color: 'blue.300',
+      fontSize: 14,
+      fontFamily: 'fonts.bold',
+      fontWeight: 'bold',
+      px: 30,
+      py: 10,
+      width: '100%',
+      height: 36,
+      alignSelf: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      ":hover": {
+        opacity: 0.5,
+        transition: 'ease-in-out 0.1s',
+
+      }
+    }
   },
   
 

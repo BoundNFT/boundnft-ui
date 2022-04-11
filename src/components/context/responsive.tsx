@@ -38,13 +38,13 @@ const ResponsiveContextProvider: React.FC = ({ children }): React.ReactElement =
 
 
   const isMobile = useMediaQuery({
-    query: `(min-width: 375px`
+    query: `(min-width: 375px)`
   })
   const isTablet = useMediaQuery({
-    query: `(min-width: 768px`
+    query: `(min-width: 768px)`
   })
   const isLaptop = useMediaQuery({
-    query: `(min-width: 1024px`
+    query: `(min-width: 1024px)`
   })
   const isDesktop = useMediaQuery({
     query: `(min-width: 1366px)`

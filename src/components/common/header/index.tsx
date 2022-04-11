@@ -1,9 +1,12 @@
 import { Flex } from 'theme-ui'
 import Navigation from './navigation'
 import Logo from './logo'
+import Web3Status from '../../../modules/wallet'
+import useResponsive from '../../../hooks/common/useResponsive'
 
 
 const Header: React.FC = () => {
+  const { isTablet } = useResponsive()
   return (
     <Flex
       sx={{
@@ -28,7 +31,14 @@ const Header: React.FC = () => {
         }}
       >
         <Logo />
-        <Navigation />
+    
+        <Flex sx={{justifyContent:'flex-end'}}>
+          {isTablet && <Navigation />  }
+          <Flex sx={{ml: [0, 0, 0, 50]}}>
+            <Web3Status />
+          </Flex>
+      
+        </Flex>
       </Flex>
     </Flex>
   )
