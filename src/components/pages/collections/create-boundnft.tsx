@@ -17,6 +17,8 @@ export const CreateBoundNFT: React.FC = () => {
     <BoundNFTContext.Provider value={{ screenState, setScreenState }}>
       <MotionFlex 
         sx={{
+        pt: 170,
+        pb: 200,
         width: '100%', 
         flexDirection: 'column', 
         alignItems: 'center',

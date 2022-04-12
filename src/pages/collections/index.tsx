@@ -9,7 +9,7 @@ const CollectionsPage: NextPage = () => (
     width: '100%', 
     flexDirection: 'column', 
     alignItems: 'center',
-    background: 'url(/assets/images/bg/collections_bg.png)',
+    background: 'url(/assets/images/bg/bg-sub-00.png)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100%', 
     overflow: 'hidden',

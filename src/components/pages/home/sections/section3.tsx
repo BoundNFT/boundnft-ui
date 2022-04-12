@@ -6,7 +6,7 @@ import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-compon
 export const Section3 = () => {
   const { t } = useTranslation('common')
   return (
-    <MotionFlex sx={{ width:'100%', justifyContent: 'center', alignItems: 'center', mt: [250, 250, 250, 500] }}>
+    <MotionFlex sx={{ width: '100%', maxWidth: 1280, flexDirection: 'column', alignItems: 'center', mt: -100, mb: 100}}>
         
       <MotionFlex sx={{ maxWidth: 960, width: '100%', flexDirection: 'column'}}>
 

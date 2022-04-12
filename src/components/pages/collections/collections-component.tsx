@@ -40,6 +40,8 @@ export const CollectionsPageComponent: React.FC = () => {
   return (
     <MotionFlex 
       sx={{
+      pt: 170,
+      pb: 200,
       width: '100%', 
       flexDirection: 'column', 
       alignItems: 'center',
