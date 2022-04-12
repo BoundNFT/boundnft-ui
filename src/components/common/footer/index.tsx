@@ -14,10 +14,10 @@ export const Footer: React.FC = () => {
         alignItems: 'center',
         background: 'url(/assets/images/bg/bg-main-02.png)',
         backgroundPositionY: '0%',
-        backGroundPositionX: 'center',
+        backgroundPositionX: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        pt: 400,
+        backgroundSize: [2000],
+        pt: 500,
         mt: [-350, -250, -200]
       }}
     >

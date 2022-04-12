@@ -13,7 +13,7 @@ export const Section1 = () => {
         <MotionText variant='text.title-bold-green'>{t('label.nft-liquidity').toUpperCase()}</MotionText>
       </MotionFlex>
 
-      <MotionFlex sx={{position: 'relative', flexDirection: 'column', alignItems: 'center', ml: [0, 0, 25], mt: 40}} initial={{ opacity: 0 }} animate={{ opacity: 1}}>
+      <MotionFlex sx={{position: 'relative', flexDirection: 'column', alignItems: 'center', ml: [0, 0, 0], mt: 40}} initial={{ opacity: 0 }} animate={{ opacity: 1}}>
         <MotionBox sx={{ width: 95, height: 75, position: 'relative'}}>        
           <Image src='/assets/images/boundnft_logo.svg' layout='fill'/>
         </MotionBox>

@@ -11,9 +11,9 @@ const CreateBoundNFTPage: NextPage = () => (
     alignItems: 'center',
     background: 'url(/assets/images/bg/bg-sub-00.png)',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: ['250%', '250%', '100%'], 
+    backgroundSize: [1300, 1300, 1200, 1200, 1600], 
     backgroundPositionX: 'center',
-    backgroundPositionY: ['0%', '0%', '0%'],
+    backgroundPositionY: 0,
     overflow: 'hidden',
   }}>
     <CreateBoundNFT/>

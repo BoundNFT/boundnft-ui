@@ -20,9 +20,9 @@ export const HomePageComponent: React.FC = () => (
         alignItems: 'center',
         background: 'url(/assets/images/bg/bg-main-00.png)',
         backgroundPositionX: 'center',
-        backgroundPositionY: ['30%', '20%', '40%', '20%', '20%'],
+        backgroundPositionY: [70, 70, 10, 95, -20],
         backgroundRepeat: 'no-repeat',
-        backgroundSize: ['300%', '300%', '150%', '150%', '100%']
+        backgroundSize: [1200, 1200, 1600, 1500, 2000]
       }}>
       <MotionBox sx={{px: [20, 20, 20, 40, 0], width: '100%', maxWidth: 1280, pt: 170, pb: [250, 250, 350]}}>
         <Section1 />
@@ -36,10 +36,10 @@ export const HomePageComponent: React.FC = () => (
         flexDirection: 'column', 
         alignItems: 'center',
         background: 'url(/assets/images/bg/bg-main-01.png)',
-        backgroundPositionY: ['90%', '90%', '60%', '60%', '70%'],
-        backGroundPositionX: 'center',
+        backgroundPositionY: [320, 350, 450, 300, 300],
+        backgroundPositionX: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '100%',
+        backgroundSize: [1500, 1500, 1500, 1500, 2000],
       }}>
       <MotionBox sx={{pb: [350, 350, 800], px: [20, 20, 20, 40, 0] }}>
         <Section2 />
