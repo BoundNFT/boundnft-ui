@@ -21,7 +21,7 @@ export const CreateBoundNFTStep3: React.FC = () => {
           </Box>
         </Box>
 
-        <Box sx={{width: ['120%', '120%', '100%'], overflow: 'hidden', position: 'relative', alignSelf: 'center', my: [20, 20, 0], px: [0, 0, 30]}}>
+        <Box sx={{width: ['100%'], overflow: 'hidden', position: 'relative', alignSelf: 'center', my: [20, 20, 0], px: [0, 0, 30]}}>
           <ImageThemeUI src={'/assets/images/elements/boundnft-preloader.gif'} width={'100%'}/>
         </Box>
 
