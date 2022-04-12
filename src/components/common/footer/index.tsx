@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         pt: 400,
-        mt: -200
+        mt: [-350, -250, -200]
       }}
     >
       <Flex 

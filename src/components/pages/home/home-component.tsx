@@ -19,12 +19,12 @@ export const HomePageComponent: React.FC = () => (
         flexDirection: 'column', 
         alignItems: 'center',
         background: 'url(/assets/images/bg/bg-main-00.png)',
-        backgroundPositionY: '0%',
-        backGroundPositionX: 'stretch ',
+        backgroundPositionX: 'center',
+        backgroundPositionY: ['30%', '20%', '40%', '20%', '20%'],
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '100%',
+        backgroundSize: ['300%', '300%', '150%', '150%', '100%']
       }}>
-      <MotionBox sx={{pt: 170, pb: 350}}>
+      <MotionBox sx={{px: [20, 20, 20, 40, 0], width: '100%', maxWidth: 1280, pt: 170, pb: [250, 250, 350]}}>
         <Section1 />
       </MotionBox>
     </MotionFlex> 
@@ -36,16 +36,16 @@ export const HomePageComponent: React.FC = () => (
         flexDirection: 'column', 
         alignItems: 'center',
         background: 'url(/assets/images/bg/bg-main-01.png)',
-        backgroundPositionY: 300,
+        backgroundPositionY: ['90%', '90%', '60%', '60%', '70%'],
         backGroundPositionX: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100%',
       }}>
-      <MotionBox sx={{pb: 800}}>
+      <MotionBox sx={{pb: [350, 350, 800], px: [20, 20, 20, 40, 0] }}>
         <Section2 />
       </MotionBox>
     </MotionFlex>
-    <MotionFlex sx={{width: '100%', alignItems: 'center', justifyContent: 'center'}}>
+    <MotionFlex sx={{width: '100%', alignItems: 'center', justifyContent: 'center', px: [20, 20, 20, 40, 0]}}>
       <Section3 />
     </MotionFlex>
   </Container>

@@ -40,6 +40,7 @@ export const CollectionsPageComponent: React.FC = () => {
   return (
     <MotionFlex 
       sx={{
+      px: [20, 20, 20, 40, 0],
       pt: 170,
       pb: 200,
       width: '100%', 
