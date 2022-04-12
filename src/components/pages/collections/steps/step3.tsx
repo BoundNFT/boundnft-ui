@@ -13,12 +13,16 @@ export const CreateBoundNFTStep3: React.FC = () => {
   const { setScreenState } = useContext(BoundNFTContext)
   return (
     <>
-      <Flex sx={{mt: 80, justifyContent: 'space-between', width: '100%'}}>
+      <Flex sx={{mt: 80, justifyContent: 'space-between', width: '100%', alignItems: 'center', flexDirection: ['column', 'column', 'row']}}>
 
         <Box variant='frames.image' sx={{width: '100%', maxWidth: 202}}>
           <Box sx={{width: 182, height: 182, position: 'relative'}}>
             <Image src='/assets/images/collections/big/punk.svg' layout='fill'/>
           </Box>
+        </Box>
+
+        <Box sx={{height: [63.69], width:[480], overflow: 'hidden', position: 'relative', alignSelf: 'center', my: [20, 20, 0]}}>
+          <Image src={'/assets/images/elements/boundnft-preloader.gif'} layout='fill' />
         </Box>
 
         <Box variant='frames.image' sx={{width: '100%', maxWidth: 202}}>

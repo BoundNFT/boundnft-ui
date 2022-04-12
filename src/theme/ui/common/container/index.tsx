@@ -5,6 +5,7 @@ import { IContainer } from './interfaces'
 const Container: React.FC<IContainer> = ({ hasBorder = false, hasPadding = false, children, ...restprops }) => {
   return (
     <Flex
+    px={[20, 20, 40, 40, 0]}
       sx={{
         flexDirection: 'column',
         width: '100%',

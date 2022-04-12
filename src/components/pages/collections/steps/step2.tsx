@@ -26,9 +26,9 @@ export const CreateBoundNFTStep2: React.FC = () => {
         
         <Box variant='frames.normal' sx={{width: '100%', maxWidth: 728, mt: [20, 20, 0]}}>
           <Flex sx={{ justifyContent: 'space-between', width: '100%', flexDirection: ['column', 'column', 'column', 'row']}}>
-            <Flex sx={{ justifyContent: 'space-between'}}>
+            <Flex sx={{ justifyContent: 'space-between', minWidth: 260}}>
               <LabelInfo label='Name' info='Cryptopunks' />
-              <LabelInfo label='NO. OF TOKENS' info='10,000' sx={{mt: [20, 20, 0]}} />
+              <LabelInfo label='NO. OF TOKENS' info='10,000' align='right'/>
             </Flex>
 
             <Button text='View on Opensea' arrowColor='white' outlined sx={{maxWidth: 286, mt: [20, 20, 20, 0]}} />
