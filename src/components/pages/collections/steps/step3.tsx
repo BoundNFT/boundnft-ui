@@ -1,7 +1,7 @@
 import router from 'next/router'
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Box, Flex, Text } from 'theme-ui'
+import { Box, Flex, Text, Image as ImageThemeUI } from 'theme-ui'
 import { Button } from '../../../../theme/ui/common/button'
 import { BoundNFTContext } from '../create-boundnft'
 import { Screen } from '../types'
@@ -21,8 +21,8 @@ export const CreateBoundNFTStep3: React.FC = () => {
           </Box>
         </Box>
 
-        <Box sx={{height: [63.69], width:[480], overflow: 'hidden', position: 'relative', alignSelf: 'center', my: [20, 20, 0]}}>
-          <Image src={'/assets/images/elements/boundnft-preloader.gif'} layout='fill' />
+        <Box sx={{width: ['120%', '120%', '100%'], overflow: 'hidden', position: 'relative', alignSelf: 'center', my: [20, 20, 0], px: [0, 0, 30]}}>
+          <ImageThemeUI src={'/assets/images/elements/boundnft-preloader.gif'} width={'100%'}/>
         </Box>
 
         <Box variant='frames.image' sx={{width: '100%', maxWidth: 202}}>
