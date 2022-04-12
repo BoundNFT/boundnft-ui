@@ -6,7 +6,7 @@ import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-compon
 export const Section1 = () => {
   const { t } = useTranslation('common')
   return (
-    <MotionBox sx={{ width: '100%', maxWidth: 1280, flexDirection: 'column', position: 'relative', alignitems: 'center', px: [20, 20, 20, 40, null]}}>
+    <MotionBox sx={{ width: '100%', maxWidth: 1280, flexDirection: 'column', position: 'relative', alignitems: 'center'}}>
       <MotionFlex sx={{ width: '100%', flexDirection: 'column', fontSize: 'xxxl'}} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <MotionText variant='text.title-white'>{t('label.powering').toUpperCase()}</MotionText>
         <MotionText variant='text.title-bold-white'>{t('label.decentralized').toUpperCase()}</MotionText>

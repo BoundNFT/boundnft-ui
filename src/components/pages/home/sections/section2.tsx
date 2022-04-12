@@ -8,7 +8,7 @@ export const Section2 = () => {
   const { t } = useTranslation('common')
 
   return (
-    <MotionBox sx={{ width: '100%', maxWidth: 1280, flexDirection: 'column', position: 'relative', alignitems: 'center', px: [20, 20, 20, 40, null]}}>
+    <MotionBox sx={{ width: '100%', maxWidth: 1280, flexDirection: 'column', position: 'relative', alignitems: 'center'}}>
         
       <MotionFlex sx={{ maxWidth: 960, width: '100%', flexDirection: 'column'}}>
 

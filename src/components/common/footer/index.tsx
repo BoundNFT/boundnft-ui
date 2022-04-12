@@ -1,6 +1,7 @@
 import { Flex, Link, Text } from 'theme-ui'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
+import { rgba } from 'polished'
 
 
 export const Footer: React.FC = () => {
@@ -26,8 +27,7 @@ export const Footer: React.FC = () => {
           width: '100%', 
           alignItems: 'center', 
           justifyContent: 'center', 
-          backgroundColor: 'blue.200', 
-          opacity: 0.8, 
+          backgroundColor: rgba(6, 10, 16, 0.3),        
           height: [760, 760, 500],
           px: [20, 20, 40, 40, null],
         }}>

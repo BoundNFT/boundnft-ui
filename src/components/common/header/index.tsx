@@ -3,6 +3,7 @@ import Navigation from './navigation'
 import Logo from './logo'
 import Web3Status from '../../../modules/wallet'
 import useResponsive from '../../../hooks/common/useResponsive'
+import { rgba } from 'polished'
 
 
 const Header: React.FC = () => {
@@ -11,13 +12,12 @@ const Header: React.FC = () => {
     <Flex
       sx={{
         position: 'fixed',
-        bg: 'blue.300',
+        backgroundColor: rgba(6, 10, 16, 0.3),        
         width: '100%',
         height: [78],
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        opacity: 0.8,
         px: [20, 20, 40, null],
         zIndex: 200
       }}
