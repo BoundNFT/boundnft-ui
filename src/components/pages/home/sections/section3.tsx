@@ -16,7 +16,7 @@ export const Section3 = () => {
   }, [inViewport])
   return (
     <Animations>
-      <MotionFlex sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', alignItems: 'center', mt: -100, mb: 100}} ref={section3}>
+      <MotionFlex sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', alignItems: 'center', mt: [100, 150, 200, 150, 300]}} ref={section3}>
         <MotionFlex sx={{ width: '100%', flexDirection: 'column'}}>
 
           <MotionFlex sx={{ width: '100%', flexDirection: 'column'}}>

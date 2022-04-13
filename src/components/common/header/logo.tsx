@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Flex, Text } from 'theme-ui'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { MotionFlex } from '../motion-components'
 
 const Logo: React.FC = () => {
@@ -40,11 +40,11 @@ const Animations = styled(MotionFlex)`
     0% {
       transform: translateX(0);
       opacity: 1;
-    }
+    };
     50% {
       transform: translateX(5px);
       opacity: 0.3;
-    }
+    };
     100% {
       transform: translateX(0);
       opacity: 1;
@@ -55,11 +55,11 @@ const Animations = styled(MotionFlex)`
     0% {
       transform: translateX(0);
       opacity: 1;
-    }
+    };
     50% {
       transform: translateX(-5px);
       opacity: 0.3;
-    }
+    };
     100% {
       transform: translateX(0);
       opacity: 1;
@@ -68,11 +68,11 @@ const Animations = styled(MotionFlex)`
 
   a:hover .slide-in-circle {
     animation: slide-in-left 0.6s cubic-bezier(0, 0.03, 0.515, 0.955) 0.2s;
-  }
+  };
 
   a:hover .slide-in-dot {
     animation: slide-in-right 0.6s cubic-bezier(0, 0.03, 0.515, 0.955) 0.2s;
-  }
+  };
     
 
 `

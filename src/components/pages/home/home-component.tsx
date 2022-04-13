@@ -24,7 +24,7 @@ export const HomePageComponent: React.FC = () => (
         backgroundRepeat: 'no-repeat',
         backgroundSize: [1200, 1200, 1600, 1500, 2000]
       }}>
-      <MotionBox sx={{px: [20, 20, 20, 40, 0], width: '100%', maxWidth: 1280, pt: 170, pb: [250, 250, 350]}}>
+      <MotionBox sx={{px: [20, 20, 20, 40, 0], width: '100%', maxWidth: 1280, pt: 170, pb: [250, 250, 250]}}>
         <Section1 />
       </MotionBox>
     </MotionFlex> 
@@ -41,15 +41,16 @@ export const HomePageComponent: React.FC = () => (
         backgroundRepeat: 'no-repeat',
         backgroundSize: [1500, 1500, 1500, 1500, 2000],
       }}>
-      <MotionBox sx={{pb: [350, 350, 800], px: [20, 20, 20, 40, 0], width: '100%', maxWidth: 960}}>
+      <MotionBox sx={{pb: [100, 100, 0], px: [20, 20, 20, 40, 0], width: '100%', maxWidth: 960}}>
         <Section2 />
-      </MotionBox>
-    </MotionFlex>
-    <MotionFlex sx={{width: '100%', alignItems: 'center', justifyContent: 'center', alignContent: 'center', px: [20, 20, 20, 40, 0]}}>
-      <MotionBox sx={{width: '100%', maxWidth: 960}}>
         <Section3 />
       </MotionBox>
     </MotionFlex>
+{/*     <MotionFlex sx={{width: '100%', alignItems: 'center', justifyContent: 'center', alignContent: 'center', px: [20, 20, 20, 40, 0]}}>
+      <MotionBox sx={{width: '100%', maxWidth: 960}}>
+        <Section3 />
+      </MotionBox>
+    </MotionFlex> */}
   </Container>
 
     )
