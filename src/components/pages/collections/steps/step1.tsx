@@ -17,7 +17,7 @@ export const CreateBoundNFTStep1: React.FC = () => {
         <Box as='form'sx={{width: '100%'}}>
           <Label sx={{mb: 20}} variant='text.body-xs' color='grey.100' htmlFor='username'>{t('label.contract-address')}</Label>
           <Input
-            
+            sx={{height: 56, borderRadius: 0}}            
           />
           <Label sx={{mt: 20}} variant='text.body-xs' color='grey.100' htmlFor='password'>{t('label.input-notice')}</Label>
         </Box>

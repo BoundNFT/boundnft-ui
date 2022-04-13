@@ -210,6 +210,7 @@ export const theme = makeTheme({
     },
     'web3': {
       cursor: 'pointer',
+      borderRadius: 0,
       backgroundColor: 'green.100',
       color: 'blue.300',
       fontSize: 14,
