@@ -14,6 +14,8 @@ export const HomePageComponent: React.FC = () => (
       overflow: 'hidden',
     }}>
     <MotionFlex
+      animate={{ opacity: 1, transition: { when: 'beforeChildren', duration: 0.8 }}}
+      initial={{ opacity: 0 }}
       sx={{
         width: '100%', 
         flexDirection: 'column', 
@@ -46,11 +48,6 @@ export const HomePageComponent: React.FC = () => (
         <Section3 />
       </MotionBox>
     </MotionFlex>
-{/*     <MotionFlex sx={{width: '100%', alignItems: 'center', justifyContent: 'center', alignContent: 'center', px: [20, 20, 20, 40, 0]}}>
-      <MotionBox sx={{width: '100%', maxWidth: 960}}>
-        <Section3 />
-      </MotionBox>
-    </MotionFlex> */}
   </Container>
 
     )
