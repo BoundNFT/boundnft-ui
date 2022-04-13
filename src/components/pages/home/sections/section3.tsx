@@ -77,28 +77,8 @@ export const Section3 = () => {
 
 
 const Animations: React.FC = styled(MotionFlex)`
+  
   width: 100%;
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide-in-top {
-    0% {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
   @keyframes slide-in-right {
     0% {
       transform: translateX(60px);
