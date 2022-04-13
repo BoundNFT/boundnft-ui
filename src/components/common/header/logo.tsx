@@ -30,7 +30,6 @@ const Logo: React.FC = () => {
 export default Logo
 
 
-
 const Animations = styled.div`
 
   @keyframes slide-in-left {

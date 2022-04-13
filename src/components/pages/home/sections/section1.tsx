@@ -21,7 +21,7 @@ export const Section1 = () => {
           </MotionBox>
           <MotionFlex className='slide-in-title-3' sx={{ mt: 25}}>
             <MotionText variant='text.semi-title-white'>{t('label.bound').toUpperCase()}</MotionText>
-            <MotionText variant='text.semi-title-bold-white'>{t('label.nft').toUpperCase()}</MotionText>
+            <MotionText variant='text.semi-title-bold-white' sx={{ml: '1.5px'}}>{t('label.nft').toUpperCase()}</MotionText>
           </MotionFlex>
         </MotionFlex>
 
