@@ -33,45 +33,43 @@ export default Logo
 
 const Animations = styled.div`
 
-@keyframes slide-in-left {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(5px);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
-  50% {
-    transform: translateX(5px);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
-@keyframes slide-in-right {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-5px);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
-  50% {
-    transform: translateX(-5px);
-    opacity: 0.3;
+
+  a:hover .slide-in-circle {
+    animation: slide-in-left 0.6s cubic-bezier(0, 0.03, 0.515, 0.955) 0.2s;
   }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+
+  a:hover .slide-in-dot {
+    animation: slide-in-right 0.6s cubic-bezier(0, 0.03, 0.515, 0.955) 0.2s;
   }
-}
-
-
-
-a:hover .slide-in-circle {
-  animation: slide-in-left 0.6s cubic-bezier(0, 0.03, 0.515, 0.955) 0.2s;
-}
-
-a:hover .slide-in-dot {
-  animation: slide-in-right 0.6s cubic-bezier(0, 0.03, 0.515, 0.955) 0.2s;
-}
     
 
 `
