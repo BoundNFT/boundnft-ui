@@ -24,7 +24,7 @@ export const HomePageComponent: React.FC = () => (
         backgroundRepeat: 'no-repeat',
         backgroundSize: [1200, 1200, 1600, 1500, 2000]
       }}>
-      <MotionBox sx={{px: [20, 20, 20, 40, 0], width: '100%', maxWidth: 1280, pt: 170, pb: [250, 250, 250]}}>
+      <MotionBox sx={{px: [20, 20, 20, 40, 0], width: '100%', maxWidth: 1280, pt: 170, pb: [250, 250, 340]}}>
         <Section1 />
       </MotionBox>
     </MotionFlex> 
