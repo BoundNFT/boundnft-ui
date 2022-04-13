@@ -1,7 +1,7 @@
 import router from 'next/router'
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Box, Flex, Input, Label, Text } from 'theme-ui'
+import { Box, Flex, Text } from 'theme-ui'
 import { permalink } from '../../../../constants/routes'
 import { Button } from '../../../../theme/ui/common/button'
 import { BoundNFTContext } from '../create-boundnft'

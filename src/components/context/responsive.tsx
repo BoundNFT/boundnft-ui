@@ -1,7 +1,5 @@
 import React from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { useThemeUI } from 'theme-ui'
-import useTheme from '../../hooks/common/useTheme'
 
 /**
  * Interfaces & types

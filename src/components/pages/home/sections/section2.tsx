@@ -1,6 +1,6 @@
 
 import Image from 'next/image'
-import { MutableRefObject, ReactHTMLElement, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useInViewport } from 'react-in-viewport'
 import styled from 'styled-components'

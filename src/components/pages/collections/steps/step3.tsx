@@ -1,8 +1,6 @@
-import router from 'next/router'
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Flex, Text, Image as ImageThemeUI } from 'theme-ui'
-import { Button } from '../../../../theme/ui/common/button'
 import { BoundNFTContext } from '../create-boundnft'
 import { Screen } from '../types'
 import Image from 'next/image'

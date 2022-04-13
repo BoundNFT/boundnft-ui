@@ -12,7 +12,7 @@ interface IMain extends FlexProps {
   image?: string
 }
 
-const Main: React.FC<IMain> = ({ children, title = '', description = '', url = '', image = '', ...restprops }): React.ReactElement => {
+const Main: React.FC<IMain> = ({ children, title = '', description = '', url = '', image = '' }): React.ReactElement => {
   return (
     <>
       <Head>

@@ -1,4 +1,4 @@
-import React, { isValidElement, useState } from 'react'
+import React, { isValidElement } from 'react'
 import _ from 'lodash'
 // Components
 // iterfaces
@@ -40,7 +40,7 @@ const Table: React.FC<ITable> = ({
 
   const { isTablet, isLaptop } = useResponsive()
 
-  const [selected, setSelected] = useState<any[]>([])
+  // const [selected, setSelected] = useState<any[]>([])
   const { t } = useTranslation('common')
 
   React.useEffect(() => {

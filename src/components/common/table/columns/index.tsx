@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Flex, Text, Box, Link } from 'theme-ui'
+import { Flex, Text, Box } from 'theme-ui'
 import useResponsive from '../../../../hooks/common/useResponsive'
 import { ITableColumn } from '../interfaces'
 import { ICollections } from './interfaces'

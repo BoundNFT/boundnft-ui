@@ -1,4 +1,4 @@
-import { useMemo, forwardRef } from 'react'
+import React, { useMemo, forwardRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Flex, Text, Link as StyledLink, FlexProps } from 'theme-ui'
@@ -40,7 +40,7 @@ const NavButton: React.FC<INavButton> = props => {
 
 export default NavButton
 
-const LinkComponent = forwardRef<HTMLElement, INavButton & FlexProps>(({ route, name, children, ...restprops }, ref) => {
+const LinkComponent = forwardRef<HTMLDivElement, INavButton & FlexProps>(({ route, name, children, ...restprops }, ref) => {
 
   const { pathname } = useRouter()
 
@@ -52,7 +52,7 @@ const LinkComponent = forwardRef<HTMLElement, INavButton & FlexProps>(({ route, 
   }, [pathname])
 
   return (
-    <Flex sx={{ position: 'relative', justifyContent: 'center' }} /* ref={ref} */ {...restprops}>
+    <Flex sx={{ position: 'relative', justifyContent: 'center' }} {...restprops} ref={ref} >
       <Flex
         sx={{
           flexDirection: ['row'],

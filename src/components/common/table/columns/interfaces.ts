@@ -1,6 +1,3 @@
-import React from "react"
-
-
 export interface ICollections {
   key: string
   avatar: string

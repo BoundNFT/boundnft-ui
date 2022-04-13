@@ -1,4 +1,4 @@
-import { Box, Label, SxProp, Text } from 'theme-ui'
+import { Box, Label, Text } from 'theme-ui'
 
 
 interface ILabelInfo {

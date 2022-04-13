@@ -10,9 +10,7 @@ import { theme } from '../theme/theme'
 import ResponsiveContextProvider from '../components/context/responsive'
 import WalletContextProvider from 'modules/wallet/context/wallet'
 
-
 export default function MyApp({ Component, pageProps }: AppProps) {
-
   return (
     <WalletContextProvider>
       <I18nextProvider i18n={i18n} defaultNS='common'>

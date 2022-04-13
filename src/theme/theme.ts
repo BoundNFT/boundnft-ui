@@ -1,6 +1,4 @@
 import { makeTheme } from '@theme-ui/css/utils'
-import React from 'react'
-
 
 export const theme = makeTheme({
   config: {
@@ -140,7 +138,7 @@ export const theme = makeTheme({
       py: 24,
       px: 30,
       '&:focus': {
-        boxShadow: t => `0 0 0 2px ${'black'}`,
+        boxShadow: `0 0 0 2px ${'black'}`,
         outline: '1px solid white',
       },
       color: 'white',
