@@ -11,8 +11,8 @@ export const Section1 = () => {
       <MotionFlex sx={{ width: '100%', maxWidth: 1280, flexDirection: 'column'}}>
         <MotionFlex sx={{ width: '100%', flexDirection: 'column', fontSize: 'xxxl'}}>
           <MotionText className='slide-in-title' variant='text.title-white'>{t('label.powering').toUpperCase()}</MotionText>
-          <MotionText className='slide-in-title-2'variant='text.title-bold-white'>{t('label.decentralized').toUpperCase()}</MotionText>
-          <MotionText className='slide-in-title-3'variant='text.title-bold-green'>{t('label.nft-liquidity').toUpperCase()}</MotionText>
+          <MotionText className='slide-in-title-2' variant='text.title-bold-white'>{t('label.decentralized').toUpperCase()}</MotionText>
+          <MotionText className='slide-in-title-3' variant='text.title-bold-green'>{t('label.nft-liquidity').toUpperCase()}</MotionText>
         </MotionFlex>
 
         <MotionFlex sx={{position: 'relative', flexDirection: 'column', alignItems: 'center', ml: [0, 0, 0], mt: 40}}>
@@ -38,7 +38,7 @@ export const Section1 = () => {
 }
 
 
-const Animations: React.FC = styled.div`
+const Animations: React.FC = styled(MotionFlex)`
   width: 100%;
   @keyframes fade-in {
     0% {

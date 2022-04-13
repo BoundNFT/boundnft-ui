@@ -3,26 +3,29 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Flex, Text } from 'theme-ui'
 import styled, { css } from 'styled-components'
+import { MotionFlex } from '../motion-components'
 
 const Logo: React.FC = () => {
   return (
     <Animations>
-      <Link href='/' passHref>
-        <Flex as='a' sx={{ position: 'relative', alignItems: 'center', minWidth: 170 }}>
-          <Flex sx={{width: 36}}>
-            <Flex className='slide-in-circle' sx={{width: 25, zIndex: 100, height: 28, position: 'relative'}}>
-              <Image src='/assets/images/elements/hex-empty.svg' layout='fill' />
+      <MotionFlex>
+        <Link href='/' passHref>
+          <Flex as='a' sx={{ position: 'relative', alignItems: 'center', minWidth: 170 }}>
+            <Flex sx={{width: 36}}>
+              <Flex className='slide-in-circle' sx={{width: 25, zIndex: 100, height: 28, position: 'relative'}}>
+                <Image src='/assets/images/elements/hex-empty.svg' layout='fill' />
+              </Flex>
+              <Flex className='slide-in-dot' sx={{ml: '-13px', width: 25, height: 28, position: 'relative', zIndex: 90}}>
+                <Image src='/assets/images/elements/hex-dotted.svg' layout='fill' />
+              </Flex>
             </Flex>
-            <Flex className='slide-in-dot' sx={{ml: '-13px', width: 25, height: 28, position: 'relative', zIndex: 90}}>
-              <Image src='/assets/images/elements/hex-dotted.svg' layout='fill' />
+            <Flex ml={15}>
+              <Text variant='text.logo-text'>BOUND</Text>
+              <Text sx={{ ml: '1.5px'}} variant='text.logo-text-bold'>NFT</Text>
             </Flex>
           </Flex>
-          <Flex ml={15}>
-            <Text variant='text.logo-text'>BOUND</Text>
-            <Text sx={{ ml: '1.5px'}} variant='text.logo-text-bold'>NFT</Text>
-          </Flex>
-        </Flex>
-      </Link>
+        </Link>
+      </MotionFlex>
     </Animations>
   )
 }
@@ -31,7 +34,7 @@ export default Logo
 
 
 
-const Animations = styled.div`
+const Animations = styled(MotionFlex)`
 
   @keyframes slide-in-left {
     0% {

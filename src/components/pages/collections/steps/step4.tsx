@@ -42,7 +42,7 @@ export const CreateBoundNFTStep4: React.FC = () => {
       </Box>
 
       <Flex sx={{ width: '100%', mt: 40, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
-        <Button text={t('button.back-to-collections').toUpperCase()} backgroundColor='green.100' arrowColor='black' switchArrow onClick={() => router.push(permalink.collections)} />
+        <Button text={t('button.back-to-collections').toUpperCase()} outlined switchArrow onClick={() => router.push(permalink.collections)} />
         <Button text={t('button.create-another-one').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}} onClick={() => setScreenState(Screen.fetchMetadata)}/>
       </Flex>
     </>

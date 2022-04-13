@@ -8,29 +8,29 @@ import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-compon
 
 export const Section3 = () => {
   const { t } = useTranslation('common')
-  const section = useRef<any>()
+  const section3 = useRef<any>()
   const wasInViewport = useRef<boolean>(false)
-  const { inViewport } = useInViewport(section, {}, { disconnectOnLeave: false }, {})
+  const { inViewport } = useInViewport(section3, {}, { disconnectOnLeave: false }, {})
   useEffect(() => {
     if (inViewport) wasInViewport.current = true
   }, [inViewport])
   return (
     <Animations>
-      <MotionFlex sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', alignItems: 'center', mt: -100, mb: 100}} ref={section}>
+      <MotionFlex sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', alignItems: 'center', mt: -100, mb: 100}} ref={section3}>
         <MotionFlex sx={{ width: '100%', flexDirection: 'column'}}>
 
           <MotionFlex sx={{ width: '100%', flexDirection: 'column'}}>
             <MotionFlex>
               <MotionFlex sx={{ flexDirection: 'column'}}>
-                <MotionText variant='text.title-white' className={inViewport || wasInViewport.current ? 'slide-in-title' : undefined}>{t('label.fully').toUpperCase()}</MotionText>
-                <MotionText variant='text.title-bold-white' className={inViewport || wasInViewport.current ? 'slide-in-title' : undefined}>{t('label.functional').toUpperCase()}</MotionText>
+                <MotionText variant='text.title-white' className={inViewport || wasInViewport.current ? 'slide-in-title' : ''}>{t('label.fully').toUpperCase()}</MotionText>
+                <MotionText variant='text.title-bold-white' className={inViewport || wasInViewport.current ? 'slide-in-title' : ''}>{t('label.functional').toUpperCase()}</MotionText>
               </MotionFlex>
-              <MotionBox sx={{ width: 65, height: 65, position: 'relative'}} className={inViewport || wasInViewport.current ? 'slide-in-logo' : undefined}>        
+              <MotionBox sx={{ width: 65, height: 65, position: 'relative'}} className={inViewport || wasInViewport.current ? 'slide-in-logo' : ''}>        
                 <Image src={'/assets/images/elements/subtitle_element_1.svg'} layout='fill' />
               </MotionBox>
             </MotionFlex>
 
-            <MotionText variant='text.body' sx={{ mt: 16, maxWidth: 593}}  className={inViewport || wasInViewport.current ? 'slide-in-text' : undefined}>
+            <MotionText variant='text.body' sx={{ mt: 16, maxWidth: 593}}  className={inViewport || wasInViewport.current ? 'slide-in-text' : ''}>
               {t('paragraph.section3-1').toUpperCase()}
             </MotionText>
           </MotionFlex>
@@ -39,15 +39,15 @@ export const Section3 = () => {
             <MotionFlex sx={{ width: '100%', justifyContent: 'right', flexDirection: 'column', maxWidth: 645, mt: 80, fontSize: 64}}>
               <MotionFlex>
                 <MotionFlex sx={{ flexDirection: 'column'}}>
-                  <MotionText variant='text.title-white'  className={inViewport || wasInViewport.current ? 'slide-in-title-2' : undefined}>{t('label.fully').toUpperCase()}</MotionText>
-                  <MotionText variant='text.title-bold-white'  className={inViewport || wasInViewport.current ? 'slide-in-title-2' : undefined}>{t('label.permissionless').toUpperCase()}</MotionText>
+                  <MotionText variant='text.title-white'  className={inViewport || wasInViewport.current ? 'slide-in-title-2' : ''}>{t('label.fully').toUpperCase()}</MotionText>
+                  <MotionText variant='text.title-bold-white'  className={inViewport || wasInViewport.current ? 'slide-in-title-2' : ''}>{t('label.permissionless').toUpperCase()}</MotionText>
                 </MotionFlex>
-                <MotionBox sx={{ width: 65, height: 65, position: 'relative'}}  className={inViewport || wasInViewport.current ? 'slide-in-logo-2' : undefined}>        
+                <MotionBox sx={{ width: 65, height: 65, position: 'relative'}}  className={inViewport || wasInViewport.current ? 'slide-in-logo-2' : ''}>        
                   <Image src={'/assets/images/elements/subtitle_element_3.svg'} layout='fill' />
                 </MotionBox>
               </MotionFlex>
 
-              <MotionText variant='text.body' sx={{ mt: 16, maxWidth: 645}}  className={inViewport || wasInViewport.current ? 'slide-in-text-2' : undefined}>
+              <MotionText variant='text.body' sx={{ mt: 16, maxWidth: 645}}  className={inViewport || wasInViewport.current ? 'slide-in-text-2' : ''}>
                 {t('paragraph.section3-2').toUpperCase()}
               </MotionText>
       
@@ -57,14 +57,14 @@ export const Section3 = () => {
           <MotionFlex sx={{width:'100%', flexDirection: 'column', fontSize: 64, mt: 80}}>
             <MotionFlex>
               <MotionFlex sx={{ flexDirection: 'column'}}>
-                <MotionText as='text' variant='text.title-white'  className={inViewport || wasInViewport.current ? 'slide-in-title-3' : undefined}>{t('label.fully').toUpperCase()}</MotionText>
-                <MotionText as='text' variant='text.title-bold-white'  className={inViewport || wasInViewport.current ? 'slide-in-title-3' : undefined}>{t('label.open-source').toUpperCase()}</MotionText>
+                <MotionText as='text' variant='text.title-white'  className={inViewport || wasInViewport.current ? 'slide-in-title-3' : ''}>{t('label.fully').toUpperCase()}</MotionText>
+                <MotionText as='text' variant='text.title-bold-white'  className={inViewport || wasInViewport.current ? 'slide-in-title-3' : ''}>{t('label.open-source').toUpperCase()}</MotionText>
               </MotionFlex>
-              <MotionBox sx={{ width: 65, height: 65, position: 'relative'}}  className={inViewport || wasInViewport.current ? 'slide-in-logo-3' : undefined}>        
+              <MotionBox sx={{ width: 65, height: 65, position: 'relative'}}  className={inViewport || wasInViewport.current ? 'slide-in-logo-3' : ''}>        
                 <Image src={'/assets/images/elements/subtitle_element_2.svg'} layout='fill' />
               </MotionBox>
             </MotionFlex>
-            <MotionText variant='text.body' sx={{ mt: 16, maxWidth: 565}}  className={inViewport || wasInViewport.current ? 'slide-in-text-3' : undefined}>
+            <MotionText variant='text.body' sx={{ mt: 16, maxWidth: 565}}  className={inViewport || wasInViewport.current ? 'slide-in-text-3' : ''}>
               {t('paragraph.section3-3').toUpperCase()}
             </MotionText>
           </MotionFlex>
@@ -76,7 +76,7 @@ export const Section3 = () => {
 }
 
 
-const Animations: React.FC = styled.div`
+const Animations: React.FC = styled(MotionFlex)`
   width: 100%;
 
   @keyframes fade-in {
