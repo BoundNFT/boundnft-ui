@@ -17,7 +17,8 @@ export default {
   'label.open-source': 'Open Source',
   'paragraph.section3-3': "The BoundNFT Protocol codebase is open source, AVAILABLE ON  GITHUB  IT's Permissively licensed and third-party audited.",
   'label.the-protocol': 'The Protocol',
-  'paragraph.footer-1': 'Project BoundNFT is a decentralized NFT bound protocol running on Ethereum. Bound everything from CryptoPunks to game assets with no stolen risk.',
+  'paragraph.footer-1':
+    'Project BoundNFT is a decentralized NFT bound protocol running on Ethereum. Bound everything from CryptoPunks to game assets with no stolen risk.',
   'label.twitter': 'Twitter',
   'label.discord': 'Discord',
   'label.github': 'Github',
@@ -39,13 +40,14 @@ export default {
   'label.create': 'Create',
   'label.new-boundnft': 'New Bound Nft',
   'label.nft-collection-create': 'Enter NFT Collections contract address to create Bound NFT',
-  'paragraph.create-boundnft-step1': 'The collection contract metadata must be fetched.<br> <light-green>If the contract is valid,</light-green> you will be able to create your bound nft.',
-  'paragraph.create-boundnft-step2': 'The contract is valid. <light-green>Please check details above.</light-green><br> If the data is correct, you can continue and create your bound nft.',
+  'paragraph.create-boundnft-step1':
+    'The collection contract metadata must be fetched.<br> <light-green>If the contract is valid,</light-green> you will be able to create your bound nft.',
+  'paragraph.create-boundnft-step2':
+    'The contract is valid. <light-green>Please check details above.</light-green><br> If the data is correct, you can continue and create your bound nft.',
   'paragraph.create-boundnft-proccesing': '<light-green>{{ asset }}</light-green> boundnft is being created...',
   'paragraph.create-boundnft-success': 'You have successfully created the bound nft <light-green>{{ boundAsset }}.</light-green>',
   'label.input-notice': 'a valid ethereum contract address starts with 0x followed by 40 characters (0-9, a-f)',
   'label.contract-address': 'Contract address',
-
 
   // BUTTONS
 
@@ -60,6 +62,4 @@ export default {
   'button.read-the-docs': 'Read the Docs',
   'button.connect': 'Connect',
   'button.fetch-contract-metadata': 'Fetch contract Metadata'
-
-
 }

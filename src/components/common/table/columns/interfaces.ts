@@ -6,5 +6,4 @@ export interface ICollections {
   boundNFTName: string
   boundNFTAddress: string
   totalNfts: number
-
 }

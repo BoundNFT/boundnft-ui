@@ -5,7 +5,6 @@ import { IRoutes } from '../../../constants/types'
 import NavButton from '../nav-button'
 
 const Navigation: React.FC<BoxProps> = ({ ...resprops }) => {
-  
   return (
     <Flex sx={{ alignItems: 'center' }} {...resprops}>
       {routes.map((route: IRoutes, index) => (

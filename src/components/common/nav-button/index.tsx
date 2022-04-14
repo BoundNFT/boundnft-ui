@@ -5,7 +5,6 @@ import { Flex, Text, Link as StyledLink, FlexProps } from 'theme-ui'
 import { IRoutes } from '../../../constants/types'
 import { permalink } from '../../../constants/routes'
 
-
 interface INavButton extends IRoutes {}
 
 const NavButton: React.FC<INavButton> = props => {
@@ -20,14 +19,14 @@ const NavButton: React.FC<INavButton> = props => {
       sx={{
         '&:hover': {
           opacity: 1,
-          textDecoration: 'none',
+          textDecoration: 'none'
         }
       }}
     >
       <LinkComponent {...props} />
     </StyledLink>
   ) : (
-    <Flex sx={{ alignItems: 'center'}}>
+    <Flex sx={{ alignItems: 'center' }}>
       {children ? (
         <LinkComponent onClick={onClick} {...props} />
       ) : (
@@ -41,8 +40,7 @@ const NavButton: React.FC<INavButton> = props => {
 
 export default NavButton
 
-const LinkComponent = forwardRef<HTMLDivElement, INavButton & FlexProps>(({ route, name, children, ...restprops }, ref) => {
-
+const LinkComponent = forwardRef<HTMLDivElement, INavButton & FlexProps>(({ route, name, ...restprops }, ref) => {
   const { pathname } = useRouter()
 
   const activePathname = useMemo(() => {
@@ -53,7 +51,7 @@ const LinkComponent = forwardRef<HTMLDivElement, INavButton & FlexProps>(({ rout
   }, [pathname])
 
   return (
-    <Flex sx={{ position: 'relative', justifyContent: 'center' }} {...restprops} ref={ref} >
+    <Flex sx={{ position: 'relative', justifyContent: 'center' }} {...restprops} ref={ref}>
       <Flex
         sx={{
           flexDirection: ['row'],
@@ -69,12 +67,11 @@ const LinkComponent = forwardRef<HTMLDivElement, INavButton & FlexProps>(({ rout
             width: activePathname === route ? '100%' : 0,
             height: 3,
             transition: 'all 0.3s',
-            bg: activePathname === route ? 'green.100' : 'transparent',
+            bg: activePathname === route ? 'green.100' : 'transparent'
           },
           '& svg': {
             transition: 'all 0.3s',
-            color: activePathname === route ? 'white' : 'white',
-            
+            color: activePathname === route ? 'white' : 'white'
           },
           '&:hover': {
             cursor: 'pointer',
@@ -82,22 +79,14 @@ const LinkComponent = forwardRef<HTMLDivElement, INavButton & FlexProps>(({ rout
               left: 0,
               width: '100%',
               bg: ['green.100']
-            },
-
+            }
           }
         }}
       >
-        <Text
-          as='text'
-          color={activePathname === route ? 'white' : 'grey.100 '}
-          sx={{ textAlign: 'center'}}
-          variant='text.nav-buttons-text'
-        >
+        <Text as='text' color={activePathname === route ? 'white' : 'grey.100 '} sx={{ textAlign: 'center' }} variant='text.nav-buttons-text'>
           {name}
         </Text>
       </Flex>
-        
     </Flex>
   )
 })
-

@@ -3,32 +3,28 @@ import { makeTheme } from '@theme-ui/css/utils'
 export const theme = makeTheme({
   config: {
     initialColorModeName: 'light',
-    useColorSchemeMediaQuery: true,
-    
+    useColorSchemeMediaQuery: true
   },
 
   breakpoints: ['375px', '768px', '1024px', '1366px', '1440px', '1600px'],
 
   fonts: {
-    bold: "code_boldregular",
-    light: "code_lightregular",
-    
+    bold: 'code_boldregular',
+    light: 'code_lightregular'
   },
-/*   fontWeights: {
+  /*   fontWeights: {
     body: 400,
     bold: 700,
   }, */
 
-  fontSizes: [
-    12, 14, 16, 24, 32, 64
-  ],
+  fontSizes: [12, 14, 16, 24, 32, 64],
 
-  colors:  {
+  colors: {
     body: '#fff',
     white: '#fff',
     background: '#242F3F',
     green: {
-      100: '#C0FF00',
+      100: '#C0FF00'
     },
     grey: {
       100: '#6E8197'
@@ -37,12 +33,11 @@ export const theme = makeTheme({
       100: '#242F3F',
       200: '#1A2430',
       300: '#060A10',
-      400: '#2A3646',
+      400: '#2A3646'
     }
-  
   },
 
-  text : {
+  text: {
     'title-white': {
       fontSize: [34, 34, 44, 64],
       color: 'white',
@@ -62,32 +57,32 @@ export const theme = makeTheme({
       color: 'green.100',
       fontFamily: 'bold',
       letterSpacing: '3px'
-    }, 
+    },
 
     'semi-title-white': {
       fontSize: 32,
       color: 'white',
-      fontFamily: 'light',
+      fontFamily: 'light'
     },
 
     'logo-text': {
       fontSize: 21,
       color: 'white',
-      fontFamily: 'light',
+      fontFamily: 'light'
     },
 
     'logo-text-bold': {
       fontSize: 21,
       color: 'white',
-      fontFamily: 'bold',
+      fontFamily: 'bold'
     },
     'semi-title-bold-white': {
       fontSize: 32,
       color: 'white',
-      fontFamily: 'bold',
+      fontFamily: 'bold'
     },
 
-    'body': {
+    body: {
       fontSize: 16,
       color: 'grey.100',
       fontFamily: 'bold',
@@ -98,7 +93,7 @@ export const theme = makeTheme({
       fontSize: 14,
       color: 'grey.100',
       fontFamily: 'bold',
-      fontWeight: 'bold',
+      fontWeight: 'bold'
     },
 
     'mid-title-white': {
@@ -110,18 +105,18 @@ export const theme = makeTheme({
     'body-xs': {
       fontSize: 12,
       fontFamily: 'bold',
-      letterSpacing: '1px',      
-      color: 'grey.100',
-    },
+      letterSpacing: '1px',
+      color: 'grey.100'
+    }
   },
 
-  frames : {
-    'normal' : {
-      width: '100%', 
-      padding: 40, 
-      backgroundColor: 'blue.400',
+  frames: {
+    normal: {
+      width: '100%',
+      padding: 40,
+      backgroundColor: 'blue.400'
     },
-    'image' : {
+    image: {
       alignItems: 'center',
       width: '100%',
       padding: 10,
@@ -131,7 +126,7 @@ export const theme = makeTheme({
 
   forms: {
     label: {
-      fontSize: 12,
+      fontSize: 12
     },
     input: {
       border: '1px solid white',
@@ -139,36 +134,35 @@ export const theme = makeTheme({
       px: 30,
       '&:focus': {
         boxShadow: `0 0 0 2px ${'black'}`,
-        outline: '1px solid white',
+        outline: '1px solid white'
       },
       color: 'white',
       fontSize: 16,
       fontFamily: 'bold',
-      letterSpacing: '1px',
-    },
-
+      letterSpacing: '1px'
+    }
   },
-  
+
   styles: {
     root: {
       fontFamily: 'body',
-      color: 'white',
+      color: 'white'
     },
     a: {
       color: 'primary',
       textDecoration: 'none',
       ':hover': {
         color: 'secondary',
-        textDecoration: 'underline',
-      },
+        textDecoration: 'underline'
+      }
     },
-    
+
     table: {
       flexDirection: 'column',
       width: '100%',
       minWidth: 295,
       overflowY: 'auto',
-      backgroundColor: 'transparent',
+      backgroundColor: 'transparent'
     },
     'table-header': {
       flexDirection: 'row',
@@ -185,28 +179,28 @@ export const theme = makeTheme({
       fontSize: 13,
       fontFamily: 'bold',
       py: [10],
-      width: '100%',  
-      justifyContent: 'space-between',
+      width: '100%',
+      justifyContent: 'space-between'
     },
-    
+
     'table-row-text': {
       color: 'white',
       fontFamily: 'bold',
-      fontSize: 16,
+      fontSize: 16
     },
     'table-header-column-mobile': {
       fontSize: 14,
       color: 'white',
       alignItems: 'center',
       mt: '0.5px'
-    },
+    }
   },
 
   buttons: {
     primary: {
-      cursor: 'pointer',
+      cursor: 'pointer'
     },
-    'web3': {
+    web3: {
       cursor: 'pointer',
       borderRadius: 0,
       backgroundColor: 'green.100',
@@ -221,15 +215,10 @@ export const theme = makeTheme({
       alignSelf: 'center',
       alignItems: 'center',
       justifyContent: 'center',
-      ":hover": {
+      ':hover': {
         opacity: 0.5,
-        transition: 'ease-in-out 0.1s',
-
+        transition: 'ease-in-out 0.1s'
       }
     }
-  },
-  
-
-  
+  }
 })
-

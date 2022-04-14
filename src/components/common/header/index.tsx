@@ -5,14 +5,13 @@ import Web3Status from '../../../modules/wallet'
 import useResponsive from '../../../hooks/common/useResponsive'
 import { rgba } from 'polished'
 
-
 const Header: React.FC = () => {
   const { isTablet } = useResponsive()
   return (
     <Flex
       sx={{
         position: 'fixed',
-        backgroundColor: rgba(6, 10, 16, 0.3),        
+        backgroundColor: rgba(6, 10, 16, 0.3),
         width: '100%',
         height: [78],
         justifyContent: 'center',
@@ -27,17 +26,16 @@ const Header: React.FC = () => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: '100%',
-          maxWidth: 1280,         
+          maxWidth: 1280
         }}
       >
         <Logo />
-    
-        <Flex sx={{justifyContent:'flex-end'}}>
-          {isTablet && <Navigation />  }
-          <Flex sx={{ml: [0, 0, 0, 50]}}>
+
+        <Flex sx={{ justifyContent: 'flex-end' }}>
+          {isTablet && <Navigation />}
+          <Flex sx={{ ml: [0, 0, 0, 50] }}>
             <Web3Status />
           </Flex>
-      
         </Flex>
       </Flex>
     </Flex>
@@ -45,6 +43,5 @@ const Header: React.FC = () => {
 }
 
 export default Header
-
 
 export { Navigation }
