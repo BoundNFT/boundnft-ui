@@ -14,7 +14,7 @@ export const HomePageComponent: React.FC = () => (
       overflow: 'hidden',
     }}>
     <MotionFlex
-      animate={{ opacity: 1, transition: { when: 'beforeChildren', duration: 0.8 }}}
+      animate={{ opacity: 1, transition: { when: 'beforeChildren', duration: 2/* , delay: 3, duration: 0.8 */ }}}
       initial={{ opacity: 0 }}
       sx={{
         width: '100%', 
