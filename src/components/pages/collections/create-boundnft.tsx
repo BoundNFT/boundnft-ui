@@ -8,13 +8,16 @@ import { CreateBoundNFTStep4 } from './steps/step4'
 import { CreateBoundNFTContext, Screen } from './types'
 
 
-export const BoundNFTContext = createContext<CreateBoundNFTContext>({})
+export const BoundNFTContext = createContext<CreateBoundNFTContext>({
+  setIsBack: () => {}
+})
 
 export const CreateBoundNFT: React.FC = () => {
   const { t } = useTranslation('common')
   const [ screenState, setScreenState ] = useState<Screen>(Screen.fetchMetadata) 
+  const [ isBack, setIsBack ] = useState<boolean>(false)
   return (
-    <BoundNFTContext.Provider value={{ screenState, setScreenState }}>
+    <BoundNFTContext.Provider value={{ screenState, setScreenState, setIsBack, isBack }}>
       <MotionFlex 
         sx={{
         px: [20, 20, 20, 40, 0],
@@ -34,20 +37,19 @@ export const CreateBoundNFT: React.FC = () => {
           <MotionText variant='text.body' color='white' sx={{ mt: 16}}>
             {t('label.nft-collection-create')}
           </MotionText>
-
-          {(() => {
-            switch (screenState) {
-              default:
-              case Screen.fetchMetadata:
-                return <CreateBoundNFTStep1 />
-              case Screen.checkDetails:
-                return <CreateBoundNFTStep2 />
-              case Screen.boundNFTProcessing:
-                return <CreateBoundNFTStep3 />
-              case Screen.boundNFTCreationSuccess:
-                return <CreateBoundNFTStep4 />
-            }
-          })()}
+            {(() => {
+              switch (screenState) {
+                default:
+                case Screen.fetchMetadata:
+                  return <CreateBoundNFTStep1 />
+                case Screen.checkDetails:
+                  return <CreateBoundNFTStep2 />
+                case Screen.boundNFTProcessing:
+                  return <CreateBoundNFTStep3 />
+                case Screen.boundNFTCreationSuccess:
+                  return <CreateBoundNFTStep4 />
+              }
+            })()}
         </MotionFlex>
       </MotionFlex>
     </BoundNFTContext.Provider>

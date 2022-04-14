@@ -4,13 +4,21 @@ import { Box, Flex, Text, Image as ImageThemeUI } from 'theme-ui'
 import { BoundNFTContext } from '../create-boundnft'
 import { Screen } from '../types'
 import Image from 'next/image'
+import { MotionBox } from 'components/common/motion-components'
 
 
 export const CreateBoundNFTStep3: React.FC = () => {
   const { t } = useTranslation('common')
   const { setScreenState } = useContext(BoundNFTContext)
   return (
-    <>
+    <MotionBox 
+      initial={{ x: '100vh' }} 
+      animate={{    
+        x: 0,
+      transition: { 
+        type: 'spring', stiffness: 50, duration: 0.5 }
+      }}
+    >
       <Flex sx={{mt: 80, justifyContent: 'space-between', width: '100%', alignItems: 'center', flexDirection: ['column', 'column', 'row']}}>
 
         <Box variant='frames.image' sx={{width: '100%', maxWidth: 202}}>
@@ -35,6 +43,6 @@ export const CreateBoundNFTStep3: React.FC = () => {
         <Text as='span' variant='text.body' sx={{ color: 'white', lineHeight: 1.5}} dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-proccesing', { asset: 'CRYPTOPUNKS' })}}/>
       </Box>
 
-    </>
+    </MotionBox>
   )
 }

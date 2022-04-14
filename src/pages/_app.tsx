@@ -62,7 +62,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
           <ResponsiveContextProvider>               
             <Header />
-            <Component {...pageProps}/>
+              <Component {...pageProps}/>
             <Footer />
           </ResponsiveContextProvider>
         </ThemeProvider>

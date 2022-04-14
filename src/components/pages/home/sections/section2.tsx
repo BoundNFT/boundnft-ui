@@ -7,6 +7,8 @@ import { useInView } from 'react-intersection-observer'
 import { Button } from '../../../../theme/ui/common/button'
 import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-components'
 import { logoContainer2, logosContainer2, subTitleContainer, titleContainer, titlesContainer2 } from './details/motion-containers'
+import { Link as ThemeLink } from 'theme-ui'
+import { BOUNDNFT_DOCS_LINK } from 'constants/index'
 
 export const Section2: React.FC = () => {
   const { t } = useTranslation('common')
@@ -55,7 +57,9 @@ export const Section2: React.FC = () => {
       
             <MotionFlex sx={{ width: '100%', mt: 70, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
               <Button text={t('button.get-started').toUpperCase()} backgroundColor='green.100' arrowColor='black' />
-              <Button text={t('button.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}}/>
+              <ThemeLink href={BOUNDNFT_DOCS_LINK} target='_blank' sx={{width: '100%', maxWidth: [454, 454, 454, 420, 454]}}>
+                <Button text={t('button.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}}/>
+              </ThemeLink>
             </MotionFlex>
             
           </MotionFlex>

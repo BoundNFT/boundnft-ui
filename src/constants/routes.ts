@@ -1,10 +1,11 @@
+import { BOUNDNFT_DOCS_LINK } from 'constants/index'
 import { IPermalink, IRoutes } from './types'
 
 export const permalink: IPermalink = {
   home: '/',
   collections: '/collections',
-  governance: '/governance',
-  documents: '/documents',
+  governance: 'https://snapshot.org/#/benddao.eth',
+  documents: BOUNDNFT_DOCS_LINK,
   createBoundNFT: '/collections/create'
 }
 
@@ -23,15 +24,15 @@ const routes: IRoutes[] = [
   },
   {
     name: 'Governance',
-    route: '/#',
+    route: permalink.governance,
     auth: false,
-    external: false
+    external: true
   },
   {
     name: 'Documents',
-    route: '/#',
+    route: permalink.documents,
     auth: false,
-    external: false
+    external: true
   },
  
 ]

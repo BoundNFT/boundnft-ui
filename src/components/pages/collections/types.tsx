@@ -9,4 +9,6 @@ export enum Screen {
 export type CreateBoundNFTContext = {
   screenState?: Screen
   setScreenState?: any
+  isBack?: boolean
+  setIsBack: Function
 }

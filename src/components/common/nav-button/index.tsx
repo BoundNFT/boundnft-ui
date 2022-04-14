@@ -19,7 +19,8 @@ const NavButton: React.FC<INavButton> = props => {
       onClick={onClick}
       sx={{
         '&:hover': {
-          opacity: 1
+          opacity: 1,
+          textDecoration: 'none',
         }
       }}
     >
