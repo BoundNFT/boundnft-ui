@@ -9,6 +9,8 @@ import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-compon
 import { logoContainer2, logosContainer2, subTitleContainer, titleContainer, titlesContainer2 } from './details/motion-containers'
 import { Link as ThemeLink } from 'theme-ui'
 import { BOUNDNFT_DOCS_LINK } from 'constants/index'
+import { permalink } from 'constants/routes'
+import Link from 'next/link'
 
 export const Section2: React.FC = () => {
   const { t } = useTranslation('common')
@@ -56,7 +58,7 @@ export const Section2: React.FC = () => {
             </MotionFlex>
       
             <MotionFlex sx={{ width: '100%', mt: 70, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
-              <Button text={t('button.get-started').toUpperCase()} backgroundColor='green.100' arrowColor='black' />
+              <Link href={permalink.collections} passHref><Button text={t('button.get-started').toUpperCase()} backgroundColor='green.100' arrowColor='black' /></Link>
               <ThemeLink href={BOUNDNFT_DOCS_LINK} target='_blank' sx={{width: '100%', maxWidth: [454, 454, 454, 420, 454]}}>
                 <Button text={t('button.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}}/>
               </ThemeLink>
