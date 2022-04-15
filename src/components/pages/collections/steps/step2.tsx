@@ -64,7 +64,7 @@ export const CreateBoundNFTStep2: React.FC = () => {
         </Box>
 
         <Flex sx={{ width: '100%', mt: 40, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
-          <Button text={t('button.back').toUpperCase()} arrowColor='black' outlined switchArrow onClick={() => handleBackClick()} />
+          <Button text={t('button.back').toUpperCase()} outlined switchArrow onClick={() => handleBackClick()} />
           <Button text={t('button.create-bound-nft').toUpperCase()} backgroundColor='green.100' sx={{ mt: [20, 20, 20, 0]}} onClick={() => setScreenState(Screen.boundNFTProcessing)}/>
         </Flex>
       </MotionBox>

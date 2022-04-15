@@ -1,6 +1,8 @@
 
 import { MotionButton, MotionFlex } from '../../../../components/common/motion-components'
-import { Text } from 'theme-ui'
+import { Flex, Text } from 'theme-ui'
+import { IconArrow } from 'theme/ui/icons'
+import { theme } from 'theme/theme'
 interface IButton {
     backgroundColor?: string
     text: string
@@ -30,7 +32,7 @@ export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, o
       >
       <MotionFlex sx={{ width: '100%', justifyContent: 'space-between', px: 10, alignItems: 'center'}}>
         <Text color={outlined ? 'white' : 'blue.100'} variant='text.body'>{text}</Text>
-        <Text sx={{ fontSize: 30, transform: switchArrow ? 'scaleX(-1)' : null}} color={outlined ? 'white' : arrowColor ? arrowColor : 'blue.100'}>&#x2192;</Text>
+        <Flex sx={{ transform: switchArrow ? 'scaleX(-1)' : null}}><IconArrow color={outlined ? 'white' : arrowColor ? arrowColor : theme.colors.blue[100]}/></Flex>
       </MotionFlex>
     </MotionButton>   
 

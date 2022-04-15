@@ -73,7 +73,7 @@ export const CollectionsPageComponent: React.FC = () => {
       </Flex>
 
       <Flex sx={{ width: '100%', mt: 70, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row', 'row']}}>
-        <Button text={t('button.create-new-boundnft').toUpperCase()} backgroundColor='green.100' arrowColor='black' onClick={() => router.push(permalink.createBoundNFT)} />
+        <Button text={t('button.create-new-boundnft').toUpperCase()} backgroundColor='green.100' onClick={() => router.push(permalink.createBoundNFT)} />
         <Button text={t('button.use-existing-boundnft').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0]}} onClick={() => router.push(permalink.createBoundNFT)}/>
      </Flex>
       </MotionFlex>

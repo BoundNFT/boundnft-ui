@@ -36,7 +36,7 @@ export const CreateBoundNFTStep1: React.FC = () => {
 
         <Flex sx={{ width: '100%', mt: 40, alignItems: ['center', 'center', 'center', null], justifyContent: ['space-between'], flexDirection: ['column', 'column', 'column', 'row']}}>
           <Button text={t('button.back').toUpperCase()} outlined switchArrow sx={{ mt: [20, 20, 20, 0]}} onClick={() => router.push(permalink.collections)}/>
-          <Button text={t('button.fetch-contract-metadata').toUpperCase()} backgroundColor='green.100' sx={{ mt: [20, 20, 20, 0]}}  arrowColor='black' onClick={() => setScreenState(Screen.checkDetails)} />
+          <Button text={t('button.fetch-contract-metadata').toUpperCase()} backgroundColor='green.100' sx={{ mt: [20, 20, 20, 0]}} onClick={() => setScreenState(Screen.checkDetails)} />
         </Flex>
       </MotionBox>
 

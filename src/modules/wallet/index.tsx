@@ -1,6 +1,7 @@
-import { useTranslation } from "react-i18next"
-import { Button } from "theme-ui"
-import useWallet from "./hooks/useWallet"
+import { useTranslation } from 'react-i18next'
+import { Button, Text } from 'theme-ui'
+import { shortenAddress } from 'utils/shorten-address'
+import useWallet from './hooks/useWallet'
 
 
 
@@ -12,10 +13,11 @@ const Web3Status: React.FC = () => {
   return (
     <Button 
       variant='buttons.web3' 
-      sx={{ maxWidth: 126}}
+      
+      sx={{ px: 15, width: 126, alignitems: 'center'}}
       onClick={connectWallet}
     >
-      {account ? account : t('button.connect').toUpperCase()}
+      <Text sx={{ textAlign: 'center'}}>{account ? shortenAddress(account) : t('button.connect').toUpperCase()}</Text>
     </Button>
 
 
