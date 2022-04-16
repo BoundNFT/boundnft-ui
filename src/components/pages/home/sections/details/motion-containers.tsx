@@ -106,14 +106,14 @@ export const logoContainer2 = {
 export const logoContainer3 = {
   hidden: {
     opacity: 0,
-    scale: 0.5,
+    scale: 0.1,
     x: 30
   },
   visible: {
     x: 0,
     scale: 1,
     opacity: 1,
-    transition: { duration: 0.9, type: 'spring', stiffness: 120 }
+    transition: { duration: 1, type: 'spring', stiffness: 100 }
   }
 }
 
