@@ -1,6 +1,8 @@
 import { createContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Box } from 'theme-ui'
 import { MotionFlex, MotionText } from '../../common/motion-components'
+import { mainContainer } from './details/motion-containers'
 import { CreateBoundNFTStep1 } from './steps/step1'
 import { CreateBoundNFTStep2 } from './steps/step2'
 import { CreateBoundNFTStep3 } from './steps/step3'
@@ -29,14 +31,15 @@ export const CreateBoundNFT: React.FC = () => {
         }}
       >
         <MotionFlex sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', alignitems: 'center' }}>
-          <MotionFlex sx={{ width: '100%', flexDirection: 'column', fontSize: 'xxxl' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <MotionFlex variants={mainContainer} sx={{ width: '100%', flexDirection: 'column', fontSize: 'xxxl' }} initial='hidden' animate={'visible'}>
             <MotionText variant='text.title-white'>{t('label.create').toUpperCase()}</MotionText>
             <MotionText variant='text.title-bold-green'>{t('label.new-boundnft').toUpperCase()}</MotionText>
           </MotionFlex>
 
-          <MotionText variant='text.body' color='white' sx={{ mt: 16 }}>
+          <MotionText variant='text.body' color='white' sx={{ mt: 16 }} animate={{ opacity: 1, y: 0, transition: { duration: 0.15, delay: 1, type: 'tween'} }} initial={{opacity: 0, y: -100}}>
             {t('label.nft-collection-create')}
           </MotionText>
+          <Box sx={{minHeight: 560}}>
           {(() => {
             switch (screenState) {
               default:
@@ -50,6 +53,7 @@ export const CreateBoundNFT: React.FC = () => {
                 return <CreateBoundNFTStep4 />
             }
           })()}
+          </Box>
         </MotionFlex>
       </MotionFlex>
     </BoundNFTContext.Provider>

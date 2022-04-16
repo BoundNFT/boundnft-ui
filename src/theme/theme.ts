@@ -169,6 +169,7 @@ export const theme = makeTheme({
       width: '100%',
       color: 'grey.100',
       py: 20,
+      fontSize: 12,
       fontFamily: 'bold',
       maxHeight: 52,
       justifyContent: 'space-between',
@@ -176,7 +177,7 @@ export const theme = makeTheme({
     },
     'table-row': {
       alignItems: 'center',
-      fontSize: 13,
+      fontSize: 12,
       fontFamily: 'bold',
       py: [10],
       width: '100%',
@@ -189,7 +190,7 @@ export const theme = makeTheme({
       fontSize: 16
     },
     'table-header-column-mobile': {
-      fontSize: 14,
+      fontSize: 12,
       color: 'white',
       alignItems: 'center',
       mt: '0.5px'

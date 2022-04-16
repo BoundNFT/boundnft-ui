@@ -5,10 +5,10 @@ interface IIconArrow {
   size?: number
 }
 
-const IconArrow = React.forwardRef<SVGSVGElement, IIconArrow>(({ color = 'currentColor' }, ref) => {
+const IconArrow = React.forwardRef<SVGSVGElement, IIconArrow>(({ color = 'currentColor' }) => {
   return (
 
-    <svg xmlns='http://www.w3.org/2000/svg' width='30.507' height='20.044' viewBox='0 0 30.507 12.044' ref={ref}>
+    <svg xmlns='http://www.w3.org/2000/svg' width='30.507' height='20.044' viewBox='0 0 30.507 12.044'>
       <defs>
         <clipPath id='clip-path'>
           <rect id='Rectangle_15' data-name='Rectangle 15' width='30.507' height='12.044' transform='translate(0 0)' fill={color}/>

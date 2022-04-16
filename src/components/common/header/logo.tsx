@@ -5,7 +5,7 @@ import { Flex } from 'theme-ui'
 import { MotionFlex, MotionText } from '../motion-components'
 
 const Logo: React.FC = () => {
-  const [isEffect, setIsEffect] = useState(false)
+  const [isEffect, setIsEffect] = useState<boolean>()
   return (
     <Link href='/' passHref>
       <MotionFlex
@@ -26,7 +26,7 @@ const Logo: React.FC = () => {
         <Flex sx={{ width: 36 }}>
           <MotionFlex
             initial={{ x: 0 }}
-            animate={{ x: isEffect ? 5.5 : 0, transition: { yoyo: isEffect ? 1 : 0, duration: 0.3 } }}
+            animate={{ x: isEffect ? 5.5 : 0, transition: { repeat: isEffect ? 1 : 0, repeatType: 'reverse', duration: 0.3 } }}
             sx={{
               width: 25,
               zIndex: 100,
@@ -38,7 +38,7 @@ const Logo: React.FC = () => {
           </MotionFlex>
           <MotionFlex
             initial={{ x: 0 }}
-            animate={{ x: isEffect ? -5.5 : 0, transition: { yoyo: isEffect ? 1 : 0, duration: 0.3 } }}
+            animate={{ x: isEffect ? -5.5 : 0, transition: { repeat: isEffect ? 1 : 0, repeatType: 'reverse', duration: 0.3 } }}
             sx={{
               ml: '-13px',
               width: 25,

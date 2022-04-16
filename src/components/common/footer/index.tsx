@@ -2,6 +2,7 @@ import { Flex, Link, Text } from 'theme-ui'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import { rgba } from 'polished'
+import { MotionFlex } from '../motion-components'
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation('common')
@@ -50,7 +51,9 @@ export const Footer: React.FC = () => {
             <Flex sx={{ flexDirection: 'column', flex: [1, 1, 0.25], lineHeight: 2, mt: [30, 30, 0] }}>
               <Text variant='text.mid-title-white'>{t('label.about')}</Text>
               <Flex variant='text.body-xs' color='grey.100' sx={{ maxWidth: 400, lineHeight: '25px', mt: 25, flexDirection: 'column' }}>
-                <Link>{t('label.twitter')}</Link>
+                <MotionFlex               
+                  whileHover={{ scale: 1.3, originX: 0}}
+                  transition={{ type: 'spring', stiffness: 300 }}><Link>{t('label.twitter')}</Link></MotionFlex>
                 <Link>{t('label.discord')}</Link>
                 <Link>{t('label.github')}</Link>
               </Flex>
