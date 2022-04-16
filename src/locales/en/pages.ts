@@ -2,7 +2,6 @@ export default {
   title: 'BoundNFT',
   description: 'BoundNFT decription',
 
-  'title.collections': 'Collections',
   'label.powering': 'Powering',
   'label.decentralized': 'Decentralized',
   'label.nft-liquidity': 'NFT Liquidity',

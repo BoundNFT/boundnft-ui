@@ -194,7 +194,7 @@ const Table: React.FC<ITable> = ({
               </Flex>
             </Box>
           )}
-          {!tabletHasTable && mobile && isTablet && !isLaptop && dataSource?.length > 0 && (
+          {!tabletHasTable && mobile && !isTablet && !isLaptop && dataSource?.length > 0 && (
             <Box {...restprops}>
               {_.orderBy(dataSource, [sortHeader], [sortDirection])?.map((source: any, i: number) =>
                 _.isArray(source)

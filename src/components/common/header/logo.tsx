@@ -5,20 +5,21 @@ import { Flex } from 'theme-ui'
 import { MotionFlex, MotionText } from '../motion-components'
 
 const Logo: React.FC = () => {
-  const [isEffect, setIsEffect] = useState<boolean>()
+  const [isEffect, setIsEffect] = useState<boolean>(true)
+  
   return (
     <Link href='/' passHref>
       <MotionFlex
+        as='a'
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         onHoverStart={() => setIsEffect(true)}
         onHoverEnd={() => setIsEffect(false)}
         whileHover={{
-          textShadow: '0px 0px 8px rgb(255,255,255)'
+          textShadow: '0px 0px 4px rgb(255, 255, 255)'
         }}
-        as='a'
+
         sx={{
-          position: 'relative',
           alignItems: 'center',
           minWidth: 170
         }}

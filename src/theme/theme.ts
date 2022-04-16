@@ -153,7 +153,7 @@ export const theme = makeTheme({
       textDecoration: 'none',
       ':hover': {
         color: 'secondary',
-        textDecoration: 'underline'
+        textDecoration: 'none'
       }
     },
 

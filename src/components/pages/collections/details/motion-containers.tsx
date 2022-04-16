@@ -1,7 +1,7 @@
 export const mainContainer = {
   hidden: {
     opacity: 0,
-    y: 25
+    y: -25
   },
   visible: {
     opacity: 1,

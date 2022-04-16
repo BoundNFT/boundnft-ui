@@ -1,8 +1,10 @@
-import { NextPage } from 'next'
+import common from 'locales/en/common'
+import { Head } from 'next/document'
+import { NextPageWithLayout } from '../../../types'
 import { CollectionsPageComponent } from '../../components/pages/collections/collections-component'
 import Container from '../../theme/ui/common/container'
 
-const CollectionsPage: NextPage = () => (
+const CollectionsPage: NextPageWithLayout = () => (
   <Container
     sx={{
       width: '100%',
@@ -21,3 +23,7 @@ const CollectionsPage: NextPage = () => (
 )
 
 export default CollectionsPage
+
+CollectionsPage.getLayout = function GetLayout(page: React.ReactNode) {
+  return <Head title={common['title.collections']}>{page}</Head>
+}
