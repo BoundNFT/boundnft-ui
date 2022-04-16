@@ -1,16 +1,34 @@
+import useResponsive from 'hooks/common/useResponsive'
 import React from 'react'
 import { Flex, BoxProps } from 'theme-ui'
 import routes from '../../../constants/routes'
 import { IRoutes } from '../../../constants/types'
+import { DropdownMenu } from '../dropdown'
 import NavButton from '../nav-button'
 
 const Navigation: React.FC<BoxProps> = ({ ...resprops }) => {
+  const { isTablet } = useResponsive()
   return (
-    <Flex sx={{ alignItems: 'center' }} {...resprops}>
-      {routes.map((route: IRoutes, index) => (
-        <NavButton key={`nav-button-${index}`} {...route} />
-      ))}
-    </Flex>
+    <>
+      {isTablet &&
+        <Flex sx={{ alignItems: 'center' }} {...resprops}>
+          {routes.map((route: IRoutes, index) => (
+            <NavButton key={`nav-button-${index}`} {...route} />
+          ))}
+        </Flex>}
+      {!isTablet &&
+        <Flex sx={{mr: 10}}>
+          <DropdownMenu 
+            menu={['Mobile menu']} 
+            menuStyle={{
+              width: '250px',
+              ml: '-75px',
+              mt: '10px'
+            }} />
+        </Flex>
+    
+      }
+    </>
   )
 }
 
