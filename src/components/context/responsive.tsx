@@ -34,7 +34,7 @@ export const ResponsiveContext = React.createContext<IState>(initialState)
  */
 const ResponsiveContextProvider: React.FC = ({ children }): React.ReactElement => {
   const isMobile = useMediaQuery({
-    query: `(min-width: 375px)`
+    query: `(min-width: 240px)`
   })
   const isTablet = useMediaQuery({
     query: `(min-width: 768px)`
@@ -43,11 +43,8 @@ const ResponsiveContextProvider: React.FC = ({ children }): React.ReactElement =
     query: `(min-width: 1024px)`
   })
   const isDesktop = useMediaQuery({
-    query: `(min-width: 1366px)`
+    query: `(min-width: 1440px)`
   })
-  /*   const isPortrait = useMediaQuery({
-    query: '(orientation: portrait)'
-  }) */
 
   return (
     <ResponsiveContext.Provider

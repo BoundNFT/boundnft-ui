@@ -9,6 +9,7 @@ import { MotionFlex, MotionText } from '../../common/motion-components'
 import { Button } from '../../../theme/ui/common/button'
 import { permalink } from '../../../constants/routes'
 import router from 'next/router'
+import { mainContainer } from './details/motion-containers'
 
 export const CollectionsPageComponent: React.FC = () => {
   const { t } = useTranslation('common')
@@ -50,8 +51,8 @@ export const CollectionsPageComponent: React.FC = () => {
         overflow: 'hidden'
       }}
     >
-      <MotionFlex sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', alignitems: 'center' }}>
-        <MotionFlex sx={{ width: '100%', flexDirection: 'column', fontSize: 'xxxl' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <MotionFlex variants={mainContainer} initial={'hidden'} animate='visible' sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', alignitems: 'center' }}>
+        <MotionFlex sx={{ width: '100%', flexDirection: 'column', fontSize: 'xxxl' }}>
           <MotionText variant='text.title-white'>{t('label.list-of').toUpperCase()}</MotionText>
           <MotionText variant='text.title-bold-green'>{t('label.collections').toUpperCase()}</MotionText>
         </MotionFlex>
