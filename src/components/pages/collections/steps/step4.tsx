@@ -12,7 +12,13 @@ import { MotionBox } from 'components/common/motion-components'
 
 export const CreateBoundNFTStep4: React.FC = () => {
   const { t } = useTranslation('common')
-  const { setScreenState } = useContext(BoundNFTContext)
+  const { setScreenState, setIsBack, isBack } = useContext(BoundNFTContext)
+
+  const handleBack = () => {
+    return (
+      isBack ? null : setIsBack(false),
+      setScreenState(Screen.fetchMetadata))
+  }
   return (
     <MotionBox
       initial={{ x: '100vh' }}
@@ -75,7 +81,7 @@ export const CreateBoundNFTStep4: React.FC = () => {
           text={t('button.create-another-one').toUpperCase()}
           outlined
           sx={{ mt: [20, 20, 20, 0] }}
-          onClick={() => setScreenState(Screen.fetchMetadata)}
+          onClick={() => handleBack()}
         />
       </Flex>
     </MotionBox>

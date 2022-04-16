@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Flex, Text } from 'theme-ui'
 import { Button } from '../../../../theme/ui/common/button'
@@ -9,6 +9,7 @@ import { LabelInfo } from '../../../../theme/ui/common/label-info'
 import { MotionBox } from 'components/common/motion-components'
 import { AnimatePresence } from 'framer-motion'
 
+
 export const CreateBoundNFTStep2: React.FC = () => {
   const { t } = useTranslation('common')
   const { setScreenState, setIsBack, isBack } = useContext(BoundNFTContext)
@@ -18,7 +19,7 @@ export const CreateBoundNFTStep2: React.FC = () => {
   }
 
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       <MotionBox
         initial={{ x: '100vh' }}
         animate={{
@@ -26,9 +27,10 @@ export const CreateBoundNFTStep2: React.FC = () => {
           transition: { type: 'spring', stiffness: 50, duration: 0.5 }
         }}
         exit={{
-          x: '-50vh',
+          x: '-100vh',
+          y: -300,
           opacity: 0,
-          transition: { ease: 'easeInOut', duration: 1 }
+          transition: { ease: 'easeInOut', duration: 1 },
         }}
       >
         <Flex
