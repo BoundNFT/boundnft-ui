@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Flex, Text } from 'theme-ui'
 import { Button } from '../../../../theme/ui/common/button'
