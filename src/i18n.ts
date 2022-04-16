@@ -11,7 +11,7 @@ i18n
   .init({
     resources: {
       en: {
-        common: commonEn,
+        common: commonEn
       },
       cn: {}
     },

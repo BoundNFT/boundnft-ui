@@ -33,8 +33,7 @@ const routes: IRoutes[] = [
     route: permalink.documents,
     auth: false,
     external: true
-  },
- 
+  }
 ]
 
 export default routes

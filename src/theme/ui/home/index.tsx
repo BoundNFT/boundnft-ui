@@ -36,10 +36,8 @@ const Main: React.FC<IMain> = ({ children, title = '', description = '', url = '
         <meta property='twitter:description' content={description} />
         <meta property='twitter:image' content={image} />
       </Head>
-      <MotionFlex sx={{ height: 'auto', flexDirection: 'column'}}>
-        <MotionFlex sx={{ flexDirection: 'column', alignItems: 'center', width: '100%'}}>
-          {children}
-        </MotionFlex>
+      <MotionFlex sx={{ height: 'auto', flexDirection: 'column' }}>
+        <MotionFlex sx={{ flexDirection: 'column', alignItems: 'center', width: '100%' }}>{children}</MotionFlex>
       </MotionFlex>
     </>
   )

@@ -12,7 +12,7 @@ const Container: React.FC<IContainer> = ({ hasBorder = false, hasPadding = false
         p: hasPadding ? [20, 20, 30] : undefined,
         borderWidth: hasBorder ? 2 : null,
         borderStyle: hasBorder ? 'solid' : null,
-        borderColor: hasBorder ? 'primary' : null,
+        borderColor: hasBorder ? 'primary' : null
       }}
       {...restprops}
     >

@@ -1,14 +1,12 @@
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Flex, Text, Box } from 'theme-ui'
-import useResponsive from '../../../../hooks/common/useResponsive'
 import { ITableColumn } from '../interfaces'
 import { ICollections } from './interfaces'
 import Image from 'next/image'
 
 export const useColumns = () => {
   const { t } = useTranslation('common')
-  const { isTablet } = useResponsive()
 
   const collectionListColumns = useMemo(
     (): ITableColumn[] => [
@@ -20,12 +18,11 @@ export const useColumns = () => {
         hideSort: true,
         Render(data: ICollections) {
           return (
-            <Flex sx={{ alignItems: 'left'}}>
+            <Flex sx={{ alignItems: 'left' }}>
               <Box sx={{ width: 88, height: 44, position: 'relative' }}>
-                <Image src={data.avatar} layout='fill'/>
+                <Image src={data.avatar} layout='fill' />
               </Box>
             </Flex>
-
           )
         }
       },
@@ -36,11 +33,7 @@ export const useColumns = () => {
         align: 'left',
         hideSort: true,
         Render(data: ICollections) {
-          return (
-            <Text variant='styles.table-row-text'>
-              {data.collectionName}
-            </Text>
-          )
+          return <Text variant='styles.table-row-text'>{data.collectionName}</Text>
         }
       },
       {
@@ -65,11 +58,7 @@ export const useColumns = () => {
         align: 'left',
         hideSort: true,
         Render(data: ICollections) {
-          return (
-            <Text variant='styles.table-row-text'>
-              {data.boundNFTName}
-            </Text>
-          )
+          return <Text variant='styles.table-row-text'>{data.boundNFTName}</Text>
         }
       },
       {
@@ -94,19 +83,17 @@ export const useColumns = () => {
         hideSort: true,
         Render(data: ICollections) {
           return (
-            <Flex sx={{ justifyContent: 'right'}}>
-              <Text variant='styles.table-row-text'>
-                {data.totalNfts}
-              </Text>
+            <Flex sx={{ justifyContent: 'right' }}>
+              <Text variant='styles.table-row-text'>{data.totalNfts}</Text>
             </Flex>
           )
         }
-      },
+      }
     ],
-    [isTablet, t]
+    [t]
   )
 
   return {
-    collectionListColumns,
+    collectionListColumns
   }
 }

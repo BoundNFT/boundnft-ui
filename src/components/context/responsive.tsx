@@ -9,7 +9,7 @@ export interface IState {
   isLaptop: boolean
   isTablet: boolean
   isMobile: boolean
-/*   isPortrait: boolean */
+  /*   isPortrait: boolean */
 }
 
 /** @constant {IState} */
@@ -17,8 +17,8 @@ const initialState: IState = {
   isDesktop: false,
   isLaptop: false,
   isTablet: false,
-  isMobile: false,
-/*   isPortrait: false */
+  isMobile: false
+  /*   isPortrait: false */
 }
 
 /**
@@ -33,8 +33,6 @@ export const ResponsiveContext = React.createContext<IState>(initialState)
  * @return {ReactElement}
  */
 const ResponsiveContextProvider: React.FC = ({ children }): React.ReactElement => {
-
-
   const isMobile = useMediaQuery({
     query: `(min-width: 375px)`
   })
@@ -47,7 +45,7 @@ const ResponsiveContextProvider: React.FC = ({ children }): React.ReactElement =
   const isDesktop = useMediaQuery({
     query: `(min-width: 1366px)`
   })
-/*   const isPortrait = useMediaQuery({
+  /*   const isPortrait = useMediaQuery({
     query: '(orientation: portrait)'
   }) */
 
@@ -57,7 +55,7 @@ const ResponsiveContextProvider: React.FC = ({ children }): React.ReactElement =
         isDesktop,
         isLaptop,
         isTablet,
-        isMobile,
+        isMobile
         /* isPortrait */
       }}
     >

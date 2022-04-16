@@ -18,12 +18,12 @@ const SORT_DIRECTION: {
 
 const Table: React.FC<ITable> = ({
   columns,
-  subRowComponent,
+  // subRowComponent,
   dataSource,
   loading,
   loadingNumRows = 5,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  scrollbarsStyle,
+  // scrollbarsStyle,
   tableHeaderStyle,
   tableHeaderVariant,
   sortable,
@@ -53,7 +53,6 @@ const Table: React.FC<ITable> = ({
     setSortHeader(defaultSortHeader)
   }, [defaultSortHeader])
 
-
   const mobileColumns = React.useMemo(() => {
     const header = _.slice(columns, 0, 2)
     const content = mobileHasButtons ? _.slice(columns, 2, -1) : _.slice(columns, 2)
@@ -78,7 +77,7 @@ const Table: React.FC<ITable> = ({
                     sx={{
                       flexDirection: 'row',
                       alignItems: 'center',
-                      justifyContent: !col.align ? 'flex-start' : col.align === 'left' ? 'flex-start' : col.align === 'right' ? 'flex-end' : 'center',
+                      justifyContent: !col.align ? 'flex-start' : col.align === 'left' ? 'flex-start' : col.align === 'right' ? 'flex-end' : 'center'
                     }}
                   >
                     {col?.hideSort ? (
@@ -95,7 +94,7 @@ const Table: React.FC<ITable> = ({
                         >
                           {col.title}
                         </Text>
-                          {/* {sortHeader === col?.sortBy && (
+                        {/* {sortHeader === col?.sortBy && (
                           <>
                             {sortDirection === SORT_DIRECTION.ASC ? (
                               <Text as='span' onClick={() => setSortDirection(SORT_DIRECTION.DESC)} sx={{ cursor: 'pointer' }} ml='3px'>
@@ -112,7 +111,9 @@ const Table: React.FC<ITable> = ({
                     )}
                   </Flex>
                 ) : (
-                  <Flex sx={{ justifyContent: !col.align ? 'flex-start' : col.align === 'left' ? 'flex-start' : col.align === 'right' ? 'flex-end' : 'center' }}>
+                  <Flex
+                    sx={{ justifyContent: !col.align ? 'flex-start' : col.align === 'left' ? 'flex-start' : col.align === 'right' ? 'flex-end' : 'center' }}
+                  >
                     <Text sx={{ textAlign: col.align }}>{col.title}</Text>
                   </Flex>
                 )}
@@ -120,30 +121,30 @@ const Table: React.FC<ITable> = ({
                   <SpacerDash bgColor='grey.100' height={3} />
                 </Flex>
               </Box>
-              
             ))}
-      
         </Flex>
       )}
       {loading ? (
         // ...Array(loadingNumRows)
-        [(loadingNumRows).keys()].map((index: number) => (
+        [loadingNumRows.keys()].map((index: number) => (
           <Flex key={`table-skeleton-${index}`} variant={tableHeaderVariant ? tableHeaderVariant : 'styles.table-row'} {...tableHeaderStyle} minHeight={82}>
             {columns &&
               columns.map((col: ITableColumn) => (
                 <Box key={col.key} sx={{ flex: col.width ? `1 1 ${col.width}` : `1 1 ${defaultWidth}%`, ...col.styles }}>
-                  <Text sx={{ textAlign: col.align}}>
-                    <SkeletonLine sx={{ height: 24, width: 'calc(100% / 2)',  borderRadius: 8 }} />
+                  <Text sx={{ textAlign: col.align }}>
+                    <SkeletonLine sx={{ height: 24, width: 'calc(100% / 2)', borderRadius: 8 }} />
                   </Text>
                 </Box>
               ))}
           </Flex>
         ))
       ) : !loading && !dataSource.length ? (
-        isValidElement(noRecords) ? noRecords : (
-          <Flex sx={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 160}}>
-       {/*      <IconError color='grey.300' size={32} /> */}
-            <Box color='grey.300' sx={{ fontSize: 'body', mt: 20}}>
+        isValidElement(noRecords) ? (
+          noRecords
+        ) : (
+          <Flex sx={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 160 }}>
+            {/*      <IconError color='grey.300' size={32} /> */}
+            <Box color='grey.300' sx={{ fontSize: 'body', mt: 20 }}>
               {t('label.no-records')}
             </Box>
           </Flex>
@@ -152,24 +153,22 @@ const Table: React.FC<ITable> = ({
         <>
           {(isLaptop || !mobile || (tabletHasTable ? isTablet : null)) && dataSource?.length > 0 && (
             <Box {...restprops}>
-              <Flex sx={{ flexDirection: 'column', position: 'relative'}}>
+              <Flex sx={{ flexDirection: 'column', position: 'relative' }}>
                 {_.orderBy(dataSource, [sortHeader], [sortDirection])?.map((source: any, i: number) =>
                   _.isArray(source)
                     ? source?.map(
                         (data: any) =>
                           !data?.hide && (
-                            <Flex sx={{flexDirection: 'column'}} key={data?.key}>
-                              <Flex sx={{ width: 30, alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>
-                               {/*  {selected === source ? <ChevronUp /> : <ChevronDown />} */}
+                            <Flex sx={{ flexDirection: 'column' }} key={data?.key}>
+                              <Flex sx={{ width: 30, alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                                {/*  {selected === source ? <ChevronUp /> : <ChevronDown />} */}
                               </Flex>
                               {columns &&
                                 columns?.map((col: ITableColumn) => (
                                   <Box key={col?.key} sx={{ flex: col?.width ? `1 1 ${col?.width}` : `1 1 ${defaultWidth}%`, ...col.styles }}>
                                     {col?.Render ? col?.Render(data, i, loading) : <Text sx={{ textAlign: col.align }}>{data[col.dataIndex!]}</Text>}
                                   </Box>
-                                  
                                 ))}
-                                
                             </Flex>
                           )
                       )
@@ -180,11 +179,10 @@ const Table: React.FC<ITable> = ({
                               columns.map((col: ITableColumn) => (
                                 <Box key={col?.key} sx={{ flex: col?.width ? `1 1 ${col?.width}` : `1 1 ${defaultWidth}%`, ...col.styles }}>
                                   {col?.Render ? col?.Render(source, i, loading) : <Text sx={{ textAlign: col?.align }}>{source?.[col.dataIndex!]}</Text>}
-                                  
                                 </Box>
                               ))}
                           </Flex>
-                          <Flex sx={{ width: '100%', my: 15, opacity: 0.5, ":last-child": { width: 0, height: 0, my: 0, mt: 3} }}>
+                          <Flex sx={{ width: '100%', my: 15, opacity: 0.5, ':last-child': { width: 0, height: 0, my: 0, mt: 3 } }}>
                             <SpacerDash bgColor='grey.100' height={1} />
                           </Flex>
                         </React.Fragment>
@@ -203,14 +201,14 @@ const Table: React.FC<ITable> = ({
                   ? source?.map(
                       (data: any) =>
                         !data?.hide && (
-                          <Flex sx={{ flexDirection: 'column'}} key={data?.key}>
-                            <Flex sx={{ width: 30, alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>
-                             {/*  {selected === source ? <ChevronUp /> : <ChevronDown />} */}
+                          <Flex sx={{ flexDirection: 'column' }} key={data?.key}>
+                            <Flex sx={{ width: 30, alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                              {/*  {selected === source ? <ChevronUp /> : <ChevronDown />} */}
                             </Flex>
                             {columns &&
                               columns?.map((col: ITableColumn) => (
                                 <Box key={col?.key} sx={{ flex: col?.width ? `1 1 ${col?.width}` : `1 1 ${defaultWidth}%`, ...col.styles }}>
-                                  {col?.Render ? col?.Render(data, i, loading) : <Text sx={{ textAlign: col.align}}>{data[col.dataIndex!]}</Text>}
+                                  {col?.Render ? col?.Render(data, i, loading) : <Text sx={{ textAlign: col.align }}>{data[col.dataIndex!]}</Text>}
                                 </Box>
                               ))}
                           </Flex>
@@ -219,21 +217,23 @@ const Table: React.FC<ITable> = ({
                   : !source?.hide && (
                       <React.Fragment key={source?.key}>
                         <Flex
-                          sx={{ backgroundColor: source.active || source.active === undefined ? 'transparent' : 'transparent', justifyContent: 'space-between' }}
+                          sx={{
+                            backgroundColor: source.active || source.active === undefined ? 'transparent' : 'transparent',
+                            justifyContent: 'space-between'
+                          }}
                           variant='styles.table-row'
                         >
                           <Box
                             sx={{
-                              
                               display: 'grid',
                               gridGap: 20,
                               gridTemplateColumns: 'repeat(3, minmax(160px, 1fr))',
                               py: 22
                             }}
                           >
-                            <Flex sx={{ alignItems: 'center',  ...mobileColumns.header[0].styles}}>
+                            <Flex sx={{ alignItems: 'center', ...mobileColumns.header[0].styles }}>
                               {mobileColumns.header[0].Render ? mobileColumns.header[0].Render(source, i, loading) : source?.[columns[0].dataIndex!]}
-                              <Flex sx={{ flexDirection: 'column'}} ml={20}>
+                              <Flex sx={{ flexDirection: 'column' }} ml={20}>
                                 {mobileColumns.header[1].title && (
                                   <Box variant={'styles.table-header-column-mobile'} sx={{ textAlign: mobileColumns.header[1].align }}>
                                     {mobileColumns.header[1].title}
@@ -247,34 +247,33 @@ const Table: React.FC<ITable> = ({
                               mobileColumns.content.map((col: ITableColumn) => (
                                 <Flex key={col?.key} sx={{ ...col.styles }}>
                                   {col?.Render ? (
-                                    <Flex sx={{ flexDirection: 'column'}}>
+                                    <Flex sx={{ flexDirection: 'column' }}>
                                       {col.title && (
-                                        <Box variant={'styles.table-header-column-mobile'} sx={{ textAlign: col.align}}>
+                                        <Box variant={'styles.table-header-column-mobile'} sx={{ textAlign: col.align }}>
                                           {col.title}
                                         </Box>
                                       )}
                                       {col?.Render(source, i, loading)}
                                     </Flex>
                                   ) : (
-                                    <Text sx={{ textAlign: col.align}}>{source?.[col.dataIndex!]}</Text>
+                                    <Text sx={{ textAlign: col.align }}>{source?.[col.dataIndex!]}</Text>
                                   )}
                                 </Flex>
                               ))}
                           </Box>
-                          <Flex  sx={{ flex: '0 0 150px', alignItems: 'center' }}>
+                          <Flex sx={{ flex: '0 0 150px', alignItems: 'center' }}>
                             {mobileColumns &&
                               mobileColumns.footer &&
                               mobileColumns.footer.map((col: any) => (
                                 <Flex key={col?.key} sx={{ flex: 1, justifyContent: 'flex-end', ...col.styles }}>
                                   {col?.Render ? (
-                                    <Flex sx={{flexDirection: 'column'}}>{col?.Render(source, i, loading)}</Flex>
+                                    <Flex sx={{ flexDirection: 'column' }}>{col?.Render(source, i, loading)}</Flex>
                                   ) : (
-                                    <Text sx={{ textAlign: col?.align}}>{source?.[col.dataIndex!]}</Text>
+                                    <Text sx={{ textAlign: col?.align }}>{source?.[col.dataIndex!]}</Text>
                                   )}
                                 </Flex>
                               ))}
                           </Flex>
-
                         </Flex>
                       </React.Fragment>
                     )
@@ -288,14 +287,14 @@ const Table: React.FC<ITable> = ({
                   ? source?.map(
                       (data: any) =>
                         !data?.hide && (
-                          <Flex sx={{ flexDirection: 'column'}} key={data?.key}>
-                            <Flex sx={{ width: 30, alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>
-                          {/*     {selected === source ? <ChevronUp /> : <ChevronDown />} */}
+                          <Flex sx={{ flexDirection: 'column' }} key={data?.key}>
+                            <Flex sx={{ width: 30, alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                              {/*     {selected === source ? <ChevronUp /> : <ChevronDown />} */}
                             </Flex>
                             {columns &&
                               columns?.map((col: ITableColumn) => (
-                                <Box key={col?.key} sx={{ flex: col?.width ? `1 1 ${col?.width}` : `1 1 ${defaultWidth}%`,  ...col.styles }}>
-                                  {col?.Render ? col?.Render(data, i) : <Text sx={{ textAlign: col.align}}>{data[col.dataIndex!]}</Text>}
+                                <Box key={col?.key} sx={{ flex: col?.width ? `1 1 ${col?.width}` : `1 1 ${defaultWidth}%`, ...col.styles }}>
+                                  {col?.Render ? col?.Render(data, i) : <Text sx={{ textAlign: col.align }}>{data[col.dataIndex!]}</Text>}
                                 </Box>
                               ))}
                           </Flex>
@@ -303,9 +302,12 @@ const Table: React.FC<ITable> = ({
                     )
                   : !source?.hide && (
                       <React.Fragment key={source?.key}>
-                        <Flex variant='styles.table-row' sx={{ backgroundColor: source.active || source.active === undefined ? 'transparent' : 'transparent', flexDirection: 'column' }}>
+                        <Flex
+                          variant='styles.table-row'
+                          sx={{ backgroundColor: source.active || source.active === undefined ? 'transparent' : 'transparent', flexDirection: 'column' }}
+                        >
                           <Flex sx={{ width: '100%', alignItems: 'center', justifyContent: 'space-between', ...mobileColumns.header[0].styles }}>
-                            <Flex sx={{ flexDirection: 'column', flex: 1}}>
+                            <Flex sx={{ flexDirection: 'column', flex: 1 }}>
                               {mobileColumns.header[1].title && (
                                 <Box variant={'styles.table-header-column-mobile'} sx={{ textAlign: mobileColumns.header[1].align }}>
                                   {mobileColumns.header[1].title}
@@ -314,7 +316,7 @@ const Table: React.FC<ITable> = ({
                               {mobileColumns.header[1].Render ? mobileColumns.header[1].Render(source, i, loading) : source?.[columns[1].dataIndex!]}
                             </Flex>
 
-                            <Flex sx={{ flex: 1, justifyContent: 'flex-end'}}>
+                            <Flex sx={{ flex: 1, justifyContent: 'flex-end' }}>
                               {mobileColumns.header[0].Render ? mobileColumns.header[0].Render(source, i, loading) : source?.[columns[0].dataIndex!]}
                             </Flex>
                           </Flex>
@@ -337,19 +339,18 @@ const Table: React.FC<ITable> = ({
                                     flex: 1,
                                     ...col.styles
                                   }}
-                              
                                 >
                                   {col?.Render ? (
-                                    <Flex sx={{ justifyContent: 'space-between', width: '100%'}}>
+                                    <Flex sx={{ justifyContent: 'space-between', width: '100%' }}>
                                       {col.title && (
-                                        <Box variant={'styles.table-header-column-mobile'} sx={{ textAlign: col?.align}}>
+                                        <Box variant={'styles.table-header-column-mobile'} sx={{ textAlign: col?.align }}>
                                           {col.title}
                                         </Box>
                                       )}
                                       {col?.Render(source, i, loading)}
                                     </Flex>
                                   ) : (
-                                    <Text sx={{ textAlign: col?.align}}>{source?.[col.dataIndex!]}</Text>
+                                    <Text sx={{ textAlign: col?.align }}>{source?.[col.dataIndex!]}</Text>
                                   )}
                                 </Flex>
                               ))}
@@ -361,14 +362,13 @@ const Table: React.FC<ITable> = ({
                               mobileColumns.footer.map((col: any) => (
                                 <Flex key={col?.key} sx={{ flex: 1, justifyContent: 'flex-end', ...col.styles }}>
                                   {col?.Render ? (
-                                    <Flex sx={{ flexDirection: 'column'}}>{col?.Render(source, i, loading)}</Flex>
+                                    <Flex sx={{ flexDirection: 'column' }}>{col?.Render(source, i, loading)}</Flex>
                                   ) : (
                                     <Text sx={{ textAlign: col?.align }}>{source?.[col.dataIndex!]}</Text>
                                   )}
                                 </Flex>
                               ))}
                           </Flex>
-
                         </Flex>
                       </React.Fragment>
                     )

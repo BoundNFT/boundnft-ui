@@ -6,43 +6,47 @@ import { Screen } from '../types'
 import Image from 'next/image'
 import { MotionBox } from 'components/common/motion-components'
 
-
 export const CreateBoundNFTStep3: React.FC = () => {
   const { t } = useTranslation('common')
   const { setScreenState } = useContext(BoundNFTContext)
   return (
-    <MotionBox 
-      initial={{ x: '100vh' }} 
-      animate={{    
+    <MotionBox
+      initial={{ x: '100vh' }}
+      animate={{
         x: 0,
-      transition: { 
-        type: 'spring', stiffness: 50, duration: 0.5 }
+        transition: {
+          type: 'spring',
+          stiffness: 50,
+          duration: 0.5
+        }
       }}
     >
-      <Flex sx={{mt: 80, justifyContent: 'space-between', width: '100%', alignItems: 'center', flexDirection: ['column', 'column', 'row']}}>
-
-        <Box variant='frames.image' sx={{width: '100%', maxWidth: 202}}>
-          <Box sx={{width: 182, height: 182, position: 'relative'}}>
-            <Image src='/assets/images/collections/big/punk.svg' layout='fill'/>
+      <Flex sx={{ mt: 80, justifyContent: 'space-between', width: '100%', alignItems: 'center', flexDirection: ['column', 'column', 'row'] }}>
+        <Box variant='frames.image' sx={{ width: '100%', maxWidth: 202 }}>
+          <Box sx={{ width: 182, height: 182, position: 'relative' }}>
+            <Image src='/assets/images/collections/big/punk.svg' layout='fill' />
           </Box>
         </Box>
 
-        <Box sx={{width: ['100%'], overflow: 'hidden', position: 'relative', alignSelf: 'center', my: [20, 20, 0], px: [0, 0, 30]}}>
-          <ImageThemeUI src={'/assets/images/elements/boundnft-preloader.gif'} width={'100%'}/>
+        <Box sx={{ width: ['100%'], overflow: 'hidden', position: 'relative', alignSelf: 'center', my: [20, 20, 0], px: [0, 0, 30] }}>
+          <ImageThemeUI src={'/assets/images/elements/boundnft-preloader.gif'} width={'100%'} />
         </Box>
 
-        <Box variant='frames.image' sx={{width: '100%', maxWidth: 202}}>
-          <Box sx={{width: 182, height: 182, position: 'relative'}}>
-            <Image src='/assets/images/collections/big/punk.svg' layout='fill'/>
+        <Box variant='frames.image' sx={{ width: '100%', maxWidth: 202 }}>
+          <Box sx={{ width: 182, height: 182, position: 'relative' }}>
+            <Image src='/assets/images/collections/big/punk.svg' layout='fill' />
           </Box>
         </Box>
-        
       </Flex>
 
-      <Box variant='frames.normal' sx={{textAlign: 'center', mt: 40}} onClick={() => setScreenState(Screen.boundNFTCreationSuccess)}>
-        <Text as='span' variant='text.body' sx={{ color: 'white', lineHeight: 1.5}} dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-proccesing', { asset: 'CRYPTOPUNKS' })}}/>
+      <Box variant='frames.normal' sx={{ textAlign: 'center', mt: 40 }} onClick={() => setScreenState(Screen.boundNFTCreationSuccess)}>
+        <Text
+          as='span'
+          variant='text.body'
+          sx={{ color: 'white', lineHeight: 1.5 }}
+          dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-proccesing', { asset: 'CRYPTOPUNKS' }) }}
+        />
       </Box>
-
     </MotionBox>
   )
 }
