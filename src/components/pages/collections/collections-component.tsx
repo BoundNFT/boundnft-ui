@@ -87,7 +87,6 @@ export const CollectionsPageComponent: React.FC = () => {
           <Button
             text={t('button.create-new-boundnft').toUpperCase()}
             backgroundColor='green.100'
-            arrowColor='black'
             onClick={() => router.push(permalink.createBoundNFT)}
           />
           <Button

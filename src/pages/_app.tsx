@@ -43,7 +43,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               padding: 0px;
               margin: 0px;
               letter-spacing: 1.5px;
-              font-family: ${theme.fonts.bold}
+              font-family: ${theme.fonts.bold};
               font-size: 12px;           
             }
 

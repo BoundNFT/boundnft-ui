@@ -27,7 +27,7 @@ export const DefaultMenuButton: React.FC<any> = ({ onClick, isOpen }) => {
           justifyContent: 'center',
           outline: 'none',
           userSelect: 'none',
-          borderRadius: 0,
+          borderRadius: null,
         }}
         onClick={onClick}
         animate={isOpen ? 'open' : 'closed'}

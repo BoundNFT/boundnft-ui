@@ -71,7 +71,7 @@ export const Section2: React.FC = () => {
               }}
             >
               <Link href={permalink.collections} passHref>
-                <Button text={t('button.get-started').toUpperCase()} backgroundColor='green.100' arrowColor='black' />
+                <Button text={t('button.get-started').toUpperCase()} backgroundColor='green.100'/>
               </Link>
               <ThemeLink href={BOUNDNFT_DOCS_LINK} target='_blank' sx={{ width: '100%', maxWidth: [454, 454, 454, 420, 454] }}>
                 <Button text={t('button.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0] }} />

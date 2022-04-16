@@ -58,7 +58,6 @@ export const CreateBoundNFTStep1: React.FC = () => {
             text={t('button.fetch-contract-metadata').toUpperCase()}
             backgroundColor='green.100'
             sx={{ mt: [20, 20, 20, 0] }}
-            arrowColor='black'
             onClick={() => setScreenState(Screen.checkDetails)}
           />
         </Flex>

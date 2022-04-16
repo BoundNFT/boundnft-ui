@@ -1,5 +1,6 @@
+import { ThemeContext } from '@emotion/react'
 import { useContext } from 'react'
-import { ThemeContext } from 'styled-components'
+
 import { IUseTheme } from '../../constants/types'
 
 const useTheme = (): IUseTheme => useContext(ThemeContext)
