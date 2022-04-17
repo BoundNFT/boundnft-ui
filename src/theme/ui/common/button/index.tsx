@@ -1,9 +1,7 @@
-import { MotionButton, MotionFlex, MotionText } from '../../../../components/common/motion-components'
-import { /* Flex, */ Text } from 'theme-ui'
+import { MotionButton } from '../../../../components/common/motion-components'
+import { Flex, Text } from 'theme-ui'
 import { IconArrow } from 'theme/ui/icons'
 import useTheme from 'hooks/common/useTheme'
-/* import { IconArrow } from 'theme/ui/icons'
-import { theme } from 'theme/theme' */
 interface IButton {
   backgroundColor?: string
   text: string
@@ -20,7 +18,7 @@ const buttonVariants = {
     transition: { duration: 0.2 }
   },
 }
-export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, outlined, switchArrow, sx, onClick }, ...restprops) => {
+export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, outlined, switchArrow, sx, onClick }) => {
   const { colors } = useTheme()
   return (
     <MotionButton
@@ -37,16 +35,15 @@ export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, o
         ':hover': { cursor: 'pointer' },
         ...sx
       }}
-      {...restprops}
     >
-      <MotionFlex sx={{ width: '100%', justifyContent: 'space-between', px: 10, alignItems: 'center' }}>
-        <MotionText animate={{opacity: 1}} sx={{ color: outlined ? 'white' : 'blue.100', fontSize: 16, fontFamily: 'bold'}}>
+      <Flex sx={{ width: '100%', justifyContent: 'space-between', px: 10, alignItems: 'center' }}>
+        <Text sx={{ color: outlined ? 'white' : 'blue.100', fontSize: 16, fontFamily: 'bold'}}>
           {text}
-        </MotionText>
+        </Text>
         <Text sx={{ fontSize: 30, transform: switchArrow ? 'scaleX(-1)' : null }}>
           <IconArrow color={outlined ? 'white' : arrowColor ? arrowColor : colors.blue[100]} />
         </Text>
-      </MotionFlex>
+      </Flex>
     </MotionButton>
   )
 }

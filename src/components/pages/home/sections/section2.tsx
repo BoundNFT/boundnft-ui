@@ -9,7 +9,7 @@ import { logoContainer2, logosContainer2, subTitleContainer, titleContainer, tit
 import { Link as ThemeLink } from 'theme-ui'
 import { BOUNDNFT_DOCS_LINK } from 'constants/index'
 import { permalink } from 'constants/routes'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export const Section2: React.FC = () => {
   const { t } = useTranslation('common')
@@ -23,6 +23,7 @@ export const Section2: React.FC = () => {
     }
   }, [controls, inView])
 
+  const router = useRouter()
   return (
     <MotionBox sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', position: 'relative', alignitems: 'center' }} ref={ref} mt={100}>
       {showComponent && (
@@ -70,9 +71,9 @@ export const Section2: React.FC = () => {
                 flexDirection: ['column', 'column', 'column', 'row']
               }}
             >
-              <Link href={permalink.collections} passHref>
-                <Button text={t('button.get-started').toUpperCase()} backgroundColor='green.100'/>
-              </Link>
+
+              <Button text={t('button.get-started').toUpperCase()} backgroundColor='green.100' onClick={() => router.push(permalink.collections)}/>
+
               <ThemeLink href={BOUNDNFT_DOCS_LINK} target='_blank' sx={{ width: '100%', maxWidth: [454, 454, 454, 420, 454] }}>
                 <Button text={t('button.read-the-docs').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0] }} />
               </ThemeLink>

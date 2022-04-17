@@ -5,7 +5,7 @@ import { Flex } from 'theme-ui'
 import { MotionFlex, MotionText } from '../motion-components'
 
 const Logo: React.FC = () => {
-  const [isEffect, setIsEffect] = useState<boolean>(true)
+  const [isEffect, setIsEffect] = useState<boolean>()
   
   return (
     <Link href='/' passHref>
