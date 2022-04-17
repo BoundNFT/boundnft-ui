@@ -20,7 +20,7 @@ export const useColumns = () => {
           return (
             <Flex sx={{ alignItems: 'left' }}>
               <Box sx={{ width: 88, height: 44, position: 'relative' }}>
-                <Image src={data.avatar} layout='fill' />
+                <Image src={data.avatar} layout='fill' quality={'100%'}/>
               </Box>
             </Flex>
           )

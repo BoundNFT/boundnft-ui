@@ -15,58 +15,58 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <WalletContextProvider>
       <I18nextProvider i18n={i18n} defaultNS='common'>
         <ThemeProvider theme={theme}>
-          <Global
-            styles={css`
-            @font-face {
-              font-family: 'code_boldregular';
-              src: url('/assets/fonts/code_bold-webfont.woff2') format('woff2');
-              src: url('/assets/fonts/code_bold-webfont.woff') format('woff'),
-              font-weight: normal;
-              font-style: normal;
-            }
-
-            @font-face {
-              font-family: 'code_lightregular';
-              src: url('/assets/fonts/code_light-webfont.woff2') format('woff2');
-              src: url('/assets/fonts/code_light-webfont.woff') format('woff'),
-              font-weight: normal;
-              font-style: normal;
-            } 
-            a {
-              text-decoration: none;
-            }    
-            a:hover {
-              cursor: pointer;
-            } 
-
-            html {
-              padding: 0px;
-              margin: 0px;
-              letter-spacing: 1.5px;
-              font-family: ${theme.fonts.bold};
-              font-size: 12px;           
-            }
-
-            light-green {
-              color: ${theme.colors.green[100]}
-            }
-
-            body {
-              min-width: 360px;
-              height: 100%;
-            }
-
-            p {}
-          `}
-          />
-
-          <ResponsiveContextProvider>
-            <Header />
-            <Component {...pageProps} />
-            <Footer />
-          </ResponsiveContextProvider>
-        </ThemeProvider>
+          <Global styles={GlobalStyles} />
+            <ResponsiveContextProvider>
+              <Header />
+              <Component {...pageProps} />
+              <Footer />
+            </ResponsiveContextProvider>
+          </ThemeProvider>
       </I18nextProvider>
     </WalletContextProvider>
   )
 }
+
+
+const GlobalStyles = css`
+@font-face {
+  font-family: 'code_boldregular';
+  src: url('/assets/fonts/code_bold-webfont.woff2') format('woff2');
+  src: url('/assets/fonts/code_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'code_lightregular';
+  src: url('/assets/fonts/code_light-webfont.woff2') format('woff2');
+  src: url('/assets/fonts/code_light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} 
+a {
+  text-decoration: none;
+}    
+a:hover {
+  cursor: pointer;
+} 
+
+html {
+  padding: 0px;
+  margin: 0px;
+  letter-spacing: 1.5px;
+  font-family: ${theme.fonts.bold};
+  font-size: 12px;           
+}
+
+light-green {
+  color: ${theme.colors.green[100]}
+}
+
+body {
+  min-width: 360px;
+  height: 100%;
+}
+
+p {}
+`

@@ -8,13 +8,13 @@ import { ICollections } from '../../common/table/columns/interfaces'
 import { MotionFlex, MotionText } from '../../common/motion-components'
 import { Button } from '../../../theme/ui/common/button'
 import { permalink } from '../../../constants/routes'
-import router from 'next/router'
 import { mainContainer } from './details/motion-containers'
+import { useRouter } from 'next/router'
 
 export const CollectionsPageComponent: React.FC = () => {
   const { t } = useTranslation('common')
   const { collectionListColumns } = useColumns()
-
+  const router = useRouter()
   const rows = useMemo(
     (): ICollections[] => [
       {
@@ -40,7 +40,7 @@ export const CollectionsPageComponent: React.FC = () => {
   )
 
   return (
-    <MotionFlex
+    <Flex
       sx={{
         px: [20, 20, 20, 40, 0],
         pt: 170,
@@ -97,6 +97,6 @@ export const CollectionsPageComponent: React.FC = () => {
           />
         </Flex>
       </MotionFlex>
-    </MotionFlex>
+    </Flex>
   )
 }

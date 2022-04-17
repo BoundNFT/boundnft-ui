@@ -38,8 +38,8 @@ const Table: React.FC<ITable> = ({
   const [sortHeader, setSortHeader] = React.useState<string | undefined>(columns[0]?.sortBy)
   const [sortDirection, setSortDirection] = React.useState<'asc' | 'desc'>(SORT_DIRECTION.ASC)
 
-  const { isTablet, isLaptop } = useResponsive()
-
+  const { isTablet, isLaptop, isDesktop } = useResponsive()
+  console.log('mobile', mobile)
   // const [selected, setSelected] = useState<any[]>([])
   const { t } = useTranslation('common')
 
@@ -194,7 +194,7 @@ const Table: React.FC<ITable> = ({
               </Flex>
             </Box>
           )}
-          {!tabletHasTable && mobile && !isTablet && !isLaptop && dataSource?.length > 0 && (
+          {!tabletHasTable && mobile && isTablet && !isLaptop && !isDesktop && dataSource?.length > 0 && (
             <Box {...restprops}>
               {_.orderBy(dataSource, [sortHeader], [sortDirection])?.map((source: any, i: number) =>
                 _.isArray(source)
