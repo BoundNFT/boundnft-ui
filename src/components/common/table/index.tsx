@@ -1,4 +1,4 @@
-import React, { isValidElement } from 'react'
+import React, { isValidElement, useMemo } from 'react'
 import _ from 'lodash'
 // Components
 // iterfaces
@@ -28,7 +28,6 @@ const Table: React.FC<ITable> = ({
   tableHeaderVariant,
   sortable,
   defaultSortHeader = '',
-  mobile,
   mobileHasButtons = false,
   tabletHasTable = false,
   noRecords,
@@ -37,9 +36,11 @@ const Table: React.FC<ITable> = ({
   const [defaultWidth, setDefaultWidth] = React.useState<number>(0)
   const [sortHeader, setSortHeader] = React.useState<string | undefined>(columns[0]?.sortBy)
   const [sortDirection, setSortDirection] = React.useState<'asc' | 'desc'>(SORT_DIRECTION.ASC)
+  const { isMobile } = useResponsive()
+  const mobile = useMemo(() => isMobile, [])
 
   const { isTablet, isLaptop, isDesktop } = useResponsive()
-  console.log('mobile', mobile)
+
   // const [selected, setSelected] = useState<any[]>([])
   const { t } = useTranslation('common')
 
@@ -67,7 +68,7 @@ const Table: React.FC<ITable> = ({
 
   return (
     <Flex variant='styles.table'>
-      {(isLaptop || !mobile || (tabletHasTable ? isTablet : null)) && (
+      {(isLaptop && !mobile || (tabletHasTable ? isTablet : null)) && (
         <Flex variant={tableHeaderVariant ? tableHeaderVariant : 'styles.table-header'} {...tableHeaderStyle}>
           {columns &&
             columns.map((col: ITableColumn) => (
@@ -202,9 +203,6 @@ const Table: React.FC<ITable> = ({
                       (data: any) =>
                         !data?.hide && (
                           <Flex sx={{ flexDirection: 'column' }} key={data?.key}>
-                            <Flex sx={{ width: 30, alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
-                              {/*  {selected === source ? <ChevronUp /> : <ChevronDown />} */}
-                            </Flex>
                             {columns &&
                               columns?.map((col: ITableColumn) => (
                                 <Box key={col?.key} sx={{ flex: col?.width ? `1 1 ${col?.width}` : `1 1 ${defaultWidth}%`, ...col.styles }}>
@@ -219,15 +217,15 @@ const Table: React.FC<ITable> = ({
                         <Flex
                           sx={{
                             backgroundColor: source.active || source.active === undefined ? 'transparent' : 'transparent',
-                            justifyContent: 'space-between'
+                            justifyContent: 'space-between',
                           }}
                           variant='styles.table-row'
                         >
                           <Box
                             sx={{
                               display: 'grid',
-                              gridGap: 20,
-                              gridTemplateColumns: 'repeat(3, minmax(160px, 1fr))',
+                              gridGap: '20px 40px',
+                              gridTemplateColumns: 'repeat(3, minmax(220px, 1fr))',
                               py: 22
                             }}
                           >

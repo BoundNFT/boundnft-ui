@@ -180,6 +180,7 @@ export const theme = makeTheme({
       fontSize: 12,
       fontFamily: 'bold',
       py: [10],
+      lineHeight: 1.5,
       width: '100%',
       justifyContent: 'space-between'
     },

@@ -61,7 +61,7 @@ export const CollectionsPageComponent: React.FC = () => {
           {t('label.nft-collections-support')}
         </MotionText>
 
-        <Flex mt={80} sx={{ flexDirection: 'column'}}>
+        <MotionFlex animate={{opacity: 1, y: 0, transition: { delay: 0.3 }}} initial={{opacity: 0, y: 50}} sx={{ width: '100%', mt: 80}}>
           <Table
             columns={collectionListColumns ? collectionListColumns : []}
             dataSource={rows ? rows : []}
@@ -73,7 +73,7 @@ export const CollectionsPageComponent: React.FC = () => {
             //tabletHasTable={tabletHasTable}
             //noRecords={noRecords}
           />
-        </Flex>
+        </MotionFlex>
 
         <Flex
           sx={{
