@@ -132,12 +132,10 @@ export const logoTextContainer = {
 export const imageContainer = {
   hidden: {
     opacity: 0,
-    x: 50
   },
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { delay: 1.8, duration: 0.6 }
+    transition: { delay: 1, duration: 0.1 }
   }
 }
 
@@ -148,6 +146,42 @@ export const section3Parent = {
     transition: {
       delay: 0.3,
       staggerChildren: 1.2
+    }
+  }
+}
+
+
+export const imageContainer2 = {
+  hidden: { opacity: 0, scale: 0.3 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: 'spring', duration: 2 }
+  }
+}
+
+export const imageContainer3 = {
+  hidden: { opacity: 0, scale: 0.3 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: 'spring', delay: 1, duration: 2 }
+  }
+}
+
+export const animationParent = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1
+  }
+}
+
+export const subAnimation = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.6,
     }
   }
 }

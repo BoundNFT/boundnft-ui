@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-import { Box } from 'theme-ui'
 import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-components'
 import { imageContainer, logoContainer, logoTextContainer, titleContainer, titlesContainer } from './details/motion-containers'
+import { Section1Sub } from './details/section-1-sub'
 
 export const Section1 = () => {
   const { t } = useTranslation('common')
@@ -48,19 +48,12 @@ export const Section1 = () => {
         sx={{
           width: '100%',
           justifyContent: 'right',
-          ml: [0, 50, 300, 450, 450],
-          mt: [50, 50, -200, -250]
+          alignItems: 'right',
+          ml: [50, 50, 100, 150, 50],
+          mt: [50, 50, 50, -150]
         }}
       >
-        <Box
-          sx={{
-            width: [344, 452, 638, 853],
-            height: [191, 250, 354, 473],
-            position: 'relative'
-          }}
-        >
-          <Image src='/assets/images/top_image_1.png' layout='fill' />
-        </Box>
+          <Section1Sub />
       </MotionFlex>
     </MotionFlex>
   )
