@@ -6,6 +6,7 @@ import { rgba } from 'polished'
 import useWindowPosition from 'modules/hooks/use-window-position'
 import { MotionFlex } from '../motion-components'
 import { useEffect, useRef, useState } from 'react'
+import { WINDOW_POSITION_TRIGGER, HEADER_HEIGHT } from 'constants/index'
 
 const Header: React.FC = () => {
   const windowPosition = useWindowPosition()
@@ -13,7 +14,7 @@ const Header: React.FC = () => {
   const navbarRef = useRef<number>(0)
 
   useEffect(() => {
-    if (windowPosition < 300) return
+    if (windowPosition < WINDOW_POSITION_TRIGGER) return
     if (navbarRef.current < windowPosition) {
       setShow(false)
     } else {
@@ -32,7 +33,7 @@ const Header: React.FC = () => {
       animate={{
         backdropFilter: windowPosition > 78 ? 'blur(5px)' : 'blur(0px)',
         opacity: show ? 1 : 0,
-        y: show ? 0 : -78
+        y: show ? 0 : -HEADER_HEIGHT
       }}
       transition={{
         duration: 0.3
@@ -41,7 +42,7 @@ const Header: React.FC = () => {
         position: 'fixed',
         backgroundColor: rgba(6, 10, 16, 0.3),
         width: '100%',
-        height: [78],
+        height: [HEADER_HEIGHT],
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',

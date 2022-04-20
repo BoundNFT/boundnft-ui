@@ -6,3 +6,6 @@ export const PUNK_IMAGE_PATH = '/assets/images/collections/punk.svg'
 export const BOUNDNFT_TWITTER_LINK = ''
 export const BOUNDNFT_DOCS_LINK = 'https://docs.benddao.xyz/portal/protocol-overview/boundnft'
 export const BOUNDNFT_GITHUB_LINK = ''
+
+export const WINDOW_POSITION_TRIGGER = 300
+export const HEADER_HEIGHT = 78

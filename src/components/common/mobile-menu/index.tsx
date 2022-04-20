@@ -1,6 +1,8 @@
+import { WINDOW_POSITION_TRIGGER } from 'constants/index'
 import { IRoutes } from 'constants/types'
+import useWindowPosition from 'modules/hooks/use-window-position'
 import Link from 'next/link'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Flex, NavLink, Text } from 'theme-ui'
 import { MotionBox, MotionFlex } from '../motion-components'
 import { DefaultMenuButton } from './details/default-menu-button'
@@ -15,6 +17,13 @@ interface IDropdownMenu {
 const MobileMenu: React.FC<IDropdownMenu> = ({ menu, menuStyle, menuButton }) => {
   const [isOpen, setIsOpen] = useState(false)
   const menuHeight = useMemo(() => (menu.length + 1) * 32, [menu.length])
+  const windowPosition = useWindowPosition()
+
+  useEffect(() => {
+    if (windowPosition > WINDOW_POSITION_TRIGGER) {
+      setIsOpen(false)
+    }
+  }, [windowPosition])
 
   return (
     <MotionBox>
