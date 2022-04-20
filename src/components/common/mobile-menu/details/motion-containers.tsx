@@ -6,13 +6,13 @@ export const slideVerticalAnimation = {
     transition: {
       duration: 0.3,
       mass: 0.4,
-      type: 'spring',
+      type: 'spring'
     },
     display: 'block'
   },
   hidden: {
     rotateX: -15,
-    y: -200,
+    y: -10,
     opacity: 0,
     transition: {
       duration: 0.3

@@ -23,6 +23,7 @@ export const theme = makeTheme({
     body: '#fff',
     white: '#fff',
     background: '#242F3F',
+    accent: '#C0FF00',
     green: {
       100: '#C0FF00'
     },
@@ -107,6 +108,15 @@ export const theme = makeTheme({
       fontFamily: 'bold',
       letterSpacing: '1px',
       color: 'grey.100'
+    }
+  },
+
+  links: {
+    nav: {
+      color: ['black'],
+      '&:visited': {
+        color: ['black']
+      }
     }
   },
 

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Flex, BoxProps } from 'theme-ui'
 import routes from '../../../constants/routes'
 import { IRoutes } from '../../../constants/types'
-import { DropdownMenu } from '../dropdown'
+import MobileMenu from '../mobile-menu'
 import NavButton from '../nav-button'
 
 const Navigation: React.FC<BoxProps> = ({ ...resprops }) => {
@@ -25,11 +25,9 @@ const Navigation: React.FC<BoxProps> = ({ ...resprops }) => {
       )}
       {!isTablet && (
         <Flex sx={{ mr: 10 }}>
-          <DropdownMenu
-            menu={['Mobile menu']}
+          <MobileMenu
+            menu={routes}
             menuStyle={{
-              width: '250px',
-              ml: '-75px',
               mt: '10px'
             }}
           />
