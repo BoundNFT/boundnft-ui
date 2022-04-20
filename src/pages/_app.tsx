@@ -83,7 +83,7 @@ const GlobalStyles = css`
   }
 
   ::selection {
-    color: black¸¸;
+    color: black;
     background: ${theme.colors.green[100]};
   }
 `
