@@ -6,9 +6,10 @@ import { Section1Sub } from './details/section-1-sub'
 import { motion } from 'framer-motion'
 
 const svgVariants = {
-  hidden: { x: 0 },
+  hidden: { x: -30 },
   visible: { 
-    transition: { duration : 1, staggerChildren: 0.1, x: 20 },
+    x: 0,
+    transition: { duration : 1.2, staggerChildren: 0.12 },
   },
 }
 
@@ -31,16 +32,19 @@ const pathVariants2 = {
   hidden: {
     opacity: 0,
     pathLength: 0,
-    x: 20
+    x: 15,
+    rotate: 90,
   },
   visible: {
     opacity: 1,
     x: 0,
     pathLength: 1,
+    rotate: 0,
     transition: { 
       duration: 1,
-      delay: 1,
-      ease: 'easeInOut',
+      delay: 1.3,
+      ease: 'easeOut',
+
     }
   }
 }
