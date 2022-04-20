@@ -1,5 +1,5 @@
 import useResponsive from 'hooks/common/useResponsive'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Flex, BoxProps } from 'theme-ui'
 import routes from '../../../constants/routes'
 import { IRoutes } from '../../../constants/types'
@@ -8,6 +8,12 @@ import NavButton from '../nav-button'
 
 const Navigation: React.FC<BoxProps> = ({ ...resprops }) => {
   const { isTablet } = useResponsive()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
   return (
     <>
       {isTablet && (

@@ -8,7 +8,7 @@ import { permalink } from '../../../constants/routes'
 interface INavButton extends IRoutes {}
 
 const NavButton: React.FC<INavButton> = props => {
-  const { route, onClick, children, external } = props
+  const { route, onClick, children, external, name } = props
 
   return external ? (
     <NavLink
@@ -23,7 +23,7 @@ const NavButton: React.FC<INavButton> = props => {
         }
       }}
     >
-      <LinkComponent {...props} />
+      <LinkComponent name={name} route={route} />
     </NavLink>
   ) : (
     <Flex sx={{ alignItems: 'center' }}>
@@ -31,7 +31,7 @@ const NavButton: React.FC<INavButton> = props => {
         <LinkComponent onClick={onClick} {...props} />
       ) : (
         <Link href={route} passHref>
-          <LinkComponent onClick={onClick} as='a' {...props} />
+          <LinkComponent onClick={onClick} as='a' name={name} route={route} />
         </Link>
       )}
     </Flex>
