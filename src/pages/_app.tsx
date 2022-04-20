@@ -68,5 +68,10 @@ body {
   height: 100%;
 }
 
+::selection {
+  color: black¸¸;
+  background: ${theme.colors.green[100]}
+}
+
 p {}
 `
