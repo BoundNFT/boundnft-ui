@@ -3,10 +3,40 @@ import Navigation from './navigation'
 import Logo from './logo'
 import Web3Status from '../../../modules/wallet'
 import { rgba } from 'polished'
+import useWindowPosition from 'modules/hooks/use-window-position'
+import { MotionFlex } from '../motion-components'
+import { useEffect, useRef, useState } from 'react'
 
 const Header: React.FC = () => {
+  const windowPosition = useWindowPosition()
+  const [show, setShow] = useState(true)
+  const navbarRef = useRef<number>(0)
+
+  useEffect(() => {
+    if (windowPosition < 300) return
+    if (navbarRef.current < windowPosition) {
+      setShow(false)
+    } else {
+      setShow(true)
+    }
+    navbarRef.current = windowPosition
+  }, [windowPosition])
+
   return (
-    <Flex
+    <MotionFlex
+      initial={{
+        backdropFilter: 'blur(0px)',
+        opacity: 1,
+        y: 0
+      }}
+      animate={{
+        backdropFilter: windowPosition > 78 ? 'blur(5px)' : 'blur(0px)',
+        opacity: show ? 1 : 0,
+        y: show ? 0 : -78
+      }}
+      transition={{
+        duration: 0.3
+      }}
       sx={{
         position: 'fixed',
         backgroundColor: rgba(6, 10, 16, 0.3),
@@ -36,7 +66,7 @@ const Header: React.FC = () => {
           </Flex>
         </Flex>
       </Flex>
-    </Flex>
+    </MotionFlex>
   )
 }
 
