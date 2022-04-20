@@ -1,7 +1,7 @@
 /* import Image from 'next/image' */
 import { useTranslation } from 'react-i18next'
 import { MotionBox, MotionFlex, MotionText } from '../../../common/motion-components'
-import { imageContainer, logoContainer, logoTextContainer, titleContainer, titlesContainer } from './details/motion-containers'
+import { imageContainer, logoTextContainer, titleContainer, titlesContainer } from './details/motion-containers'
 import { Section1Sub } from './details/section-1-sub'
 import { motion } from 'framer-motion'
 
