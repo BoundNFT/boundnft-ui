@@ -10,24 +10,25 @@ const Navigation: React.FC<BoxProps> = ({ ...resprops }) => {
   const { isTablet } = useResponsive()
   return (
     <>
-      {isTablet &&
+      {isTablet && (
         <Flex sx={{ alignItems: 'center' }} {...resprops}>
           {routes.map((route: IRoutes, index) => (
             <NavButton key={`nav-button-${index}`} {...route} />
           ))}
-        </Flex>}
-      {!isTablet &&
-        <Flex sx={{mr: 10}}>
-          <DropdownMenu 
-            menu={['Mobile menu']} 
+        </Flex>
+      )}
+      {!isTablet && (
+        <Flex sx={{ mr: 10 }}>
+          <DropdownMenu
+            menu={['Mobile menu']}
             menuStyle={{
               width: '250px',
               ml: '-75px',
               mt: '10px'
-            }} />
+            }}
+          />
         </Flex>
-    
-      }
+      )}
     </>
   )
 }

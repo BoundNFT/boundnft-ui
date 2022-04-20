@@ -1,7 +1,7 @@
 import React, { useMemo, forwardRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Flex, Text, Link as StyledLink, FlexProps } from 'theme-ui'
+import { Flex, Text, NavLink, FlexProps } from 'theme-ui'
 import { IRoutes } from '../../../constants/types'
 import { permalink } from '../../../constants/routes'
 
@@ -11,7 +11,7 @@ const NavButton: React.FC<INavButton> = props => {
   const { route, onClick, children, external } = props
 
   return external ? (
-    <StyledLink
+    <NavLink
       href={route}
       target='_blank'
       rel='noopener noreferrer'
@@ -24,7 +24,7 @@ const NavButton: React.FC<INavButton> = props => {
       }}
     >
       <LinkComponent {...props} />
-    </StyledLink>
+    </NavLink>
   ) : (
     <Flex sx={{ alignItems: 'center' }}>
       {children ? (
@@ -83,7 +83,7 @@ const LinkComponent = forwardRef<HTMLDivElement, INavButton & FlexProps>(({ rout
           }
         }}
       >
-        <Text as='text' color={activePathname === route ? 'white' : 'grey.100 '} sx={{ textAlign: 'center' }} variant='text.nav-buttons-text'>
+        <Text as='span' color={activePathname === route ? 'white' : 'grey.100 '} sx={{ textAlign: 'center' }} variant='text.nav-buttons-text'>
           {name}
         </Text>
       </Flex>

@@ -3,7 +3,7 @@ import { IPermalink, IRoutes } from './types'
 
 export const permalink: IPermalink = {
   home: '/',
-  collections: '/collections/',
+  collections: '/collections',
   governance: 'https://snapshot.org/#/benddao.eth',
   documents: BOUNDNFT_DOCS_LINK,
   createBoundNFT: '/collections/create/'
@@ -18,7 +18,7 @@ const routes: IRoutes[] = [
   },
   {
     name: 'Collections',
-    route: '/collections',
+    route: permalink.collections,
     auth: false,
     external: false
   },

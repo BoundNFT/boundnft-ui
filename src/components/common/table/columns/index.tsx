@@ -2,8 +2,9 @@ import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Flex, Text, Box } from 'theme-ui'
 import { ITableColumn } from '../interfaces'
-import { ICollections } from './interfaces'
-import Image from 'next/image'
+import { BnftCollectionReturn } from 'utils/api/get-bnft-collections'
+import CollectionImage from 'components/common/collection-image'
+import { shortenAddress } from 'utils/shorten-address'
 
 export const useColumns = () => {
   const { t } = useTranslation('common')
@@ -16,11 +17,11 @@ export const useColumns = () => {
         title: t('label.avatar'),
         align: 'left',
         hideSort: true,
-        Render(data: ICollections) {
+        Render(data: BnftCollectionReturn) {
           return (
             <Flex sx={{ alignItems: 'left' }}>
               <Box sx={{ width: 88, height: 44, position: 'relative' }}>
-                <Image src={data.avatar} layout='fill' quality={'100%'}/>
+                <CollectionImage collectionAddress={data.nftAsset} width={44} height={44} />
               </Box>
             </Flex>
           )
@@ -32,8 +33,8 @@ export const useColumns = () => {
         title: t('label.collection-name'),
         align: 'left',
         hideSort: true,
-        Render(data: ICollections) {
-          return <Text variant='styles.table-row-text'>{data.collectionName}</Text>
+        Render(data: BnftCollectionReturn) {
+          return <Text variant='styles.table-row-text'>{data.nftSymbol}</Text>
         }
       },
       {
@@ -43,10 +44,10 @@ export const useColumns = () => {
         width: '20%',
         align: 'left',
         hideSort: true,
-        Render(data: ICollections) {
+        Render(data: BnftCollectionReturn) {
           return (
             <Text variant='styles.table-row-text' color='green.100'>
-              {data.collectionAddress}
+              {shortenAddress(data.nftAsset, 6)}
             </Text>
           )
         }
@@ -57,8 +58,8 @@ export const useColumns = () => {
         title: t('label.boundnft-name'),
         align: 'left',
         hideSort: true,
-        Render(data: ICollections) {
-          return <Text variant='styles.table-row-text'>{data.boundNFTName}</Text>
+        Render(data: BnftCollectionReturn) {
+          return <Text variant='styles.table-row-text'>{data.symbol}</Text>
         }
       },
       {
@@ -67,10 +68,10 @@ export const useColumns = () => {
         title: t('label.boundnft-address'),
         align: 'left',
         hideSort: true,
-        Render(data: ICollections) {
+        Render(data: BnftCollectionReturn) {
           return (
             <Text variant='styles.table-row-text' color='green.100'>
-              {data.boundNFTAddress}
+              {shortenAddress(data.bnftProxy, 6)}
             </Text>
           )
         }
@@ -81,10 +82,10 @@ export const useColumns = () => {
         title: t('label.total-nfts'),
         align: 'right',
         hideSort: true,
-        Render(data: ICollections) {
+        Render(data: BnftCollectionReturn) {
           return (
             <Flex sx={{ justifyContent: 'right' }}>
-              <Text variant='styles.table-row-text'>{data.totalNfts}</Text>
+              <Text variant='styles.table-row-text'>{data.totalTokens}</Text>
             </Flex>
           )
         }

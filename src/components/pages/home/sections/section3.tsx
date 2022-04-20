@@ -81,10 +81,10 @@ export const Section3 = () => {
           <MotionFlex variants={titlesContainer3} sx={{ width: '100%', flexDirection: 'column', fontSize: 64, mt: 80 }}>
             <MotionFlex>
               <MotionFlex sx={{ flexDirection: 'column' }}>
-                <MotionText as='text' variant='text.title-white' variants={titleContainer}>
+                <MotionText variant='text.title-white' variants={titleContainer}>
                   {t('label.fully').toUpperCase()}
                 </MotionText>
-                <MotionText as='text' variant='text.title-bold-white' variants={titleContainer}>
+                <MotionText variant='text.title-bold-white' variants={titleContainer}>
                   {t('label.open-source').toUpperCase()}
                 </MotionText>
               </MotionFlex>

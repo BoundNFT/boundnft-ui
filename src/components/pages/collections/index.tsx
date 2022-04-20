@@ -1,43 +1,21 @@
-import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Flex } from 'theme-ui'
-import { BAYC_IMAGE_PATH, PUNK_IMAGE_PATH } from '../../../constants'
 import Table from '../../common/table'
 import { useColumns } from '../../common/table/columns'
-import { ICollections } from '../../common/table/columns/interfaces'
 import { MotionFlex, MotionText } from '../../common/motion-components'
 import { Button } from '../../../theme/ui/common/button'
 import { permalink } from '../../../constants/routes'
 import { mainContainer } from './details/motion-containers'
 import { useRouter } from 'next/router'
+import { useQuery } from 'react-query'
+import { getBnftCollections } from 'utils/api/get-bnft-collections'
+import { AnimatePresence } from 'framer-motion'
 
-export const CollectionsPageComponent: React.FC = () => {
+const Collections: React.FC = () => {
   const { t } = useTranslation('common')
   const { collectionListColumns } = useColumns()
   const router = useRouter()
-  const rows = useMemo(
-    (): ICollections[] => [
-      {
-        key: 'punks',
-        avatar: PUNK_IMAGE_PATH,
-        collectionName: 'cryptopunks',
-        collectionAddress: '0xc1c2c3...c7c8c9',
-        boundNFTName: 'BOUNDWPUNKS',
-        boundNFTAddress: '0xc1c2c3...c7c8c9',
-        totalNfts: 123
-      },
-      {
-        key: 'bayc',
-        avatar: BAYC_IMAGE_PATH,
-        collectionName: 'bayc',
-        collectionAddress: '0xc1c2c3...c7c8c9',
-        boundNFTName: 'BOUNDWPUNKS',
-        boundNFTAddress: '0xc1c2c3...c7c8c9',
-        totalNfts: 234
-      }
-    ],
-    []
-  )
+  const { data, isLoading, isIdle } = useQuery(['Get BNFT collections'], async () => getBnftCollections())
 
   return (
     <Flex
@@ -51,7 +29,12 @@ export const CollectionsPageComponent: React.FC = () => {
         overflow: 'hidden'
       }}
     >
-      <MotionFlex variants={mainContainer} initial={'hidden'} animate='visible' sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', alignitems: 'center' }}>
+      <MotionFlex
+        variants={mainContainer}
+        initial={'hidden'}
+        animate='visible'
+        sx={{ width: '100%', maxWidth: 960, flexDirection: 'column', alignitems: 'center' }}
+      >
         <MotionFlex sx={{ width: '100%', flexDirection: 'column', fontSize: 'xxxl' }}>
           <MotionText variant='text.title-white'>{t('label.list-of').toUpperCase()}</MotionText>
           <MotionText variant='text.title-bold-green'>{t('label.collections').toUpperCase()}</MotionText>
@@ -61,19 +44,13 @@ export const CollectionsPageComponent: React.FC = () => {
           {t('label.nft-collections-support')}
         </MotionText>
 
-        <MotionFlex animate={{opacity: 1, y: 0, transition: { delay: 0.3 }}} initial={{opacity: 0, y: 50}} sx={{ width: '100%', mt: 80}}>
-          <Table
-            columns={collectionListColumns ? collectionListColumns : []}
-            dataSource={rows ? rows : []}
-            loading={false}
-            mobile
-            //mobileHasButtons={mobileHasButtons}
-            //loadingNumRows={loadingNumRows}
-
-            //tabletHasTable={tabletHasTable}
-            //noRecords={noRecords}
-          />
-        </MotionFlex>
+        <AnimatePresence>
+          {data && (
+            <MotionFlex animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }} initial={{ opacity: 0, y: 10 }} sx={{ width: '100%', mt: 80 }}>
+              <Table columns={collectionListColumns ? collectionListColumns : []} dataSource={data ? data : []} loading={isLoading || isIdle} />
+            </MotionFlex>
+          )}
+        </AnimatePresence>
 
         <Flex
           sx={{
@@ -84,11 +61,7 @@ export const CollectionsPageComponent: React.FC = () => {
             flexDirection: ['column', 'column', 'column', 'row', 'row']
           }}
         >
-          <Button
-            text={t('button.create-new-boundnft').toUpperCase()}
-            backgroundColor='green.100'
-            onClick={() => router.push(permalink.createBoundNFT)}
-          />
+          <Button text={t('button.create-new-boundnft').toUpperCase()} backgroundColor='green.100' onClick={() => router.push(permalink.createBoundNFT)} />
           <Button
             text={t('button.use-existing-boundnft').toUpperCase()}
             outlined
@@ -100,3 +73,5 @@ export const CollectionsPageComponent: React.FC = () => {
     </Flex>
   )
 }
+
+export default Collections

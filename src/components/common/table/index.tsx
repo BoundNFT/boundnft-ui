@@ -37,7 +37,7 @@ const Table: React.FC<ITable> = ({
   const [sortHeader, setSortHeader] = React.useState<string | undefined>(columns[0]?.sortBy)
   const [sortDirection, setSortDirection] = React.useState<'asc' | 'desc'>(SORT_DIRECTION.ASC)
   const { isMobile } = useResponsive()
-  const mobile = useMemo(() => isMobile, [])
+  const mobile = useMemo(() => isMobile, [isMobile])
 
   const { isTablet, isLaptop, isDesktop } = useResponsive()
 
@@ -68,7 +68,7 @@ const Table: React.FC<ITable> = ({
 
   return (
     <Flex variant='styles.table'>
-      {(isLaptop && !mobile || (tabletHasTable ? isTablet : null)) && (
+      {((isLaptop && !mobile) || (tabletHasTable ? isTablet : null)) && (
         <Flex variant={tableHeaderVariant ? tableHeaderVariant : 'styles.table-header'} {...tableHeaderStyle}>
           {columns &&
             columns.map((col: ITableColumn) => (
@@ -126,8 +126,7 @@ const Table: React.FC<ITable> = ({
         </Flex>
       )}
       {loading ? (
-        // ...Array(loadingNumRows)
-        [loadingNumRows.keys()].map((index: number) => (
+        [...Array(loadingNumRows).keys()].map((index: number) => (
           <Flex key={`table-skeleton-${index}`} variant={tableHeaderVariant ? tableHeaderVariant : 'styles.table-row'} {...tableHeaderStyle} minHeight={82}>
             {columns &&
               columns.map((col: ITableColumn) => (
@@ -217,7 +216,7 @@ const Table: React.FC<ITable> = ({
                         <Flex
                           sx={{
                             backgroundColor: source.active || source.active === undefined ? 'transparent' : 'transparent',
-                            justifyContent: 'space-between',
+                            justifyContent: 'space-between'
                           }}
                           variant='styles.table-row'
                         >

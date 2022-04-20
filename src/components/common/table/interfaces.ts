@@ -13,7 +13,6 @@ export interface ITable extends FlexProps {
   sortable?: boolean
   defaultSortHeader?: string
   activeRow?: boolean
-  mobile?: boolean
   loadingNumRows?: number | any
   mobileHasButtons?: boolean
   tabletHasTable?: boolean

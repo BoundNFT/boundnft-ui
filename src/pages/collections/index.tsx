@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { CollectionsPageComponent } from '../../components/pages/collections/collections-component'
+import Collections from '../../components/pages/collections'
 import Container from '../../theme/ui/common/container'
 
 const CollectionsPage: NextPage = () => (
@@ -16,7 +16,7 @@ const CollectionsPage: NextPage = () => (
       overflow: 'hidden'
     }}
   >
-    <CollectionsPageComponent />
+    <Collections />
   </Container>
 )
 
