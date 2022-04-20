@@ -3,9 +3,11 @@ import { Flex, Image } from 'theme-ui'
 
 interface IBoundImage {
   imageUrl: string
+  height?: string | number
+  width?: string | number
 }
 
-const BoundImage: React.FC<IBoundImage> = ({ imageUrl }) => {
+const BoundImage: React.FC<IBoundImage> = ({ imageUrl, height, width }) => {
 
   return (
     <BoundImageWrap>
@@ -14,7 +16,7 @@ const BoundImage: React.FC<IBoundImage> = ({ imageUrl }) => {
           <Flex className='hex hexborder'>
             <Flex className='hex hexdark'>
               <Flex className='hex hexpic'>
-                <Image src={imageUrl} width='100%' height='100%'/>
+                <Image src={imageUrl} width={width} height={height}/>
               </Flex>
             </Flex>
           </Flex>
@@ -23,7 +25,7 @@ const BoundImage: React.FC<IBoundImage> = ({ imageUrl }) => {
           <Flex className='hex hexborder'>
             <Flex className='hex hexdark'>
               <Flex className='hex hexpic'>
-                <Image src={imageUrl} width='100%' height='100%'/>
+              <Image src={imageUrl} width={width} height={height}/>
               </Flex>
             </Flex>
           </Flex>

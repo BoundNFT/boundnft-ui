@@ -3,6 +3,7 @@ import { gql, ApolloQueryResult } from '@apollo/client'
 import { useQuery } from 'react-query'
 import { boundNftApiClient } from 'modules/clients'
 import { MotionBox } from '../motion-components'
+import BoundImage from 'theme/ui/common/bound-image'
 
 interface CollectionImage {
   collectionAddress: string
@@ -43,7 +44,7 @@ const CollectionImage: React.FC<CollectionImage & ImageProps> = ({ collectionAdd
 
   return (
     <MotionBox initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <Image src={`/api/image?url=${data?.openseaImageURL}`} width={width} height={height} {...restprops} />
+      <BoundImage imageUrl={`/api/image?url=${data?.openseaImageURL}`} width={width} height={height} {...restprops} />
     </MotionBox>
   )
 }
