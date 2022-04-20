@@ -1,4 +1,4 @@
-import { Image, ImageProps } from 'theme-ui'
+import { ImageProps } from 'theme-ui'
 import { gql, ApolloQueryResult } from '@apollo/client'
 import { useQuery } from 'react-query'
 import { boundNftApiClient } from 'modules/clients'
@@ -38,7 +38,7 @@ const CollectionImage: React.FC<CollectionImage & ImageProps> = ({ collectionAdd
   if (!data)
     return (
       <MotionBox initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <Image src='/assets/images/no-image.png' width={width} height={height} {...restprops} />
+        <BoundImage imageUrl='/assets/images/no-image.png' width={width} height={height} {...restprops} />
       </MotionBox>
     )
 
