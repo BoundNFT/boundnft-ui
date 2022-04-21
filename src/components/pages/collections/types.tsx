@@ -1,9 +1,4 @@
-export enum Screen {
-  fetchMetadata = 'fetch_metadata',
-  checkDetails = 'check_details',
-  boundNFTProcessing = 'boundnft_proccesing',
-  boundNFTCreationSuccess = 'boundnft_creation_success'
-}
+import { Screen } from "modules/bound/hooks/useBoundNFT"
 
 export type CreateBoundNFTContext = {
   screenState?: Screen
@@ -12,4 +7,6 @@ export type CreateBoundNFTContext = {
   setIsBack: Function
   metaData?: any
   setMetaData?: React.Dispatch<React.SetStateAction<any>>
+  handleStep1?: any
+  handleCreateBNFT?: any
 }

@@ -1,17 +1,18 @@
+import { get } from "lodash"
 import { useSingleCallResult } from "modules/wallet/hooks/useSingleCallResult"
 import useWallet from "modules/wallet/hooks/useWallet"
-import { useCallback, useState } from "react"
-import { BNFT_REGISTRY } from "../constants"
+import { useCallback, useMemo, useState } from "react"
 import { handleError } from "../utils/handleError"
 import { useCreateBNFT } from "./useBNFTRegistry"
-import { useBNFTRegistryContract } from "./useContract"
+import { useERC721Contract } from "./useContract"
 
 export enum Screen {
-  available = 'available',
-  available_confirm = 'available_confirm',
-  available_processing = 'available_processing',
-  success = 'success',
-  error = 'error'
+  fetchMetadata = 'fetchMetadata',
+  checkDetails = 'checkDetails',
+  boundNFTConfirm = 'boundNFTConfirm',
+  boundNFTProcessing = 'boundNFTProcessing',
+  boundNFTCreationSuccess = 'boundNFTCreationSuccess',
+  boundNFTCreationError = 'boundNFTCreationError',
 }
 
 type UseBoundNFTResult = {
@@ -22,38 +23,54 @@ type UseBoundNFTResult = {
     txHash: string
   }
   handleCreateBNFT: ({ nftAsset_address }: { nftAsset_address: string }) => void
-  
+  handleStep1: any
+  metaData: {
+    contractAddress: string
+    contractName: string
+    contractSupply: string
+  }
 }
 
 const useBoundNFT = (): UseBoundNFTResult => {
   const { addTransaction } = useWallet()
-  const [screenState, setScreenState] = useState<Screen>(Screen.available)
+  const [screenState, setScreenState] = useState<Screen>(Screen.fetchMetadata)
   const [data, setData] = useState({
     errorMsg: '',
     txHash: ''
   })
+  const [ERC721Address, setERC721Address] = useState('')
 
-  const BNFTContract = useBNFTRegistryContract(BNFT_REGISTRY)
-  const { result: getBNFTAssetList } = useSingleCallResult(BNFTContract, 'getBNFTAssetList', [], { blocksPerFetch: 2, callback: () => { console.log('test') } })
+  const ERC721Contract = useERC721Contract(ERC721Address)
+  const { result: ERC721totalSupply } = useSingleCallResult(ERC721Contract, 'totalSupply', [], { blocksPerFetch: 10 })
+  const { result: ERC721Name } = useSingleCallResult(ERC721Contract, 'name', [], { blocksPerFetch: 10 })
 
-  console.log('getBNFTAssetList', getBNFTAssetList)
+  const metaData = useMemo(() => {
+    return {
+      contractAddress: ERC721Address,
+      contractName: get(ERC721Name, 0),
+      contractSupply: get(ERC721totalSupply, 0)?.toString()
+    }
+  }, [ERC721Address, ERC721Name, ERC721totalSupply])
 
-
+  const handleStep1 = useCallback(({ address }:{address: string}) => {
+    setScreenState(Screen.checkDetails)
+    setERC721Address(address)
+  }, [])
 
   
   const { onCreateBNFT } = useCreateBNFT()
   const handleCreateBNFT = useCallback(
-    async ({ nftAsset_address }: { nftAsset_address: string }) => {
+    async () => {
       try {
-        setScreenState(Screen.available_confirm)
-        const tx = await onCreateBNFT(nftAsset_address)
+        setScreenState(Screen.boundNFTConfirm)
+        const tx = await onCreateBNFT(ERC721Address)
         setData({
           txHash: '',
           errorMsg: ''
         })
         // user rejected tx or didn't go thru
         if (!tx || tx.message) {
-          setScreenState(Screen.error)
+          setScreenState(Screen.checkDetails)
           setData({
             txHash: '',
             errorMsg: tx?.error?.message ? handleError({ errorMessage: tx?.error?.message }) : tx?.message
@@ -63,9 +80,9 @@ const useBoundNFT = (): UseBoundNFTResult => {
             txHash: tx.hash,
             errorMsg: ''
           })
-          setScreenState(Screen.available_processing)
+          setScreenState(Screen.boundNFTProcessing)
           addTransaction(tx, () => {
-            setScreenState(Screen.success)
+            setScreenState(Screen.boundNFTCreationSuccess)
           })
         }
       } catch (e: any) {
@@ -74,17 +91,19 @@ const useBoundNFT = (): UseBoundNFTResult => {
           txHash: '',
           errorMsg: e.msg
         })
-        setScreenState(Screen.error)
+        setScreenState(Screen.boundNFTCreationError)
       }
     },
-    [addTransaction, onCreateBNFT]
+    [ERC721Address, addTransaction, onCreateBNFT]
   )
 
   return {
     screenState,
     setScreenState,
     data,
-    handleCreateBNFT
+    handleCreateBNFT,
+    handleStep1,
+    metaData
   }
 }
 

@@ -2,13 +2,13 @@ import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Flex, Text, Image as ImageThemeUI } from 'theme-ui'
 import { BoundNFTContext } from '../create-boundnft'
-import { Screen } from '../types'
 import Image from 'next/image'
 import { MotionBox } from 'components/common/motion-components'
+import { Screen } from 'modules/bound/hooks/useBoundNFT'
 
 export const CreateBoundNFTStep3: React.FC = () => {
-  const { t } = useTranslation('common')
-  const { setScreenState } = useContext(BoundNFTContext)
+  const { t } = useTranslation('pages')
+  const { setScreenState, metaData } = useContext(BoundNFTContext)
   return (
     <MotionBox
       initial={{ x: '100vh' }}
@@ -44,7 +44,7 @@ export const CreateBoundNFTStep3: React.FC = () => {
           as='span'
           variant='text.body'
           sx={{ color: 'text3', lineHeight: 1.5 }}
-          dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-proccesing', { asset: 'CRYPTOPUNKS' }) }}
+          dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-confirm', { asset: metaData.contractName }) }}
         />
       </Box>
     </MotionBox>

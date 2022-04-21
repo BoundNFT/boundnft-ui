@@ -8,11 +8,10 @@ import { Box, Flex, Input, Label, Text } from 'theme-ui'
 import { permalink } from '../../../../constants/routes'
 import { Button } from '../../../../theme/ui/common/button'
 import { BoundNFTContext } from '../create-boundnft'
-import { Screen } from '../types'
 
 export const CreateBoundNFTStep1: React.FC = () => {
   const { t } = useTranslation('common')
-  const { setScreenState, isBack /* setMetaData */ } = useContext(BoundNFTContext)
+  const { isBack, handleStep1 /* setMetaData */ } = useContext(BoundNFTContext)
   const router = useRouter()
   const animationType = useMemo(() => isBack, [isBack])
   const {
@@ -30,9 +29,9 @@ export const CreateBoundNFTStep1: React.FC = () => {
       // setMetaData(result)
       //   setScreenState(Screen.checkDetails)
       // }
-      setScreenState(Screen.checkDetails)
+      handleStep1({ address: data.contractAddress})
     },
-    [errors, isValid, setScreenState]
+    [errors, handleStep1, isValid]
   )
 
   useEffect(() => {

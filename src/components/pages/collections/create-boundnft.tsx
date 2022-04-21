@@ -1,14 +1,16 @@
+import useBoundNFT, { Screen } from 'modules/bound/hooks/useBoundNFT'
 import { createContext, useState } from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { Box } from 'theme-ui'
 import { MotionFlex, MotionText } from '../../common/motion-components'
 import { mainContainer } from './details/motion-containers'
+import { CreateBoundNFTStepSuccess } from './steps/step-success'
 import { CreateBoundNFTStep1 } from './steps/step1'
 import { CreateBoundNFTStep2 } from './steps/step2'
 import { CreateBoundNFTStep3 } from './steps/step3'
 import { CreateBoundNFTStep4 } from './steps/step4'
-import { CreateBoundNFTContext, Screen } from './types'
+import { CreateBoundNFTContext } from './types'
 
 export const BoundNFTContext = createContext<CreateBoundNFTContext>({
   setIsBack: () => {}
@@ -16,13 +18,12 @@ export const BoundNFTContext = createContext<CreateBoundNFTContext>({
 
 export const CreateBoundNFT: React.FC = () => {
   const { t } = useTranslation('common')
-  const [screenState, setScreenState] = useState<Screen>(Screen.fetchMetadata)
   const [isBack, setIsBack] = useState<boolean>(false)
-  const [metaData, setMetaData] = useState()
   const methods = useForm()
+  const { metaData, screenState, setScreenState, handleStep1, handleCreateBNFT } = useBoundNFT()
 
   return (
-    <BoundNFTContext.Provider value={{ screenState, setScreenState, setIsBack, isBack, metaData, setMetaData }}>
+    <BoundNFTContext.Provider value={{ screenState, setScreenState, setIsBack, isBack, metaData, handleStep1, handleCreateBNFT }}>
       <FormProvider {...methods}>
         <MotionFlex
           sx={{
@@ -58,10 +59,12 @@ export const CreateBoundNFT: React.FC = () => {
                     return <CreateBoundNFTStep1 />
                   case Screen.checkDetails:
                     return <CreateBoundNFTStep2 />
-                  case Screen.boundNFTProcessing:
+                  case Screen.boundNFTConfirm:
                     return <CreateBoundNFTStep3 />
-                  case Screen.boundNFTCreationSuccess:
+                  case Screen.boundNFTProcessing:
                     return <CreateBoundNFTStep4 />
+                  case Screen.boundNFTCreationSuccess:
+                    return <CreateBoundNFTStepSuccess />
                 }
               })()}
             </Box>

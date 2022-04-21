@@ -44,8 +44,10 @@ export default {
     'The collection contract metadata must be fetched.<br> <light-green>If the contract is valid,</light-green> you will be able to create your bound nft.',
   'paragraph.create-boundnft-step2':
     'The contract is valid. <light-green>Please check details above.</light-green><br> If the data is correct, you can continue and create your bound nft.',
+  'paragraph.create-boundnft-confirm': 'Please confirm the transaction.',
   'paragraph.create-boundnft-proccesing': '<light-green>{{ asset }}</light-green> boundnft is being created...',
   'paragraph.create-boundnft-success': 'You have successfully created the bound nft <light-green>{{ boundAsset }}.</light-green>',
+  'paragraph.create-boundnft-error': 'ERROR',
   'label.input-notice': 'a valid ethereum contract address starts with 0x followed by 40 characters (0-9, a-f)',
   'label.contract-address': 'Contract address',
 

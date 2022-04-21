@@ -4,6 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import { DEFAULT_LANGUAGE } from './constants'
 import commonEn from './locales/en/common'
+import pagesEn from './locales/en/pages'
 
 i18n
   .use(LanguageDetector)
@@ -11,7 +12,8 @@ i18n
   .init({
     resources: {
       en: {
-        common: commonEn
+        common: commonEn,
+        pages: pagesEn
       },
       cn: {}
     },

@@ -3,15 +3,15 @@ import { useTranslation } from 'react-i18next'
 import { Box, Flex, Text } from 'theme-ui'
 import { Button } from '../../../../theme/ui/common/button'
 import { BoundNFTContext } from '../create-boundnft'
-import { Screen } from '../types'
 import Image from 'next/image'
 import { LabelInfo } from '../../../../theme/ui/common/label-info'
 import { MotionBox } from 'components/common/motion-components'
 import { AnimatePresence } from 'framer-motion'
+import { Screen } from 'modules/bound/hooks/useBoundNFT'
 
 export const CreateBoundNFTStep2: React.FC = () => {
   const { t } = useTranslation('common')
-  const { setScreenState, setIsBack, isBack } = useContext(BoundNFTContext)
+  const { setScreenState, setIsBack, isBack, metaData, handleCreateBNFT } = useContext(BoundNFTContext)
 
   const handleBackClick = () => {
     return !isBack && setIsBack(true), setScreenState(Screen.fetchMetadata)
@@ -50,15 +50,15 @@ export const CreateBoundNFTStep2: React.FC = () => {
           <Box variant='frames.normal' sx={{ width: '100%', maxWidth: 728, mt: [20, 20, 0] }}>
             <Flex sx={{ justifyContent: 'space-between', width: '100%', flexDirection: ['column', 'column', 'column', 'row'] }}>
               <Flex sx={{ justifyContent: 'space-between', minWidth: 260 }}>
-                <LabelInfo label='Name' info='Cryptopunks' />
-                <LabelInfo label='NO. OF TOKENS' info='10,000' align='right' />
+                <LabelInfo label='Name' info={metaData.contractName} />
+                <LabelInfo label='NO. OF TOKENS' info={metaData.contractSupply} align='right' />
               </Flex>
 
               <Button text='View on Opensea' arrowColor='text3' outlined sx={{ maxWidth: 286, mt: [20, 20, 20, 0] }} />
             </Flex>
 
             <Flex sx={{ mt: 25 }}>
-              <LabelInfo label='CONTRACT' info='0x83494d0c61f87ff3e44992552ee0751816f478e4482349763d9bdd219986b5ff' textColor='accent' />
+              <LabelInfo label='CONTRACT' info={metaData.contractAddress} textColor='accent' />
             </Flex>
           </Box>
         </Flex>
@@ -86,7 +86,7 @@ export const CreateBoundNFTStep2: React.FC = () => {
             text={t('button.create-bound-nft').toUpperCase()}
             backgroundColor='accent'
             sx={{ mt: [20, 20, 20, 0] }}
-            onClick={() => setScreenState(Screen.boundNFTProcessing)}
+            onClick={() => handleCreateBNFT()}
           />
         </Flex>
       </MotionBox>
