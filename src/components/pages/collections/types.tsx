@@ -9,4 +9,8 @@ export type CreateBoundNFTContext = {
   setMetaData?: React.Dispatch<React.SetStateAction<any>>
   handleStep1?: any
   handleCreateBNFT?: any
+  data?: {
+    errorMsg: string
+    txHash: string
+  }
 }

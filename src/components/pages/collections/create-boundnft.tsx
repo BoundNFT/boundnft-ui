@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Box } from 'theme-ui'
 import { MotionFlex, MotionText } from '../../common/motion-components'
 import { mainContainer } from './details/motion-containers'
+import { CreateBoundNFTStepError } from './steps/step-error'
 import { CreateBoundNFTStepSuccess } from './steps/step-success'
 import { CreateBoundNFTStep1 } from './steps/step1'
 import { CreateBoundNFTStep2 } from './steps/step2'
@@ -20,10 +21,10 @@ export const CreateBoundNFT: React.FC = () => {
   const { t } = useTranslation('common')
   const [isBack, setIsBack] = useState<boolean>(false)
   const methods = useForm()
-  const { metaData, screenState, setScreenState, handleStep1, handleCreateBNFT } = useBoundNFT()
+  const { data, metaData, screenState, setScreenState, handleStep1, handleCreateBNFT } = useBoundNFT()
 
   return (
-    <BoundNFTContext.Provider value={{ screenState, setScreenState, setIsBack, isBack, metaData, handleStep1, handleCreateBNFT }}>
+    <BoundNFTContext.Provider value={{ screenState, setScreenState, setIsBack, isBack, metaData, data, handleStep1, handleCreateBNFT }}>
       <FormProvider {...methods}>
         <MotionFlex
           sx={{
@@ -65,6 +66,8 @@ export const CreateBoundNFT: React.FC = () => {
                     return <CreateBoundNFTStep4 />
                   case Screen.boundNFTCreationSuccess:
                     return <CreateBoundNFTStepSuccess />
+                  case Screen.boundNFTCreationError:
+                    return <CreateBoundNFTStepError />
                 }
               })()}
             </Box>

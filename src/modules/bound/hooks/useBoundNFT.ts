@@ -70,7 +70,7 @@ const useBoundNFT = (): UseBoundNFTResult => {
         })
         // user rejected tx or didn't go thru
         if (!tx || tx.message) {
-          setScreenState(Screen.checkDetails)
+          setScreenState(Screen.boundNFTCreationError)
           setData({
             txHash: '',
             errorMsg: tx?.error?.message ? handleError({ errorMessage: tx?.error?.message }) : tx?.message
