@@ -10,4 +10,6 @@ export type CreateBoundNFTContext = {
   setScreenState?: any
   isBack?: boolean
   setIsBack: Function
+  metaData?: any
+  setMetaData?: React.Dispatch<React.SetStateAction<any>>
 }

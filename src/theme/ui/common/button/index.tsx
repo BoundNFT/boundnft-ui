@@ -10,21 +10,23 @@ interface IButton {
   sx?: any
   onClick?: () => {}
   switchArrow?: boolean
+  type?: 'button' | 'submit' | 'reset' | undefined
 }
 
 const buttonVariants = {
   hover: {
     scale: 1.1,
     transition: { duration: 0.2 }
-  },
+  }
 }
-export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, outlined, switchArrow, sx, onClick }) => {
+export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, outlined, switchArrow, sx, onClick, type }) => {
   const { colors } = useTheme()
   return (
     <MotionButton
       variants={buttonVariants}
       whileHover='hover'
       onClick={onClick}
+      type={type}
       sx={{
         backgroundColor: backgroundColor ? backgroundColor : 'transparent',
         height: 56,
@@ -37,9 +39,7 @@ export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, o
       }}
     >
       <Flex sx={{ width: '100%', justifyContent: 'space-between', px: 10, alignItems: 'center' }}>
-        <Text sx={{ color: outlined ? 'white' : 'blue.100', fontSize: 16, fontFamily: 'bold'}}>
-          {text}
-        </Text>
+        <Text sx={{ color: outlined ? 'white' : 'blue.100', fontSize: 16, fontFamily: 'bold' }}>{text}</Text>
         <Text sx={{ fontSize: 30, transform: switchArrow ? 'scaleX(-1)' : null }}>
           <IconArrow color={outlined ? 'white' : arrowColor ? arrowColor : colors.blue[100]} />
         </Text>
