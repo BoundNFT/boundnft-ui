@@ -95,7 +95,6 @@ export const theme = makeTheme({
 
     'nav-buttons-text': {
       fontSize: 14,
-      color: 'text2',
       fontFamily: 'bold',
       fontWeight: 'bold'
     },
