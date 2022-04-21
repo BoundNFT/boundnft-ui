@@ -10,6 +10,7 @@ import { theme } from '../theme/theme'
 import ResponsiveContextProvider from '../components/context/responsive'
 import WalletContextProvider from 'modules/wallet/context/wallet'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import MulticallContextProvider from 'modules/wallet/context/multicall'
 
 /**
  * React query client
@@ -27,16 +28,18 @@ export default function BoundNFT({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={client}>
       <WalletContextProvider>
-        <I18nextProvider i18n={i18n} defaultNS='common'>
-          <ThemeProvider theme={theme}>
-            <Global styles={GlobalStyles} />
-            <ResponsiveContextProvider>
-              <Header />
-              <Component {...pageProps} />
-              <Footer />
-            </ResponsiveContextProvider>
-          </ThemeProvider>
-        </I18nextProvider>
+        <MulticallContextProvider>
+          <I18nextProvider i18n={i18n} defaultNS='common'>
+            <ThemeProvider theme={theme}>
+              <Global styles={GlobalStyles} />
+              <ResponsiveContextProvider>
+                <Header />
+                <Component {...pageProps} />
+                <Footer />
+              </ResponsiveContextProvider>
+            </ThemeProvider>
+          </I18nextProvider>
+        </MulticallContextProvider>
       </WalletContextProvider>
     </QueryClientProvider>
   )
