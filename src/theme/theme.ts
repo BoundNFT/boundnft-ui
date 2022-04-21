@@ -25,6 +25,8 @@ export const theme = makeTheme({
     background: '#242F3F',
     accent: '#C0FF00',
     text1: '#000',
+    text2: '#6E8197',
+    text3: '#fff',
     green: {
       100: '#C0FF00'
     },
@@ -42,65 +44,65 @@ export const theme = makeTheme({
   text: {
     'title-white': {
       fontSize: [34, 34, 44, 64],
-      color: 'white',
+      color: 'text3',
       fontFamily: 'light',
       letterSpacing: '1.5px'
     },
 
     'title-bold-white': {
       fontSize: [34, 34, 44, 64],
-      color: 'white',
+      color: 'text3',
       fontFamily: 'bold',
       letterSpacing: '1.5px'
     },
 
     'title-bold-green': {
       fontSize: [34, 34, 44, 64],
-      color: 'green.100',
+      color: 'accent',
       fontFamily: 'bold',
       letterSpacing: '3px'
     },
 
     'semi-title-white': {
       fontSize: 32,
-      color: 'white',
+      color: 'text3',
       fontFamily: 'light'
     },
 
     'logo-text': {
       fontSize: 21,
-      color: 'white',
+      color: 'text3',
       fontFamily: 'light'
     },
 
     'logo-text-bold': {
       fontSize: 21,
-      color: 'white',
+      color: 'text3',
       fontFamily: 'bold'
     },
     'semi-title-bold-white': {
       fontSize: 32,
-      color: 'white',
+      color: 'text3',
       fontFamily: 'bold'
     },
 
     body: {
       fontSize: 16,
-      color: 'grey.100',
+      color: 'text2',
       fontFamily: 'bold',
       letterSpacing: '1.2px'
     },
 
     'nav-buttons-text': {
       fontSize: 14,
-      color: 'grey.100',
+      color: 'text2',
       fontFamily: 'bold',
       fontWeight: 'bold'
     },
 
     'mid-title-white': {
       fontSize: 24,
-      color: 'white',
+      color: 'text3',
       fontFamily: 'bold'
     },
 
@@ -108,7 +110,7 @@ export const theme = makeTheme({
       fontSize: 12,
       fontFamily: 'bold',
       letterSpacing: '1px',
-      color: 'grey.100'
+      color: 'text2'
     }
   },
 
@@ -147,7 +149,7 @@ export const theme = makeTheme({
         boxShadow: `0 0 0 2px ${'black'}`,
         outline: '1px solid white'
       },
-      color: 'white',
+      color: 'text3',
       fontSize: 16,
       fontFamily: 'bold',
       letterSpacing: '1px'
@@ -157,7 +159,7 @@ export const theme = makeTheme({
   styles: {
     root: {
       fontFamily: 'body',
-      color: 'white'
+      color: 'text3'
     },
     a: {
       color: 'primary',
@@ -178,7 +180,7 @@ export const theme = makeTheme({
     'table-header': {
       flexDirection: 'row',
       width: '100%',
-      color: 'grey.100',
+      color: 'text2',
       py: 20,
       fontSize: 12,
       fontFamily: 'bold',
@@ -197,13 +199,13 @@ export const theme = makeTheme({
     },
 
     'table-row-text': {
-      color: 'white',
+      color: 'text3',
       fontFamily: 'bold',
       fontSize: 16
     },
     'table-header-column-mobile': {
       fontSize: 12,
-      color: 'white',
+      color: 'text3',
       alignItems: 'center',
       mt: '0.5px'
     }
@@ -216,7 +218,7 @@ export const theme = makeTheme({
     web3: {
       cursor: 'pointer',
       borderRadius: 0,
-      backgroundColor: 'green.100',
+      backgroundColor: 'accent',
       color: 'blue.300',
       fontSize: 14,
       fontFamily: 'fonts.bold',

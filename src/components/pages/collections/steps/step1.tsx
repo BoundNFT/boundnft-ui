@@ -51,7 +51,7 @@ export const CreateBoundNFTStep1: React.FC = () => {
         >
           <Box variant='frames.normal' sx={{ mt: 80 }}>
             <Box sx={{ position: 'relative', width: '100%' }}>
-              <Label sx={{ mb: 20 }} variant='text.body-xs' color='grey.100' htmlFor='contractAddress'>
+              <Label sx={{ mb: 20 }} variant='text.body-xs' color='text2' htmlFor='contractAddress'>
                 {t('label.contract-address')}
               </Label>
               <AnimatePresence>
@@ -88,7 +88,7 @@ export const CreateBoundNFTStep1: React.FC = () => {
                   }
                 })}
               />
-              <Label sx={{ mt: 20 }} variant='text.body-xs' color='grey.100'>
+              <Label sx={{ mt: 20 }} variant='text.body-xs' color='text2'>
                 {t('label.input-notice')}
               </Label>
             </Box>
@@ -98,7 +98,7 @@ export const CreateBoundNFTStep1: React.FC = () => {
             <Text
               as='span'
               variant='text.body'
-              sx={{ color: 'white', lineHeight: 1.5 }}
+              sx={{ color: 'text3', lineHeight: 1.5 }}
               dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-step1') }}
             />
           </Box>
@@ -119,7 +119,7 @@ export const CreateBoundNFTStep1: React.FC = () => {
               sx={{ mt: [20, 20, 20, 0] }}
               onClick={() => router.push(permalink.collections)}
             />
-            <Button type='submit' text={t('button.fetch-contract-metadata').toUpperCase()} backgroundColor='green.100' sx={{ mt: [20, 20, 20, 0] }} />
+            <Button type='submit' text={t('button.fetch-contract-metadata').toUpperCase()} backgroundColor='accent' sx={{ mt: [20, 20, 20, 0] }} />
           </Flex>
         </MotionBox>
       </form>

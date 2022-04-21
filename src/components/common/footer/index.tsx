@@ -44,54 +44,39 @@ export const Footer: React.FC = () => {
           <Flex sx={{ mt: [40, 40, 40, 70], width: '100%', flex: 1, justifyContent: 'flex-start', flexDirection: ['column', 'column', 'row'] }}>
             <Flex sx={{ flexDirection: 'column', lineHeight: 2, flex: [1, 1, 0.5] }}>
               <Text variant='text.mid-title-white'>{t('label.the-protocol').toUpperCase()}</Text>
-              <Text variant='text.body-xs' color='grey.100' sx={{ maxWidth: 400, mt: 25 }}>
+              <Text variant='text.body-xs' color='text2' sx={{ maxWidth: 400, mt: 25 }}>
                 {t('paragraph.footer-1')}
               </Text>
             </Flex>
 
             <Flex sx={{ flexDirection: 'column', flex: [1, 1, 0.25], lineHeight: 2, mt: [30, 30, 0] }}>
               <Text variant='text.mid-title-white'>{t('label.about')}</Text>
-              <Flex variant='text.body-xs' color='grey.100' sx={{ maxWidth: ['100%', 400, 100], lineHeight: '25px', mt: 25, flexDirection: 'column' }}>
-                <MotionFlex
-                  variants={linkContainer}  
-                  whileHover={'hover'}>
-                    <Link>{t('label.twitter')}</Link>
-                  </MotionFlex>
-                  <MotionFlex  
-                    variants={linkContainer}  
-                    whileHover={'hover'}>
-                    <Link>{t('label.discord')}</Link>
-                  </MotionFlex>
-                  <MotionFlex  
-                    variants={linkContainer}  
-                    whileHover={'hover'}>
-                    <Link>{t('label.github')}</Link>
-                  </MotionFlex>
+              <Flex variant='text.body-xs' color='text2' sx={{ maxWidth: ['100%', 400, 100], lineHeight: '25px', mt: 25, flexDirection: 'column' }}>
+                <MotionFlex variants={linkContainer} whileHover={'hover'}>
+                  <Link>{t('label.twitter')}</Link>
+                </MotionFlex>
+                <MotionFlex variants={linkContainer} whileHover={'hover'}>
+                  <Link>{t('label.discord')}</Link>
+                </MotionFlex>
+                <MotionFlex variants={linkContainer} whileHover={'hover'}>
+                  <Link>{t('label.github')}</Link>
+                </MotionFlex>
               </Flex>
             </Flex>
 
             <Flex sx={{ flexDirection: 'column', flex: [1, 1, 0.25], lineHeight: 2, mt: [30, 30, 0] }}>
               <Text variant='text.mid-title-white'>{t('label.community')}</Text>
-                <Flex variant='text.body-xs' color='grey.100' sx={{ maxWidth: ['100%', 400, 100], mt: 25, lineHeight: '25px', flexDirection: 'column' }}>
-                  <MotionFlex  
-                    variants={linkContainer}  
-                    whileHover={'hover'}
-                  >
-                    <Link>{t('label.about')}</Link>
-                  </MotionFlex>
-                  <MotionFlex  
-                    variants={linkContainer}  
-                    whileHover={'hover'}
-                  >
-                    <Link>{t('label.contract')}</Link>
-                  </MotionFlex>
-                  <MotionFlex  
-                    variants={linkContainer}  
-                    whileHover={'hover'}
-                  >
-                    <Link>{t('label.platform')}</Link>
-                  </MotionFlex>
-                </Flex>
+              <Flex variant='text.body-xs' color='text2' sx={{ maxWidth: ['100%', 400, 100], mt: 25, lineHeight: '25px', flexDirection: 'column' }}>
+                <MotionFlex variants={linkContainer} whileHover={'hover'}>
+                  <Link>{t('label.about')}</Link>
+                </MotionFlex>
+                <MotionFlex variants={linkContainer} whileHover={'hover'}>
+                  <Link>{t('label.contract')}</Link>
+                </MotionFlex>
+                <MotionFlex variants={linkContainer} whileHover={'hover'}>
+                  <Link>{t('label.platform')}</Link>
+                </MotionFlex>
+              </Flex>
             </Flex>
           </Flex>
         </Flex>

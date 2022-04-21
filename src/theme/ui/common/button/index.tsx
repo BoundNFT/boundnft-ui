@@ -39,7 +39,7 @@ export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, o
       }}
     >
       <Flex sx={{ width: '100%', justifyContent: 'space-between', px: 10, alignItems: 'center' }}>
-        <Text sx={{ color: outlined ? 'white' : 'blue.100', fontSize: 16, fontFamily: 'bold' }}>{text}</Text>
+        <Text sx={{ color: outlined ? 'text3' : 'blue.100', fontSize: 16, fontFamily: 'bold' }}>{text}</Text>
         <Text sx={{ fontSize: 30, transform: switchArrow ? 'scaleX(-1)' : null }}>
           <IconArrow color={outlined ? 'white' : arrowColor ? arrowColor : colors.blue[100]} />
         </Text>
