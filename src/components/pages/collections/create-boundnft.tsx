@@ -21,10 +21,10 @@ export const CreateBoundNFT: React.FC = () => {
   const { t } = useTranslation('common')
   const [isBack, setIsBack] = useState<boolean>(false)
   const methods = useForm()
-  const { data, metaData, screenState, setScreenState, handleStep1, handleCreateBNFT } = useBoundNFT()
+  const { data, metaData, setMetaData, screenState, setScreenState, handleStep1, handleCreateBNFT } = useBoundNFT()
 
   return (
-    <BoundNFTContext.Provider value={{ screenState, setScreenState, setIsBack, isBack, metaData, data, handleStep1, handleCreateBNFT }}>
+    <BoundNFTContext.Provider value={{ screenState, setScreenState, setIsBack, isBack, metaData, setMetaData, data, handleStep1, handleCreateBNFT }}>
       <FormProvider {...methods}>
         <MotionFlex
           sx={{

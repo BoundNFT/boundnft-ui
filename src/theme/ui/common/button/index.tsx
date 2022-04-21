@@ -11,6 +11,7 @@ interface IButton {
   onClick?: () => {}
   switchArrow?: boolean
   type?: 'button' | 'submit' | 'reset' | undefined
+  disabled?: boolean
 }
 
 const buttonVariants = {
@@ -19,7 +20,7 @@ const buttonVariants = {
     transition: { duration: 0.2 }
   }
 }
-export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, outlined, switchArrow, sx, onClick, type }) => {
+export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, outlined, switchArrow, sx, onClick, type, disabled }) => {
   const { colors } = useTheme()
   return (
     <MotionButton
@@ -27,6 +28,7 @@ export const Button: React.FC<IButton> = ({ backgroundColor, text, arrowColor, o
       whileHover='hover'
       onClick={onClick}
       type={type}
+      disabled={disabled}
       sx={{
         backgroundColor: backgroundColor ? backgroundColor : 'transparent',
         height: 56,

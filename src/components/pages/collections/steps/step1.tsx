@@ -1,3 +1,4 @@
+import { useMutation } from 'react-query'
 import { MotionBox, MotionFlex } from 'components/common/motion-components'
 import { AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
@@ -5,38 +6,52 @@ import React, { useCallback, useContext, useEffect, useMemo } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { Box, Flex, Input, Label, Text } from 'theme-ui'
+import getOpenseaCollection from 'utils/api/get-opensea-collection'
 import { permalink } from '../../../../constants/routes'
 import { Button } from '../../../../theme/ui/common/button'
 import { BoundNFTContext } from '../create-boundnft'
+import imageUrl from 'utils/api/imageUrl'
+import { Screen } from 'modules/bound/hooks/useBoundNFT'
 
 export const CreateBoundNFTStep1: React.FC = () => {
   const { t } = useTranslation('common')
-  const { isBack, handleStep1 /* setMetaData */ } = useContext(BoundNFTContext)
+  const { isBack, handleStep1, setMetaData, setScreenState } = useContext(BoundNFTContext)
   const router = useRouter()
   const animationType = useMemo(() => isBack, [isBack])
   const {
     handleSubmit,
     register,
-    formState: { isValid, errors }
+    formState: { errors },
+    setValue
   } = useFormContext()
+  const { isLoading, mutateAsync } = useMutation(async (address: string) => await getOpenseaCollection(address))
 
   const onSubmit = useCallback(
-    data => {
-      console.log('Form data:', data)
-      console.log('isValid', isValid, 'errors', errors)
-      // const result = await contract.call(data)
-      // if (result) {
-      // setMetaData(result)
-      //   setScreenState(Screen.checkDetails)
-      // }
-      handleStep1({ address: data.contractAddress})
+    async data => {
+      const result = await mutateAsync(data.contractAddress)
+      if (!setMetaData) return
+      if (result.status === 200) {
+        console.log('result.data', result.data)
+        setMetaData((state: any) => ({
+          ...state,
+          contractImage: imageUrl(result.data.collection.image_url),
+          contractName: result.data.collection.name,
+          contractAddress: data.contractAddress,
+          openseaSlug: result.data.collection.slug
+        }))
+
+        handleStep1({ address: data.contractAddress })
+        setScreenState(Screen.checkDetails)
+      }
     },
-    [errors, handleStep1, isValid]
+    [handleStep1, mutateAsync, setMetaData, setScreenState]
   )
 
   useEffect(() => {
-    console.log('isValid', isValid, 'error', errors)
-  }, [errors, isValid])
+    return () => {
+      setValue('collectionAddress', '')
+    }
+  }, [setValue])
 
   return (
     <AnimatePresence exitBeforeEnter>
@@ -118,7 +133,13 @@ export const CreateBoundNFTStep1: React.FC = () => {
               sx={{ mt: [20, 20, 20, 0] }}
               onClick={() => router.push(permalink.collections)}
             />
-            <Button type='submit' text={t('button.fetch-contract-metadata').toUpperCase()} backgroundColor='accent' sx={{ mt: [20, 20, 20, 0] }} />
+            <Button
+              type='submit'
+              text={t('button.fetch-contract-metadata').toUpperCase()}
+              backgroundColor='accent'
+              sx={{ mt: [20, 20, 20, 0] }}
+              disabled={isLoading}
+            />
           </Flex>
         </MotionBox>
       </form>

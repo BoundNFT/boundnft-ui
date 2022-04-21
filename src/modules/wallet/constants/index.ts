@@ -25,7 +25,7 @@ export const providerOptions = {
   }
 }
 
-type ApiEndpoint = 'BOUND_BNFT' | 'BOUND_NFTAPI'
+type ApiEndpoint = 'BOUND_BNFT' | 'BOUND_NFTAPI' | 'OPENSEA_API'
 
 export const API_ENDPOINTS: {
   [chainId: string]: {
@@ -34,17 +34,19 @@ export const API_ENDPOINTS: {
 } = {
   '1': {
     BOUND_BNFT: 'https://bend-subgraph-mainnet.benddao.xyz/subgraphs/name/bend/bnft-protocol',
-    BOUND_NFTAPI: 'https://bend-goservice-mainnet.benddao.xyz/graphql/query'
+    BOUND_NFTAPI: 'https://bend-goservice-mainnet.benddao.xyz/graphql/query',
+    OPENSEA_API: 'https://api.opensea.io'
   },
   '4': {
     BOUND_BNFT: 'https://bend-subgraph-rinkeby.benddao.xyz/subgraphs/name/bend/bnft-protocol',
-    BOUND_NFTAPI: 'https://bend-goservice-rinkeby.benddao.xyz/graphql/query'
+    BOUND_NFTAPI: 'https://bend-goservice-rinkeby.benddao.xyz/graphql/query',
+    OPENSEA_API: 'https://testnets-api.opensea.io'
   }
 }
 
-const MULTICALL_NETWORKS: { [key: number]: string; }  = {
+const MULTICALL_NETWORKS: { [key: number]: string } = {
   1: '0xeefBa1e63905eF1D7ACbA5a8513c70307C1cE441',
-  4: '0x42Ad527de7d4e9d9d011aC45B31D8551f8Fe9821',
+  4: '0x42Ad527de7d4e9d9d011aC45B31D8551f8Fe9821'
 }
 
 export { MULTICALL_ABI, MULTICALL_NETWORKS }

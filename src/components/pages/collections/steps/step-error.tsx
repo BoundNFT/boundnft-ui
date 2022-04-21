@@ -1,11 +1,10 @@
 import router from 'next/router'
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Box, Flex, Text } from 'theme-ui'
+import { Box, Flex, Text, Image } from 'theme-ui'
 import { permalink } from '../../../../constants/routes'
 import { Button } from '../../../../theme/ui/common/button'
 import { BoundNFTContext } from '../create-boundnft'
-import Image from 'next/image'
 import { LabelInfo } from '../../../../theme/ui/common/label-info'
 import { MotionBox } from 'components/common/motion-components'
 import { Screen } from 'modules/bound/hooks/useBoundNFT'
@@ -36,7 +35,7 @@ export const CreateBoundNFTStepError: React.FC = () => {
       >
         <Box variant='frames.image' sx={{ width: '100%', maxWidth: [320, 330, 202], mr: [0, 0, 30] }}>
           <Box sx={{ width: [300, 300, 182], height: [300, 300, 182], position: 'relative' }}>
-            <Image src='/assets/images/collections/big/punk.svg' layout='fill' />
+            <Image src={metaData.contractImage} sx={{ width: [300, 300, 182], height: [300, 300, 182] }} />
           </Box>
         </Box>
 
@@ -57,11 +56,7 @@ export const CreateBoundNFTStepError: React.FC = () => {
       </Flex>
 
       <Box variant='frames.normal' sx={{ textAlign: 'center', mt: 40 }}>
-        <Text
-          as='span'
-          variant='text.body'
-          sx={{ color: 'text3', lineHeight: 1.5 }}
-        >
+        <Text as='span' variant='text.body' sx={{ color: 'text3', lineHeight: 1.5 }}>
           {t('paragraph.create-boundnft-error')}: {data?.errorMsg}
         </Text>
       </Box>

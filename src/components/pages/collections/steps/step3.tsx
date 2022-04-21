@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Flex, Text, Image as ImageThemeUI } from 'theme-ui'
 import { BoundNFTContext } from '../create-boundnft'
-import Image from 'next/image'
 import { MotionBox } from 'components/common/motion-components'
 import { Screen } from 'modules/bound/hooks/useBoundNFT'
 
@@ -24,7 +23,7 @@ export const CreateBoundNFTStep3: React.FC = () => {
       <Flex sx={{ mt: 80, justifyContent: 'space-between', width: '100%', alignItems: 'center', flexDirection: ['column', 'column', 'row'] }}>
         <Box variant='frames.image' sx={{ width: '100%', maxWidth: 202 }}>
           <Box sx={{ width: 182, height: 182, position: 'relative' }}>
-            <Image src='/assets/images/collections/big/punk.svg' layout='fill' />
+            <ImageThemeUI src={metaData.contractImage} sx={{ width: [300, 300, 182], height: [300, 300, 182] }} />
           </Box>
         </Box>
 
@@ -34,7 +33,7 @@ export const CreateBoundNFTStep3: React.FC = () => {
 
         <Box variant='frames.image' sx={{ width: '100%', maxWidth: 202 }}>
           <Box sx={{ width: 182, height: 182, position: 'relative' }}>
-            <Image src='/assets/images/collections/big/punk.svg' layout='fill' />
+            <ImageThemeUI src={metaData.contractImage} sx={{ width: [300, 300, 182], height: [300, 300, 182] }} />
           </Box>
         </Box>
       </Flex>

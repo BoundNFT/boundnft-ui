@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Box, Flex, Text } from 'theme-ui'
+import { Box, Flex, Text, Image, Link } from 'theme-ui'
 import { Button } from '../../../../theme/ui/common/button'
 import { BoundNFTContext } from '../create-boundnft'
-import Image from 'next/image'
 import { LabelInfo } from '../../../../theme/ui/common/label-info'
 import { MotionBox } from 'components/common/motion-components'
 import { AnimatePresence } from 'framer-motion'
@@ -43,7 +42,7 @@ export const CreateBoundNFTStep2: React.FC = () => {
         >
           <Box variant='frames.image' sx={{ width: '100%', maxWidth: [320, 330, 202], mr: [0, 0, 30] }}>
             <Box sx={{ width: [300, 300, 182], height: [300, 300, 182], position: 'relative' }}>
-              <Image src='/assets/images/collections/big/punk.svg' layout='fill' />
+              <Image src={metaData.contractImage} sx={{ width: [300, 300, 182], height: [300, 300, 182] }} />
             </Box>
           </Box>
 
@@ -54,7 +53,9 @@ export const CreateBoundNFTStep2: React.FC = () => {
                 <LabelInfo label='NO. OF TOKENS' info={metaData.contractSupply} align='right' />
               </Flex>
 
-              <Button text='View on Opensea' arrowColor='text3' outlined sx={{ maxWidth: 286, mt: [20, 20, 20, 0] }} />
+              <Link href={`https://testnets.opensea.io/collection/${metaData.openseaSlug}`} target='_blank' rel='noopener noreferrer'>
+                <Button text='View on Opensea' arrowColor='text3' outlined sx={{ maxWidth: 286, mt: [20, 20, 20, 0] }} />
+              </Link>
             </Flex>
 
             <Flex sx={{ mt: 25 }}>
@@ -82,12 +83,7 @@ export const CreateBoundNFTStep2: React.FC = () => {
           }}
         >
           <Button text={t('button.back').toUpperCase()} arrowColor='black' outlined switchArrow onClick={() => handleBackClick()} />
-          <Button
-            text={t('button.create-bound-nft').toUpperCase()}
-            backgroundColor='accent'
-            sx={{ mt: [20, 20, 20, 0] }}
-            onClick={() => handleCreateBNFT()}
-          />
+          <Button text={t('button.create-bound-nft').toUpperCase()} backgroundColor='accent' sx={{ mt: [20, 20, 20, 0] }} onClick={() => handleCreateBNFT()} />
         </Flex>
       </MotionBox>
     </AnimatePresence>
