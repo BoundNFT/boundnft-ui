@@ -20,8 +20,8 @@ export const useColumns = () => {
         Render(data: BnftCollectionReturn) {
           return (
             <Flex sx={{ alignItems: 'left' }}>
-              <Box sx={{ width: 88, height: 44, position: 'relative' }}>
-                <CollectionImage collectionAddress={data.nftAsset} width={44} height={44} />
+              <Box sx={{ width: 88, height: 44, minWidth: 88, position: 'relative' }}>
+                <CollectionImage collectionAddress={data.nftAsset} width={88} height={44} />
               </Box>
             </Flex>
           )

@@ -208,6 +208,7 @@ const Table: React.FC<ITable> = ({
                                   {col?.Render ? col?.Render(data, i, loading) : <Text sx={{ textAlign: col.align }}>{data[col.dataIndex!]}</Text>}
                                 </Box>
                               ))}
+                              
                           </Flex>
                         )
                     )
@@ -271,6 +272,10 @@ const Table: React.FC<ITable> = ({
                                 </Flex>
                               ))}
                           </Flex>
+                          
+                        </Flex>
+                        <Flex sx={{mt: -15, mb: 15}}>                        
+                          <SpacerDash bgColor='grey.100' height={1} width={'120%'} />
                         </Flex>
                       </React.Fragment>
                     )
@@ -321,7 +326,7 @@ const Table: React.FC<ITable> = ({
                           <Box
                             sx={{
                               display: 'grid',
-                              gridGap: 4,
+                              gridGap: 2,
                               gridTemplateColumns: 'repeat(1, minmax(128px, 1fr))',
                               py: 22,
                               width: '100%'
@@ -340,7 +345,7 @@ const Table: React.FC<ITable> = ({
                                   {col?.Render ? (
                                     <Flex sx={{ justifyContent: 'space-between', width: '100%' }}>
                                       {col.title && (
-                                        <Box variant={'styles.table-header-column-mobile'} sx={{ textAlign: col?.align }}>
+                                        <Box variant={'styles.table-header-column-mobile'} sx={{ textAlign: col?.align, mt: 1 }}>
                                           {col.title}
                                         </Box>
                                       )}
@@ -367,6 +372,10 @@ const Table: React.FC<ITable> = ({
                               ))}
                           </Flex>
                         </Flex>
+                        <Flex sx={{mt: -15, mb: 15}}>                        
+                          <SpacerDash bgColor='grey.100' height={1} width={'120%'} />
+                        </Flex>
+
                       </React.Fragment>
                     )
               )}
