@@ -13,7 +13,7 @@ export const LabelInfo: React.FC<ILabelInfo> = ({ label, info, textColor, align 
       <Label mb={10} variant='text.body-xs'>
         {label}
       </Label>
-      <Text variant='text.body' sx={{ color: textColor ? textColor : 'white', wordBreak: 'break-all' }}>
+      <Text variant='text.body' sx={{ color: textColor ? textColor : 'text3', wordBreak: 'break-all' }}>
         {info}
       </Text>
     </Box>

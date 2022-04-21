@@ -119,7 +119,7 @@ const Table: React.FC<ITable> = ({
                   </Flex>
                 )}
                 <Flex sx={{ width: '100%', pt: 15 }}>
-                  <SpacerDash bgColor='grey.100' height={3} />
+                  <SpacerDash bgColor='text2' height={3} />
                 </Flex>
               </Box>
             ))}
@@ -183,14 +183,14 @@ const Table: React.FC<ITable> = ({
                               ))}
                           </Flex>
                           <Flex sx={{ width: '100%', my: 15, opacity: 0.5, ':last-child': { width: 0, height: 0, my: 0, mt: 3 } }}>
-                            <SpacerDash bgColor='grey.100' height={1} />
+                            <SpacerDash bgColor='text2' height={1} />
                           </Flex>
                         </React.Fragment>
                       )
                 )}
               </Flex>
               <Flex sx={{ width: '100%' }}>
-                <SpacerDash bgColor='grey.100' height={3} />
+                <SpacerDash bgColor='text2' height={3} />
               </Flex>
             </Box>
           )}
@@ -208,7 +208,6 @@ const Table: React.FC<ITable> = ({
                                   {col?.Render ? col?.Render(data, i, loading) : <Text sx={{ textAlign: col.align }}>{data[col.dataIndex!]}</Text>}
                                 </Box>
                               ))}
-                              
                           </Flex>
                         )
                     )
@@ -272,10 +271,9 @@ const Table: React.FC<ITable> = ({
                                 </Flex>
                               ))}
                           </Flex>
-                          
                         </Flex>
-                        <Flex sx={{mt: -15, mb: 15}}>                        
-                          <SpacerDash bgColor='grey.100' height={1} width={'120%'} />
+                        <Flex sx={{ mt: -15, mb: 15 }}>
+                          <SpacerDash bgColor='text2' height={1} width={'120%'} />
                         </Flex>
                       </React.Fragment>
                     )
@@ -372,10 +370,9 @@ const Table: React.FC<ITable> = ({
                               ))}
                           </Flex>
                         </Flex>
-                        <Flex sx={{mt: -15, mb: 15}}>                        
-                          <SpacerDash bgColor='grey.100' height={1} width={'120%'} />
+                        <Flex sx={{ mt: -15, mb: 15 }}>
+                          <SpacerDash bgColor='text2' height={1} width={'120%'} />
                         </Flex>
-
                       </React.Fragment>
                     )
               )}

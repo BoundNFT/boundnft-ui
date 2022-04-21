@@ -47,10 +47,10 @@ const MobileMenu: React.FC<IDropdownMenu> = ({ menu, menuStyle, menuButton }) =>
         animate={isOpen ? 'visible' : 'hidden'}
       >
         <MotionFlex sx={{ flexDirection: 'column', padding: 20 }}>
-          <Text sx={{ color: 'black', mb: 20 }}>Navigation</Text>
+          <Text sx={{ color: 'text1', mb: 20 }}>Navigation</Text>
           <Flex sx={{ flexDirection: 'column' }}>
             {menu.map(link => (
-              <Flex key={link.name} sx={{ m: 10, ml: 0, fontSize: 12, color: 'black' }} onClick={() => setIsOpen(!isOpen)}>
+              <Flex key={link.name} sx={{ m: 10, ml: 0, fontSize: 12, color: 'text1' }} onClick={() => setIsOpen(!isOpen)}>
                 {link.external ? (
                   <NavLink href={link.route} target='_blank' rel='noreferrer noopener'>
                     {link.name}

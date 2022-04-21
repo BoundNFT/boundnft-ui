@@ -15,9 +15,7 @@ export const CreateBoundNFTStep4: React.FC = () => {
   const { setScreenState, setIsBack, isBack } = useContext(BoundNFTContext)
 
   const handleBack = () => {
-    return (
-      isBack ? null : setIsBack(false),
-      setScreenState(Screen.fetchMetadata))
+    return isBack ? null : setIsBack(false), setScreenState(Screen.fetchMetadata)
   }
   return (
     <MotionBox
@@ -49,11 +47,11 @@ export const CreateBoundNFTStep4: React.FC = () => {
               <LabelInfo label='NO. OF TOKENS' info='10,000' align='right' />
             </Flex>
 
-            <Button text='View on Opensea' arrowColor='white' outlined sx={{ maxWidth: 286, mt: [20, 20, 20, 0] }} />
+            <Button text='View on Opensea' arrowColor='text3' outlined sx={{ maxWidth: 286, mt: [20, 20, 20, 0] }} />
           </Flex>
 
           <Flex sx={{ mt: 25 }}>
-            <LabelInfo label='CONTRACT' info='0x83494d0c61f87ff3e44992552ee0751816f478e4482349763d9bdd219986b5ff' textColor='green.100' />
+            <LabelInfo label='CONTRACT' info='0x83494d0c61f87ff3e44992552ee0751816f478e4482349763d9bdd219986b5ff' textColor='accent' />
           </Flex>
         </Box>
       </Flex>
@@ -62,7 +60,7 @@ export const CreateBoundNFTStep4: React.FC = () => {
         <Text
           as='span'
           variant='text.body'
-          sx={{ color: 'white', lineHeight: 1.5 }}
+          sx={{ color: 'text3', lineHeight: 1.5 }}
           dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-success', { boundAsset: 'BOUNDWPUNKS' }) }}
         />
       </Box>
@@ -77,12 +75,7 @@ export const CreateBoundNFTStep4: React.FC = () => {
         }}
       >
         <Button text={t('button.back-to-collections').toUpperCase()} outlined switchArrow onClick={() => router.push(permalink.collections)} />
-        <Button
-          text={t('button.create-another-one').toUpperCase()}
-          outlined
-          sx={{ mt: [20, 20, 20, 0] }}
-          onClick={() => handleBack()}
-        />
+        <Button text={t('button.create-another-one').toUpperCase()} outlined sx={{ mt: [20, 20, 20, 0] }} onClick={() => handleBack()} />
       </Flex>
     </MotionBox>
   )

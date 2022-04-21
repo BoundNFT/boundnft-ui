@@ -40,7 +40,7 @@ const Collections: React.FC = () => {
           <MotionText variant='text.title-bold-green'>{t('label.collections').toUpperCase()}</MotionText>
         </MotionFlex>
 
-        <MotionText variant='text.body' color='white' sx={{ mt: 16 }}>
+        <MotionText variant='text.body' color='text3' sx={{ mt: 16 }}>
           {t('label.nft-collections-support')}
         </MotionText>
 
@@ -61,7 +61,7 @@ const Collections: React.FC = () => {
             flexDirection: ['column', 'column', 'column', 'row', 'row']
           }}
         >
-          <Button text={t('button.create-new-boundnft').toUpperCase()} backgroundColor='green.100' onClick={() => router.push(permalink.createBoundNFT)} />
+          <Button text={t('button.create-new-boundnft').toUpperCase()} backgroundColor='accent' onClick={() => router.push(permalink.createBoundNFT)} />
           <Button
             text={t('button.use-existing-boundnft').toUpperCase()}
             outlined

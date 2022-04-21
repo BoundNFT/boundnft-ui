@@ -59,6 +59,8 @@ const LinkComponent = forwardRef<HTMLDivElement, INavButton & FlexProps>(({ rout
           alignItems: 'center',
           px: [25],
           height: [80],
+          color: 'text2',
+          transition: 'all 0.3s',
           '&:after': {
             content: "''",
             position: 'absolute',
@@ -67,23 +69,24 @@ const LinkComponent = forwardRef<HTMLDivElement, INavButton & FlexProps>(({ rout
             width: activePathname === route ? '100%' : 0,
             height: 3,
             transition: 'all 0.3s',
-            bg: activePathname === route ? 'green.100' : 'transparent'
+            bg: activePathname === route ? 'accent' : 'transparent'
           },
           '& svg': {
             transition: 'all 0.3s',
-            color: activePathname === route ? 'white' : 'white'
+            color: activePathname === route ? 'text3' : 'text3'
           },
           '&:hover': {
             cursor: 'pointer',
+            color: 'text3',
             '&:after': {
               left: 0,
               width: '100%',
-              bg: ['green.100']
+              bg: ['accent']
             }
           }
         }}
       >
-        <Text as='span' color={activePathname === route ? 'white' : 'grey.100 '} sx={{ textAlign: 'center' }} variant='text.nav-buttons-text'>
+        <Text as='span' color={activePathname === route ? 'text3' : undefined} sx={{ textAlign: 'center' }} variant='text.nav-buttons-text'>
           {name}
         </Text>
       </Flex>

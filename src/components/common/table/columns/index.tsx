@@ -46,7 +46,7 @@ export const useColumns = () => {
         hideSort: true,
         Render(data: BnftCollectionReturn) {
           return (
-            <Text variant='styles.table-row-text' color='green.100'>
+            <Text variant='styles.table-row-text' color='accent'>
               {shortenAddress(data.nftAsset, 6)}
             </Text>
           )
@@ -70,7 +70,7 @@ export const useColumns = () => {
         hideSort: true,
         Render(data: BnftCollectionReturn) {
           return (
-            <Text variant='styles.table-row-text' color='green.100'>
+            <Text variant='styles.table-row-text' color='accent'>
               {shortenAddress(data.bnftProxy, 6)}
             </Text>
           )

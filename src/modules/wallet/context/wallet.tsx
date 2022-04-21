@@ -148,9 +148,9 @@ const WalletContextProvider: React.FC = ({ children }): React.ReactElement => {
     setAccount('')
   }, [])
 
-  const disconnect = useCallback(async () => {
+  const disconnect = useCallback(() => {
     console.log('disconnect')
-    await web3Modal?.clearCachedProvider()
+    web3Modal?.clearCachedProvider()
     refreshState()
   }, [refreshState, web3Modal])
 
@@ -226,6 +226,12 @@ const WalletContextProvider: React.FC = ({ children }): React.ReactElement => {
     }
   }, [web3Modal])
   
+  useEffect(() => {
+    if (web3Modal?.cachedProvider) {
+      connectWallet()
+    }
+  }, [connectWallet, web3Modal])
+
   useEffect(() => {
     if (web3Modal?.cachedProvider) {
       connectWallet()

@@ -43,7 +43,7 @@ export const CreateBoundNFTStep3: React.FC = () => {
         <Text
           as='span'
           variant='text.body'
-          sx={{ color: 'white', lineHeight: 1.5 }}
+          sx={{ color: 'text3', lineHeight: 1.5 }}
           dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-proccesing', { asset: 'CRYPTOPUNKS' }) }}
         />
       </Box>

@@ -9,7 +9,6 @@ import { LabelInfo } from '../../../../theme/ui/common/label-info'
 import { MotionBox } from 'components/common/motion-components'
 import { AnimatePresence } from 'framer-motion'
 
-
 export const CreateBoundNFTStep2: React.FC = () => {
   const { t } = useTranslation('common')
   const { setScreenState, setIsBack, isBack } = useContext(BoundNFTContext)
@@ -30,7 +29,7 @@ export const CreateBoundNFTStep2: React.FC = () => {
           x: '-100vh',
           y: -300,
           opacity: 0,
-          transition: { ease: 'easeInOut', duration: 1 },
+          transition: { ease: 'easeInOut', duration: 1 }
         }}
       >
         <Flex
@@ -55,11 +54,11 @@ export const CreateBoundNFTStep2: React.FC = () => {
                 <LabelInfo label='NO. OF TOKENS' info='10,000' align='right' />
               </Flex>
 
-              <Button text='View on Opensea' arrowColor='white' outlined sx={{ maxWidth: 286, mt: [20, 20, 20, 0] }} />
+              <Button text='View on Opensea' arrowColor='text3' outlined sx={{ maxWidth: 286, mt: [20, 20, 20, 0] }} />
             </Flex>
 
             <Flex sx={{ mt: 25 }}>
-              <LabelInfo label='CONTRACT' info='0x83494d0c61f87ff3e44992552ee0751816f478e4482349763d9bdd219986b5ff' textColor='green.100' />
+              <LabelInfo label='CONTRACT' info='0x83494d0c61f87ff3e44992552ee0751816f478e4482349763d9bdd219986b5ff' textColor='accent' />
             </Flex>
           </Box>
         </Flex>
@@ -68,7 +67,7 @@ export const CreateBoundNFTStep2: React.FC = () => {
           <Text
             as='span'
             variant='text.body'
-            sx={{ color: 'white', lineHeight: 1.5 }}
+            sx={{ color: 'text3', lineHeight: 1.5 }}
             dangerouslySetInnerHTML={{ __html: t('paragraph.create-boundnft-step2') }}
           />
         </Box>
@@ -85,7 +84,7 @@ export const CreateBoundNFTStep2: React.FC = () => {
           <Button text={t('button.back').toUpperCase()} arrowColor='black' outlined switchArrow onClick={() => handleBackClick()} />
           <Button
             text={t('button.create-bound-nft').toUpperCase()}
-            backgroundColor='green.100'
+            backgroundColor='accent'
             sx={{ mt: [20, 20, 20, 0] }}
             onClick={() => setScreenState(Screen.boundNFTProcessing)}
           />
