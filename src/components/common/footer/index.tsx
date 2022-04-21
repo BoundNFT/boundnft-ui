@@ -14,12 +14,12 @@ export const Footer: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         background: 'url(/assets/images/bg/bg-main-02.png)',
-        backgroundPositionY: '0%',
+        backgroundPositionY: [80, 80, '0%'],
         backgroundPositionX: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: [2000],
         pt: 500,
-        mt: [-350, -250, -200]
+        mt: [-350, -300, -200]
       }}
     >
       <Flex
