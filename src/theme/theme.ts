@@ -24,6 +24,7 @@ export const theme = makeTheme({
     white: '#fff',
     background: '#242F3F',
     accent: '#C0FF00',
+    text1: '#000',
     green: {
       100: '#C0FF00'
     },

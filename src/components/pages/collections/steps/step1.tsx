@@ -1,7 +1,7 @@
-import { MotionBox } from 'components/common/motion-components'
+import { MotionBox, MotionFlex } from 'components/common/motion-components'
 import { AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
-import React, { useCallback, useContext, useMemo } from 'react'
+import React, { useCallback, useContext, useEffect, useMemo } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { Box, Flex, Input, Label, Text } from 'theme-ui'
@@ -15,11 +15,16 @@ export const CreateBoundNFTStep1: React.FC = () => {
   const { setScreenState, isBack /* setMetaData */ } = useContext(BoundNFTContext)
   const router = useRouter()
   const animationType = useMemo(() => isBack, [isBack])
-  const { handleSubmit, register } = useFormContext()
+  const {
+    handleSubmit,
+    register,
+    formState: { isValid, errors }
+  } = useFormContext()
 
   const onSubmit = useCallback(
     data => {
       console.log('Form data:', data)
+      console.log('isValid', isValid, 'errors', errors)
       // const result = await contract.call(data)
       // if (result) {
       // setMetaData(result)
@@ -27,8 +32,12 @@ export const CreateBoundNFTStep1: React.FC = () => {
       // }
       setScreenState(Screen.checkDetails)
     },
-    [setScreenState]
+    [errors, isValid, setScreenState]
   )
+
+  useEffect(() => {
+    console.log('isValid', isValid, 'error', errors)
+  }, [errors, isValid])
 
   return (
     <AnimatePresence exitBeforeEnter>
@@ -41,11 +50,44 @@ export const CreateBoundNFTStep1: React.FC = () => {
           }}
         >
           <Box variant='frames.normal' sx={{ mt: 80 }}>
-            <Box sx={{ width: '100%' }}>
+            <Box sx={{ position: 'relative', width: '100%' }}>
               <Label sx={{ mb: 20 }} variant='text.body-xs' color='grey.100' htmlFor='contractAddress'>
                 {t('label.contract-address')}
               </Label>
-              <Input sx={{ height: 56, borderRadius: 0 }} {...register('contractAddress')} />
+              <AnimatePresence>
+                {errors?.['contractAddress']?.message && (
+                  <MotionFlex
+                    initial={{
+                      opacity: 0,
+                      y: 10
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    exit={{
+                      opacity: 0,
+                      y: 10
+                    }}
+                    sx={{ position: 'absolute', top: -10, right: 0 }}
+                  >
+                    <Flex sx={{ bg: 'accent', width: 'auto', color: 'text1', p: 10 }}>{errors?.['contractAddress']?.message}</Flex>
+                  </MotionFlex>
+                )}
+              </AnimatePresence>
+              <Input
+                sx={{ height: 56, borderRadius: 0 }}
+                {...register('contractAddress', {
+                  required: {
+                    value: true,
+                    message: 'Field Contract Address is required'
+                  },
+                  pattern: {
+                    value: /^0x[a-fA-F0-9]{40}$/,
+                    message: 'Address is not Ethereum address'
+                  }
+                })}
+              />
               <Label sx={{ mt: 20 }} variant='text.body-xs' color='grey.100'>
                 {t('label.input-notice')}
               </Label>
