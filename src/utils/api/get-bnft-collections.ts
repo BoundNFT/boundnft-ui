@@ -3,7 +3,7 @@ import { boundNftClient } from 'modules/clients'
 
 const GET_BNFT_COLLECTION = gql`
   query Bnfts {
-    bnfts(orderBy: nftName, orderDirection: asc) {
+    bnfts(orderBy: nftSymbol, orderDirection: asc) {
       id
       symbol
       name
