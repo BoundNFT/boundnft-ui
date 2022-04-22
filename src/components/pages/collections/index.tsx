@@ -48,7 +48,7 @@ const Collections: React.FC = () => {
           {data && (
             <MotionFlex animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }} initial={{ opacity: 0, y: 10 }} sx={{ width: '100%', mt: 80 }}>
               <Table columns={collectionListColumns ? collectionListColumns : []} dataSource={data ? data : []} loading={isLoading || isIdle} />
-            </MotionFlex>     
+            </MotionFlex>
           )}
         </AnimatePresence>
 

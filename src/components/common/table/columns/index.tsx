@@ -32,6 +32,7 @@ export const useColumns = () => {
         dataIndex: 'collectionName',
         title: t('label.collection-name'),
         align: 'left',
+        width: '180px',
         hideSort: true,
         Render(data: BnftCollectionReturn) {
           return <Text variant='styles.table-row-text'>{data.nftSymbol}</Text>
@@ -41,7 +42,7 @@ export const useColumns = () => {
         key: 'collectionAddress',
         dataIndex: 'collectionAddress',
         title: t('label.collection-address'),
-        width: '20%',
+        width: '300px',
         align: 'left',
         hideSort: true,
         Render(data: BnftCollectionReturn) {

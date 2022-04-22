@@ -68,7 +68,7 @@ const Table: React.FC<ITable> = ({
 
   return (
     <Flex variant='styles.table'>
-      {((isLaptop && !mobile) || (tabletHasTable ? isTablet : null)) && (
+      {((isLaptop ||isDesktop && !mobile) || (tabletHasTable ? isTablet : null)) && (
         <Flex variant={tableHeaderVariant ? tableHeaderVariant : 'styles.table-header'} {...tableHeaderStyle}>
           {columns &&
             columns.map((col: ITableColumn) => (
