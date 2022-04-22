@@ -28,20 +28,24 @@ export const CreateBoundNFTStep1: React.FC = () => {
 
   const onSubmit = useCallback(
     async data => {
-      const result = await mutateAsync(data.contractAddress)
-      if (!setMetaData) return
-      if (result.status === 200) {
-        console.log('result.data', result.data)
-        setMetaData((state: any) => ({
-          ...state,
-          contractImage: imageUrl(result.data.collection.image_url),
-          contractName: result.data.collection.name,
-          contractAddress: data.contractAddress,
-          openseaSlug: result.data.collection.slug
-        }))
-
-        handleStep1({ address: data.contractAddress })
-        setScreenState(Screen.checkDetails)
+      try {
+        const result = await mutateAsync(data.contractAddress)
+        if (!setMetaData) return
+        if (result.status === 200) {
+          console.log('result.data', result.data)
+          setMetaData((state: any) => ({
+            ...state,
+            contractImage: imageUrl(result.data.collection.image_url),
+            contractName: result.data.collection.name,
+            contractAddress: data.contractAddress,
+            openseaSlug: result.data.collection.slug
+          }))
+  
+          handleStep1({ address: data.contractAddress })
+          setScreenState(Screen.checkDetails)
+        }
+      } catch (error) {
+        console.error(error)
       }
     },
     [handleStep1, mutateAsync, setMetaData, setScreenState]
