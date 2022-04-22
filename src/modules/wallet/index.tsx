@@ -7,11 +7,12 @@ import useTheme from 'hooks/common/useTheme'
 import useWindowPosition from 'modules/hooks/use-window-position'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, Flex, Image, Text } from 'theme-ui'
+import { Button, Flex, Text } from 'theme-ui'
 import SpacerDash from 'theme/ui/common/spacer-dash'
 import { IconWallet } from 'theme/ui/icons'
 import { shortenAddress } from 'utils/shorten-address'
 import useWallet from './hooks/useWallet'
+import Blockies from 'react-blockies'
 
 const Web3Status: React.FC = () => {
   const { t } = useTranslation('common')
@@ -21,23 +22,31 @@ const Web3Status: React.FC = () => {
   const windowPosition = useWindowPosition()
   const { isMobile } = useResponsive()
 
-
   useEffect(() => {
     if (windowPosition > WINDOW_POSITION_TRIGGER) {
       setIsOpen(false)
     }
   }, [windowPosition])
-  
+
   return (
     <>
-      {!isMobile ? 
-      <Button variant='buttons.web3' sx={{ width: 126, textAlign: 'center', px: 10 }} onClick={() => !account ? connectWallet : account ? setIsOpen(!isOpen) : undefined}>
-        {account ? shortenAddress(account, 4) : t('button.connect').toUpperCase()}
-      </Button>
-      :
-      <Button variant='buttons.web3' sx={{ width: 36, textAlign: 'center', px: 0 }} onClick={() => !account ? connectWallet : account ? setIsOpen(!isOpen) : undefined}>
-        <IconWallet size={18} color={account ? colors.blue[100] : '#EF5350'} />
-      </Button>}
+      {!isMobile ? (
+        <Button
+          variant='buttons.web3'
+          sx={{ width: 126, textAlign: 'center', px: 10 }}
+          onClick={() => (!account ? connectWallet() : account ? setIsOpen(!isOpen) : undefined)}
+        >
+          {account ? shortenAddress(account, 4) : t('button.connect').toUpperCase()}
+        </Button>
+      ) : (
+        <Button
+          variant='buttons.web3'
+          sx={{ width: 36, textAlign: 'center', px: 0 }}
+          onClick={() => (!account ? connectWallet() : account ? setIsOpen(!isOpen) : undefined)}
+        >
+          <IconWallet size={18} color={account ? colors.blue[100] : '#EF5350'} />
+        </Button>
+      )}
       <MotionFlex
         sx={{
           alignSelf: 'right',
@@ -49,7 +58,7 @@ const Web3Status: React.FC = () => {
           boxShadow: '0 0 1rem 0.5rem rgba(0, 0, 0, 0.6)',
           zIndex: 300,
           overflowY: 'hidden',
-          overflowX: 'hidden',
+          overflowX: 'hidden'
         }}
         variants={slideVerticalAnimation}
         initial='hidden'
@@ -57,45 +66,38 @@ const Web3Status: React.FC = () => {
       >
         <MotionFlex sx={{ flexDirection: 'column', padding: 20, width: '100%' }}>
           <Flex sx={{ flexDirection: 'column', alignItems: 'center' }}>
-            <Flex sx={{borderRadius: 52, width: 80, height: 80, overflow: 'hidden'}}>
-              <Image src={'/assets/images/no-image.png'} width={80} height={80}/>
+            <Flex sx={{ borderRadius: 52, width: 80, height: 80, overflow: 'hidden' }}>
+              <Blockies seed={account} size={80} scale={6} />
             </Flex>
             <Flex mt={25}>
-              <CopyHelper toCopy={account}><Text color='blue.100'>{shortenAddress(account, 14)}</Text></CopyHelper>
+              <CopyHelper toCopy={account}>
+                <Text color='blue.100'>{shortenAddress(account, 14)}</Text>
+              </CopyHelper>
             </Flex>
           </Flex>
         </MotionFlex>
 
-        <Flex sx={{flexDirection: 'column', color: 'blue.100'}}>
+        <Flex sx={{ flexDirection: 'column', color: 'blue.100' }}>
           <SpacerDash bgColor={'blue.100'} width='100%' height={1} />
 
-          <Flex sx={{ width: '100%', justifyContent: 'space-between', px: 40, my: 10}}>
-            <Text>
-              Wallet
-            </Text>
-            <Text>
-              Metamask
-            </Text>
+          <Flex sx={{ width: '100%', justifyContent: 'space-between', px: 40, my: 10 }}>
+            <Text>Wallet</Text>
+            <Text>Metamask</Text>
           </Flex>
           <SpacerDash bgColor={'blue.100'} width='100%' height={1} />
 
-          <Flex sx={{ width: '100%', justifyContent: 'space-between', px: 40, my: 10}}>
-            <Text>
-              Connected network
-            </Text>
-            <Text>
-              Ethereum
-            </Text>
+          <Flex sx={{ width: '100%', justifyContent: 'space-between', px: 40, my: 10 }}>
+            <Text>Connected network</Text>
+            <Text>Ethereum</Text>
           </Flex>
 
           <SpacerDash bgColor={'blue.100'} width='100%' height={1} />
 
-          <Flex sx={{width: '100%', alignItems: 'center', justifyContent: 'center', padding: 10}}>
+          <Flex sx={{ width: '100%', alignItems: 'center', justifyContent: 'center', padding: 10 }}>
             <Button variant='buttons.disconnect' sx={{ width: 126, textAlign: 'center', px: 10 }}>
               Disconnect
             </Button>
           </Flex>
-
         </Flex>
       </MotionFlex>
     </>

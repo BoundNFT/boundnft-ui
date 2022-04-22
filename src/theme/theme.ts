@@ -23,6 +23,7 @@ export const theme = makeTheme({
     body: '#fff',
     white: '#fff',
     background: '#242F3F',
+    backdrop: '#000000e1',
     accent: '#C0FF00',
     text1: '#000',
     text2: '#6E8197',
@@ -234,18 +235,17 @@ export const theme = makeTheme({
         transition: 'ease-in-out 0.1s'
       }
     },
-    'disconnect': {
+    disconnect: {
       cursor: 'pointer',
       borderRadius: 0,
       backgroundColor: 'red',
       color: 'text3',
-      fontSize: 14,
+      fontSize: 1,
       fontWeight: 'bold',
       px: 30,
       py: 10,
-      height: 36,
       ':hover': {
-        opacity: 0.5,
+        opacity: 0.9,
         transition: 'ease-in-out 0.1s'
       }
     }
