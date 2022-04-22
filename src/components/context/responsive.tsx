@@ -34,7 +34,7 @@ export const ResponsiveContext = React.createContext<IState>(initialState)
  */
 const ResponsiveContextProvider: React.FC = ({ children }): React.ReactElement => {
   const isMobile = useMediaQuery({
-    query: `(min-width: 240px)`
+    query: `(min-width: 240px) and (max-width: 767px)`
   })
   const isTablet = useMediaQuery({
     query: `(min-width: 768px)`

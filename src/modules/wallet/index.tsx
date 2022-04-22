@@ -19,7 +19,7 @@ const Web3Status: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const { colors } = useTheme()
   const windowPosition = useWindowPosition()
-  const { isTablet } = useResponsive()
+  const { isMobile } = useResponsive()
 
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Web3Status: React.FC = () => {
   
   return (
     <>
-      {isTablet ? 
+      {!isMobile ? 
       <Button variant='buttons.web3' sx={{ width: 126, textAlign: 'center', px: 10 }} onClick={() => !account ? connectWallet : account ? setIsOpen(!isOpen) : undefined}>
         {account ? shortenAddress(account, 4) : t('button.connect').toUpperCase()}
       </Button>
