@@ -234,7 +234,7 @@ export const theme = makeTheme({
         transition: 'ease-in-out 0.1s'
       }
     },
-    'web3disconnect': {
+    'disconnect': {
       cursor: 'pointer',
       borderRadius: 0,
       backgroundColor: 'red',

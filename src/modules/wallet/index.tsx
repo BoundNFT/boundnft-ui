@@ -2,11 +2,14 @@ import CopyHelper from 'components/common/copy-helper'
 import { slideVerticalAnimation } from 'components/common/mobile-menu/details/motion-containers'
 import { MotionFlex } from 'components/common/motion-components'
 import { WINDOW_POSITION_TRIGGER } from 'constants/index'
+import useResponsive from 'hooks/common/useResponsive'
+import useTheme from 'hooks/common/useTheme'
 import useWindowPosition from 'modules/hooks/use-window-position'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button, Flex, Image, Text } from 'theme-ui'
 import SpacerDash from 'theme/ui/common/spacer-dash'
+import { IconWallet } from 'theme/ui/icons'
 import { shortenAddress } from 'utils/shorten-address'
 import useWallet from './hooks/useWallet'
 
@@ -14,10 +17,10 @@ const Web3Status: React.FC = () => {
   const { t } = useTranslation('common')
   const { account, connectWallet } = useWallet()
   const [isOpen, setIsOpen] = useState(false)
+  const { colors } = useTheme()
   const windowPosition = useWindowPosition()
+  const { isTablet } = useResponsive()
 
-  useEffect(() => {
-  }, [account])
 
   useEffect(() => {
     if (windowPosition > WINDOW_POSITION_TRIGGER) {
@@ -27,17 +30,22 @@ const Web3Status: React.FC = () => {
   
   return (
     <>
-      <Button variant='buttons.web3' sx={{ width: 126, textAlign: 'center', px: 10 }} onClick={() => !account ? connectWallet : setIsOpen(!isOpen)}>
+      {isTablet ? 
+      <Button variant='buttons.web3' sx={{ width: 126, textAlign: 'center', px: 10 }} onClick={() => !account ? connectWallet : account ? setIsOpen(!isOpen) : undefined}>
         {account ? shortenAddress(account, 4) : t('button.connect').toUpperCase()}
       </Button>
+      :
+      <Button variant='buttons.web3' sx={{ width: 36, textAlign: 'center', px: 0 }} onClick={() => !account ? connectWallet : account ? setIsOpen(!isOpen) : undefined}>
+        <IconWallet size={18} color={account ? colors.blue[100] : '#EF5350'} />
+      </Button>}
       <MotionFlex
         sx={{
           alignSelf: 'right',
           position: 'fixed',
           backgroundColor: 'grey.100',
-          width: 350,
-          mt: 100,
-          ml: -225,
+          width: [300, 300, 350],
+          mt: [50, 70, 100],
+          ml: [-265, -265, -225],
           boxShadow: '0 0 1rem 0.5rem rgba(0, 0, 0, 0.6)',
           zIndex: 300,
           overflowY: 'hidden',
@@ -83,7 +91,7 @@ const Web3Status: React.FC = () => {
           <SpacerDash bgColor={'blue.100'} width='100%' height={1} />
 
           <Flex sx={{width: '100%', alignItems: 'center', justifyContent: 'center', padding: 10}}>
-            <Button variant='buttons.web3disconnect' sx={{ width: 126, textAlign: 'center', px: 10 }}>
+            <Button variant='buttons.disconnect' sx={{ width: 126, textAlign: 'center', px: 10 }}>
               Disconnect
             </Button>
           </Flex>
