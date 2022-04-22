@@ -18,19 +18,14 @@ export const CreateBoundNFTStep2: React.FC = () => {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <MotionBox
-        initial={{ x: '100vh' }}
-        animate={{
-          x: 0,
-          transition: { type: 'spring', stiffness: 50, duration: 0.5 }
-        }}
-        exit={{
-          x: '-100vh',
-          y: -300,
-          opacity: 0,
-          transition: { ease: 'easeInOut', duration: 1 }
-        }}
-      >
+        <MotionBox
+          initial={{ y: 120, opacity: 0 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: { ease: 'easeIn', duration: 0.4 }
+          }}
+        >
         <Flex
           sx={{
             mt: 80,

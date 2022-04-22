@@ -18,10 +18,11 @@ export const CreateBoundNFTStepSuccess: React.FC = () => {
   }
   return (
     <MotionBox
-      initial={{ x: '100vh' }}
+      initial={{ y: 120, opacity: 0 }}
       animate={{
-        x: 0,
-        transition: { type: 'spring', stiffness: 50, duration: 0.5 }
+        opacity: 1,
+        y: 0,
+        transition: { ease: 'easeIn', duration: 0.4 }
       }}
     >
       <Flex

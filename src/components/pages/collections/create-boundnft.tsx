@@ -41,17 +41,16 @@ export const CreateBoundNFT: React.FC = () => {
             <MotionFlex variants={mainContainer} sx={{ width: '100%', flexDirection: 'column', fontSize: 'xxxl' }} initial='hidden' animate={'visible'}>
               <MotionText variant='text.title-white'>{t('label.create').toUpperCase()}</MotionText>
               <MotionText variant='text.title-bold-green'>{t('label.new-boundnft').toUpperCase()}</MotionText>
+              <MotionText
+                variant='text.body'
+                color='text3'
+                sx={{ mt: 16 }}
+              >
+                {t('label.nft-collection-create')}
+              </MotionText>
             </MotionFlex>
 
-            <MotionText
-              variant='text.body'
-              color='text3'
-              sx={{ mt: 16 }}
-              animate={{ opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.9, type: 'spring' } }}
-              initial={{ opacity: 0, y: -100 }}
-            >
-              {t('label.nft-collection-create')}
-            </MotionText>
+
             <Box sx={{ minHeight: 560 }}>
               {(() => {
                 switch (screenState) {

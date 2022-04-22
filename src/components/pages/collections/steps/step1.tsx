@@ -2,7 +2,7 @@ import { useMutation } from 'react-query'
 import { MotionBox, MotionFlex } from 'components/common/motion-components'
 import { AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
-import React, { useCallback, useContext, useEffect, useMemo } from 'react'
+import React, { useCallback, useContext, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { Box, Flex, Input, Label, Text } from 'theme-ui'
@@ -15,9 +15,8 @@ import { Screen } from 'modules/bound/hooks/useBoundNFT'
 
 export const CreateBoundNFTStep1: React.FC = () => {
   const { t } = useTranslation('common')
-  const { isBack, handleStep1, setMetaData, setScreenState } = useContext(BoundNFTContext)
+  const { handleStep1, setMetaData, setScreenState } = useContext(BoundNFTContext)
   const router = useRouter()
-  const animationType = useMemo(() => isBack, [isBack])
   const {
     handleSubmit,
     register,
@@ -35,10 +34,10 @@ export const CreateBoundNFTStep1: React.FC = () => {
           console.log('result.data', result.data)
           setMetaData((state: any) => ({
             ...state,
-            contractImage: imageUrl(result.data.collection.image_url),
-            contractName: result.data.collection.name,
+            contractImage: imageUrl(result.data.collection?.image_url),
+            contractName: result.data.collection?.name,
             contractAddress: data.contractAddress,
-            openseaSlug: result.data.collection.slug
+            openseaSlug: result.data.collection?.slug
           }))
   
           handleStep1({ address: data.contractAddress })
@@ -61,10 +60,11 @@ export const CreateBoundNFTStep1: React.FC = () => {
     <AnimatePresence exitBeforeEnter>
       <form onSubmit={handleSubmit(onSubmit)}>
         <MotionBox
-          initial={{ x: animationType ? '-100vh' : '100vh' }}
+          initial={{ y: 120, opacity: 0 }}
           animate={{
-            x: 0,
-            transition: { type: 'spring', stiffness: 50, duration: 0.5 }
+            opacity: 1,
+            y: 0,
+            transition: { ease: 'easeIn', duration: 0.4 }
           }}
         >
           <Box variant='frames.normal' sx={{ mt: 80 }}>
