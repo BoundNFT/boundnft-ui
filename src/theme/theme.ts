@@ -233,6 +233,21 @@ export const theme = makeTheme({
         opacity: 0.5,
         transition: 'ease-in-out 0.1s'
       }
+    },
+    'web3disconnect': {
+      cursor: 'pointer',
+      borderRadius: 0,
+      backgroundColor: 'red',
+      color: 'text3',
+      fontSize: 14,
+      fontWeight: 'bold',
+      px: 30,
+      py: 10,
+      height: 36,
+      ':hover': {
+        opacity: 0.5,
+        transition: 'ease-in-out 0.1s'
+      }
     }
   }
 })
